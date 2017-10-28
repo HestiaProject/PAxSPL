@@ -1,4 +1,4 @@
-Prepare, Assemble and Execute Process for SPL (PAEPSPL)
+**P**repare, **A**ssemble and E**x**ecute Process for **SPL** (PAxSPL)
 
 ![Process Overview](https://raw.githubusercontent.com/HestiaProject/Generic-SPL-Re-engineering-Process/master/process/Process/Processo_Art.png)
 
