@@ -1,6 +1,6 @@
 **P**repare, **A**ssemble and E**x**ecute Process for **SPL** (PAxSPL)
 
-![Process Overview](https://raw.githubusercontent.com/HestiaProject/Generic-SPL-Re-engineering-Process/master/process/Process/Processo_Art.png)
+![Process Overview](https://github.com/HestiaProject/PAxSPL/blob/master/process/img/Process.png)
 
 * [Process Structure](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Process-Structure)
 
