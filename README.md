@@ -34,7 +34,7 @@
        * [1.3.8 Register Technological Information](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Perform-Documentation-Analysis#register-technological-information)
 
 * [2. Assemble](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Assemble)
-  * [2.1 Select Strategies and Techniques](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Assemble#select-strategies-and-techniques)
+  * [2.1 Select Techniques](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Assemble#select-techniques)
   * [2.2 Assemble Techniques](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Assemble#assemble-techniques)
   * [2.3 Assign Tasks](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Assemble#assign-tasks)
   
