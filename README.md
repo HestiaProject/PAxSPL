@@ -63,6 +63,8 @@
     * [Expert Driven](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Expert-Driven)
     * [Heuristics](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Heuristics)
     * [Rule-Based](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Rule-Based)
+  
+  * [Support Checklist](https://github.com/HestiaProject/PAxSPL/wiki/Support-Checklist)
     
 
 * [Bibliography](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Bibliography)
