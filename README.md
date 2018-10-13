@@ -65,6 +65,6 @@
     * [Rule-Based](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Rule-Based)
   
   * [Support Checklist](https://github.com/HestiaProject/PAxSPL/wiki/Support-Checklist)
-    
+  * [Tool Support](https://github.com/HestiaProject/PAxSPL/wiki/Tool-Support)  
 
 * [Bibliography](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Bibliography)
