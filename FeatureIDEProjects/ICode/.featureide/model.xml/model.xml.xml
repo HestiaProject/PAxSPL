@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<layout chosenLayoutAlgorithm="0" horizontalLayout="true" showCollapsedConstraints="false">
+		<struct>
+			<feature X="1022" Y="342" name="Pay. Acc."/>
+			<feature X="624" Y="342" name="Account"/>
+			<feature X="885" Y="342" name="Bank Ctrl. "/>
+			<feature X="440" Y="212" name="Op. Nature"/>
+			<feature X="142" Y="380" name="Product"/>
+			<feature X="769" Y="212" name="ICMS Red. "/>
+			<feature X="411" Y="380" name="Unit of m."/>
+			<feature X="129" Y="464" name="Vehicle"/>
+			<feature X="399" Y="143" name="Input"/>
+			<feature X="568" Y="143" name="Current Status "/>
+			<feature X="263" Y="170" name="Registration"/>
+			<feature X="474" Y="381" name="Paym. Cond."/>
+			<feature X="446" Y="143" name="Output"/>
+			<feature X="349" Y="380" name="Supplier"/>
+			<feature X="689" Y="212" name="Nat. Simple"/>
+			<feature X="880" Y="212" name="CFOP"/>
+			<feature X="100" Y="379" name="Client"/>
+			<feature X="826" Y="86" name="Operations"/>
+			<feature X="662" Y="143" name="Disable"/>
+			<feature X="754" Y="342" name="Expec. Flow"/>
+			<feature X="684" Y="342" name="Real. Flow"/>
+			<feature X="565" Y="212" name="Tributation"/>
+			<feature X="956" Y="342" name="Rec. Acc."/>
+			<feature X="983" Y="198" name="Finance"/>
+			<feature X="181" Y="464" name="Ship. Company"/>
+			<feature X="255" Y="380" name="City"/>
+			<feature X="831" Y="342" name="Cx. Ctrl"/>
+			<feature X="498" Y="143" name="XML Down"/>
+			<feature X="533" Y="40" name="ICode"/>
+			<feature X="213" Y="380" name="State"/>
+			<feature X="532" Y="88" name="E-invoice"/>
+			<feature X="523" Y="212" name="NCM"/>
+			<feature X="291" Y="380" name="Country"/>
+			<feature X="634" Y="212" name="Aliquot"/>
+			<feature X="751" Y="146" name="Taxation"/>
+			<feature X="928" Y="212" name="Cest"/>
+			<feature X="159" Y="414" name="Transport"/>
+			<feature X="520" Y="342" name="Manage Acc. Plan"/>
+			<feature X="839" Y="212" name="IBPT"/>
+		</struct>
+		<constraints>
+			<rule X="530" Y="455"/>
+			<rule X="573" Y="480"/>
+			<rule X="569" Y="505"/>
+		</constraints>
+	</layout>

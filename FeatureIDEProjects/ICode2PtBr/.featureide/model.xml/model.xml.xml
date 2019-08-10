@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<layout chosenLayoutAlgorithm="0" horizontalLayout="true" showCollapsedConstraints="false">
+		<struct>
+			<feature X="-128" Y="184" name="Cadastro"/>
+			<feature X="280" Y="200" name="Inutilizacao"/>
+			<feature X="470" Y="256" name="Simples Nac."/>
+			<feature X="930" Y="334" name="Cnts. Pag."/>
+			<feature X="124" Y="332" name="Uni. Medida"/>
+			<feature X="-39" Y="332" name="Cidade"/>
+			<feature X="592" Y="334" name="Flux. Realiz."/>
+			<feature X="262" Y="332" name="Cond. Pag."/>
+			<feature X="333" Y="332" name="Transporte"/>
+			<feature X="794" Y="261" name="Financeiro"/>
+			<feature X="444" Y="150" name="Historico"/>
+			<feature X="661" Y="256" name="CFOP"/>
+			<feature X="-145" Y="332" name="Produto"/>
+			<feature X="504" Y="150" name="Tarefas"/>
+			<feature X="444" Y="200" name="Status"/>
+			<feature X="540" Y="334" name="Contas"/>
+			<feature X="346" Y="256" name="Tributacao"/>
+			<feature X="365" Y="148" name="Pedido"/>
+			<feature X="182" Y="148" name="NFe"/>
+			<feature X="374" Y="377" name="Transportadora"/>
+			<feature X="442" Y="334" name="Plano Ct. Geren."/>
+			<feature X="550" Y="256" name="Red. ICMS"/>
+			<feature X="304" Y="256" name="NCM"/>
+			<feature X="271" Y="121" name="Documento"/>
+			<feature X="603" Y="150" name="Por Profissional"/>
+			<feature X="72" Y="200" name="Saida"/>
+			<feature X="559" Y="150" name="Geral"/>
+			<feature X="321" Y="377" name="Veiculo"/>
+			<feature X="743" Y="100" name="Operacoes"/>
+			<feature X="116" Y="200" name="Down XML"/>
+			<feature X="669" Y="334" name="Flux. Prev."/>
+			<feature X="-90" Y="332" name="Estado"/>
+			<feature X="351" Y="200" name="Realizar Pedido"/>
+			<feature X="415" Y="256" name="Aliquota"/>
+			<feature X="221" Y="256" name="Natureza Op."/>
+			<feature X="793" Y="334" name="Ctrl. Banco"/>
+			<feature X="-195" Y="332" name="Cliente"/>
+			<feature X="12" Y="332" name="Pais"/>
+			<feature X="647" Y="193" name="Tributario"/>
+			<feature X="492" Y="200" name="Gerar Nfe"/>
+			<feature X="198" Y="332" name="Vendedor"/>
+			<feature X="543" Y="100" name="Agenda"/>
+			<feature X="17" Y="200" name="Entrada"/>
+			<feature X="739" Y="334" name="Ctrl Cx."/>
+			<feature X="864" Y="334" name="Cnts Rec."/>
+			<feature X="533" Y="40" name="ICode"/>
+			<feature X="50" Y="332" name="Fornecedor"/>
+			<feature X="186" Y="200" name="Consulta Status"/>
+			<feature X="709" Y="256" name="Cest"/>
+			<feature X="620" Y="256" name="IBPT"/>
+		</struct>
+		<constraints>
+			<rule X="305" Y="402"/>
+			<rule X="348" Y="427"/>
+			<rule X="344" Y="452"/>
+			<rule X="342" Y="477"/>
+		</constraints>
+	</layout>

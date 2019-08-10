@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel>
+		<properties/>
+		<struct>
+			<and abstract="true" mandatory="true" name="ICode">
+				<and mandatory="true" name="Cadastro">
+					<feature mandatory="true" name="Cliente"/>
+					<feature mandatory="true" name="Produto"/>
+					<feature mandatory="true" name="Estado"/>
+					<feature mandatory="true" name="Cidade"/>
+					<feature mandatory="true" name="Pais"/>
+					<feature mandatory="true" name="Fornecedor"/>
+					<feature mandatory="true" name="Uni. Medida"/>
+					<feature mandatory="true" name="Vendedor"/>
+					<feature name="Cond. Pag."/>
+					<and name="Transporte">
+						<feature mandatory="true" name="Veiculo"/>
+						<feature mandatory="true" name="Transportadora"/>
+					</and>
+				</and>
+				<or name="Documento">
+					<and mandatory="true" name="NFe">
+						<feature mandatory="true" name="Entrada"/>
+						<feature mandatory="true" name="Saida"/>
+						<feature mandatory="true" name="Down XML"/>
+						<feature mandatory="true" name="Consulta Status"/>
+						<feature mandatory="true" name="Inutilizacao"/>
+					</and>
+					<and mandatory="true" name="Pedido">
+						<feature mandatory="true" name="Realizar Pedido"/>
+						<feature mandatory="true" name="Status"/>
+						<feature name="Gerar Nfe"/>
+					</and>
+				</or>
+				<or abstract="true" mandatory="true" name="Operacoes">
+					<and mandatory="true" name="Tributario">
+						<feature mandatory="true" name="Natureza Op."/>
+						<feature mandatory="true" name="NCM"/>
+						<feature mandatory="true" name="Tributacao"/>
+						<feature mandatory="true" name="Aliquota"/>
+						<feature mandatory="true" name="Simples Nac."/>
+						<feature mandatory="true" name="Red. ICMS"/>
+						<feature mandatory="true" name="IBPT"/>
+						<feature mandatory="true" name="CFOP"/>
+						<feature mandatory="true" name="Cest"/>
+					</and>
+					<and mandatory="true" name="Financeiro">
+						<feature mandatory="true" name="Plano Ct. Geren."/>
+						<feature mandatory="true" name="Contas"/>
+						<feature mandatory="true" name="Flux. Realiz."/>
+						<feature mandatory="true" name="Flux. Prev."/>
+						<feature mandatory="true" name="Ctrl Cx."/>
+						<feature mandatory="true" name="Ctrl. Banco"/>
+						<feature mandatory="true" name="Cnts Rec."/>
+						<feature mandatory="true" name="Cnts. Pag."/>
+					</and>
+				</or>
+				<and name="Agenda">
+					<feature mandatory="true" name="Historico"/>
+					<feature mandatory="true" name="Tarefas"/>
+					<feature mandatory="true" name="Geral"/>
+					<feature mandatory="true" name="Por Profissional"/>
+				</and>
+			</and>
+		</struct>
+		<constraints>
+			<rule>
+				<imp>
+					<disj>
+						<var>Financeiro</var>
+						<var>NFe</var>
+					</disj>
+					<var>Cond. Pag.</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>NFe</var>
+					<var>Tributario</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>NFe</var>
+					<var>Transporte</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>Gerar Nfe</var>
+					<var>NFe</var>
+				</imp>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>

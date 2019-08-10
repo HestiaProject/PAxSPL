@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<layout chosenLayoutAlgorithm="0" horizontalLayout="true" showCollapsedConstraints="false">
+		<struct>
+			<feature X="464" Y="336" name="Account"/>
+			<feature X="232" Y="256" name="Op. Nature"/>
+			<feature X="-145" Y="332" name="Product"/>
+			<feature X="550" Y="256" name="ICMS Red. "/>
+			<feature X="271" Y="121" name="Document"/>
+			<feature X="492" Y="200" name="E-invoice Generation"/>
+			<feature X="132" Y="334" name="Unit of m."/>
+			<feature X="-126" Y="403" name="Vehicle"/>
+			<feature X="15" Y="194" name="Input"/>
+			<feature X="-128" Y="184" name="Registration"/>
+			<feature X="661" Y="256" name="CFOP"/>
+			<feature X="-195" Y="332" name="Client"/>
+			<feature X="743" Y="100" name="Operations"/>
+			<feature X="280" Y="197" name="Disable"/>
+			<feature X="196" Y="334" name="Salesman"/>
+			<feature X="444" Y="200" name="Status"/>
+			<feature X="113" Y="195" name=" XML Down"/>
+			<feature X="346" Y="256" name="Tributation"/>
+			<feature X="791" Y="339" name="Rec. Acc."/>
+			<feature X="504" Y="150" name="Tasks"/>
+			<feature X="-31" Y="330" name="City"/>
+			<feature X="669" Y="339" name="Cx. Ctrl"/>
+			<feature X="625" Y="153" name="By User"/>
+			<feature X="-77" Y="331" name="State"/>
+			<feature X="7" Y="332" name="Country"/>
+			<feature X="304" Y="256" name="NCM"/>
+			<feature X="415" Y="256" name="Aliquot"/>
+			<feature X="647" Y="193" name="Taxation"/>
+			<feature X="-114" Y="358" name="Transport"/>
+			<feature X="723" Y="338" name="Bank Ctrl. "/>
+			<feature X="187" Y="193" name="Current Status "/>
+			<feature X="263" Y="334" name="Paym. Cond."/>
+			<feature X="59" Y="194" name="Output"/>
+			<feature X="70" Y="334" name="Supplier"/>
+			<feature X="470" Y="256" name="Nat. Simple"/>
+			<feature X="590" Y="338" name="Expec. Flow"/>
+			<feature X="854" Y="340" name="Pay Acc. "/>
+			<feature X="520" Y="337" name="Real. Flow"/>
+			<feature X="747" Y="272" name="Finance"/>
+			<feature X="365" Y="148" name="Request"/>
+			<feature X="444" Y="150" name="Historic"/>
+			<feature X="-73" Y="403" name="Ship. Company"/>
+			<feature X="559" Y="150" name="Overview"/>
+			<feature X="337" Y="200" name="Perform Request"/>
+			<feature X="533" Y="40" name="ICode"/>
+			<feature X="543" Y="100" name="Schedule"/>
+			<feature X="182" Y="148" name="E-invoice"/>
+			<feature X="709" Y="256" name="Cest"/>
+			<feature X="359" Y="336" name="Manage Acc. Plan"/>
+			<feature X="620" Y="256" name="IBPT"/>
+		</struct>
+		<constraints>
+			<rule X="305" Y="402"/>
+			<rule X="348" Y="427"/>
+			<rule X="344" Y="452"/>
+			<rule X="342" Y="477"/>
+		</constraints>
+	</layout>

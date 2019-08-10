@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<layout chosenLayoutAlgorithm="0" horizontalLayout="true" showCollapsedConstraints="false">
+		<struct>
+			<feature X="273" Y="140" name="Cadastro"/>
+			<feature X="662" Y="143" name="Inutilizacao"/>
+			<feature X="454" Y="143" name="Saida"/>
+			<feature X="519" Y="430" name="Veiculo"/>
+			<feature X="826" Y="86" name="Operacoes"/>
+			<feature X="689" Y="212" name="Simples Nac."/>
+			<feature X="1093" Y="298" name="Cnts. Pag."/>
+			<feature X="498" Y="143" name="Down XML"/>
+			<feature X="411" Y="380" name="Uni. Medida"/>
+			<feature X="832" Y="298" name="Flux. Prev."/>
+			<feature X="198" Y="380" name="Estado"/>
+			<feature X="248" Y="380" name="Cidade"/>
+			<feature X="755" Y="298" name="Flux. Realiz."/>
+			<feature X="485" Y="380" name="Cond. Pag."/>
+			<feature X="556" Y="380" name="Transporte"/>
+			<feature X="634" Y="212" name="Aliquota"/>
+			<feature X="1011" Y="205" name="Financeiro"/>
+			<feature X="880" Y="212" name="CFOP"/>
+			<feature X="440" Y="212" name="Natureza Op."/>
+			<feature X="956" Y="298" name="Ctrl. Banco"/>
+			<feature X="92" Y="380" name="Cliente"/>
+			<feature X="299" Y="380" name="Pais"/>
+			<feature X="142" Y="380" name="Produto"/>
+			<feature X="703" Y="298" name="Contas"/>
+			<feature X="565" Y="212" name="Tributacao"/>
+			<feature X="751" Y="146" name="Tributario"/>
+			<feature X="532" Y="88" name="NFe"/>
+			<feature X="399" Y="143" name="Entrada"/>
+			<feature X="902" Y="298" name="Ctrl Cx."/>
+			<feature X="571" Y="430" name="Transportadora"/>
+			<feature X="605" Y="298" name="Plano Ct. Geren."/>
+			<feature X="1027" Y="298" name="Cnts Rec."/>
+			<feature X="533" Y="40" name="ICode"/>
+			<feature X="337" Y="380" name="Fornecedor"/>
+			<feature X="769" Y="212" name="Red. ICMS"/>
+			<feature X="523" Y="212" name="NCM"/>
+			<feature X="568" Y="143" name="Consulta Status"/>
+			<feature X="928" Y="212" name="Cest"/>
+			<feature X="839" Y="212" name="IBPT"/>
+		</struct>
+		<constraints>
+			<rule X="530" Y="455"/>
+			<rule X="573" Y="480"/>
+			<rule X="569" Y="505"/>
+		</constraints>
+	</layout>
