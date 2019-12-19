@@ -22,14 +22,16 @@
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Details</th>
+            <th>Description</th>
+            <th>Owner</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($projects as $project)
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $project->title }}</td>
-            <td>{{ $project->description }}</td>
+            <td>{{ $project->description }}</td> 
+            <td>{{ $project->user->name }}</td>
             <td>
                 <form action="{{ route('projects.destroy',$project->id) }}" method="POST">
    

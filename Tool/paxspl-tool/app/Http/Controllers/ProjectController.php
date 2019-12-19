@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -48,7 +49,12 @@ class ProjectController extends Controller
             'description' => 'required',
         ]);
 
-        Project::create($request->all());
+        $project = new Project();
+
+        $project->title = $request->title;
+        $project->description = $request->description;
+        $project->owner_id = auth()->id();
+        $project->save();
 
         return redirect()->route('projects.index')
             ->with('success', 'Project created successfully.');

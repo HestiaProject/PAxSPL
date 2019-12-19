@@ -18,6 +18,8 @@ class CreateProjectsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->timestamps();
+            $table->unsignedBigInteger('owner_id')->unsigned();
+            $table->foreign('owner_id')->references('id')->on('users');
         });
     }
 
@@ -28,6 +30,7 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::dropIfExists('projects');
     }
 }
