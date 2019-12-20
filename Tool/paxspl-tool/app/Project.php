@@ -18,4 +18,9 @@ class Project extends Model
         return $this->belongsTo('App\User' , 'owner_id');
     }
 
+    public function teams()
+    {
+        return $this->hasMany('App\Team');
+    }
+
 }
