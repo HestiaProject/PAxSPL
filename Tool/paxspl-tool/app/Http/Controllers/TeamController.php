@@ -23,11 +23,11 @@ class TeamController extends Controller
     {
         $teams = Team::latest()->paginate(5);
 
-        return view('projects.show', compact('project'))
+        return redirect()->route('projects.show', compact($project->id))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-     
+
 
     /**
      * Store a newly created resource in storage.
@@ -35,21 +35,24 @@ class TeamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Project $project)
+    public function store(Request $request)
     {
         $request->validate([
-            'role' => 'required', 
+            'role' => 'required',
+            'email' => 'required',
         ]);
 
         $team = new Team();
-
+        $user = new User();
+        $user->where('email', $request->input('email'))->get();
+        echo ($user->id);
         $team->role = $request->role;
         $team->project_id = $request->project_id;
-        $team->user_id = $request->user_id;
+        $team->user_id = $user->id;
         $team->save();
 
         return view('projects.show', compact('project'))
-        ->with('success', 'Team updated successfully');
+            ->with('success', 'Team updated successfully');
     }
 
     /**
@@ -74,7 +77,7 @@ class TeamController extends Controller
         $request->validate([
             'email' => 'required',
         ]);
-        return $user->where('email', $request->input('email'))->get(); 
+        return $user->where('email', $request->input('email'))->get();
     }
 
     /**
@@ -99,9 +102,7 @@ class TeamController extends Controller
     {
         $team->delete();
 
-        return view('projects.show', compact('project'))
-            ->with('success', 'Project deleted successfully');
+        return redirect()->route('projects.show', compact('project'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
-
-    
 }
