@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Team;
 use App\Project;
 use App\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -21,10 +22,9 @@ class TeamController extends Controller
      */
     public function index(Project $project)
     {
-        $teams = Team::latest()->paginate(5);
 
-        return redirect()->route('projects.show', compact($project->id))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+
+        return  view('projects.teams.index', compact('project'));
     }
 
 
@@ -44,12 +44,17 @@ class TeamController extends Controller
 
         $team = new Team();
         $user = new User();
-        $user->where('email', $request->input('email'))->get();
+        $user = DB::table('users')->where('email', $request->email)->first();
+
         echo ($user->id);
         $team->role = $request->role;
         $team->project_id = $request->project_id;
         $team->user_id = $user->id;
         $team->save();
+
+        $project = new Project();
+        $project = DB::table('projects')->where('id', $request->project_id)->first();
+
 
         return view('projects.show', compact('project'))
             ->with('success', 'Team updated successfully');
@@ -61,9 +66,9 @@ class TeamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Project $project)
     {
-        //
+        return view('projects.teams.index', compact('project'));
     }
 
     /**
@@ -95,14 +100,14 @@ class TeamController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Team $team, Project $project)
+    public function destroy(Project $project, Team $team)
     {
         $team->delete();
 
-        return redirect()->route('projects.show', compact('project'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return redirect()->route('projects.teams.index', compact('project'))
+            ->with('success', 'Team member removed successfully');
     }
 }

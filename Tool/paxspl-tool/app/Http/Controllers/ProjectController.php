@@ -71,6 +71,19 @@ class ProjectController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  \App\Project  $project
+     * @return \Illuminate\Http\Response
+     */
+    public function showTeam(Project $project)
+    {
+        return redirect()->action(
+            'TeamController@index', ['project' => $project]
+        ); 
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Project  $project
