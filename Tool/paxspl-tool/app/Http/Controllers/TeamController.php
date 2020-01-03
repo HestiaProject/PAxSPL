@@ -52,12 +52,12 @@ class TeamController extends Controller
         $team->user_id = $user->id;
         $team->save();
 
-        $project = new Project();
-        $project = DB::table('projects')->where('id', $request->project_id)->first();
+        
+        $project = $request->project_id;
 
 
-        return view('projects.show', compact('project'))
-            ->with('success', 'Team updated successfully');
+        return redirect()->route('projects.teams.index', compact('project'))
+            ->with('success', 'Team member added successfully');
     }
 
     /**
