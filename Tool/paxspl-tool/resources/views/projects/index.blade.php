@@ -54,6 +54,6 @@
         </div>
     </div>
 </div>
-{!! $projects->links() !!}
+ 
 
 @endsection

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use App\Team;
-use Illuminate\Http\Request; 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller
 {
@@ -20,7 +21,16 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::latest()->paginate(5);
+        $projects = Project::all();
+
+        $teams = DB::table('teams')->where('user_id', auth()->id())->get();
+
+        $projects_id = [];
+        foreach ($teams as $team) {
+            array_push($projects_id, $team->project_id);
+        }
+        $projects = $projects->whereIn('id',  $projects_id);
+
 
         return view('projects.index', compact('projects'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -86,8 +96,9 @@ class ProjectController extends Controller
     public function showTeam(Project $project)
     {
         return redirect()->action(
-            'TeamController@index', ['project' => $project]
-        ); 
+            'TeamController@index',
+            ['project' => $project]
+        );
     }
 
     /**
