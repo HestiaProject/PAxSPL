@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Team;
 use Illuminate\Http\Request; 
 
 class ProjectController extends Controller
@@ -54,6 +55,12 @@ class ProjectController extends Controller
         $project->description = $request->description;
         $project->owner_id = auth()->id();
         $project->save();
+
+        $team = new Team();
+        $team->role = "Admin";
+        $team->project_id = $project->id;
+        $team->user_id = auth()->id();
+        $team->save();
 
         return redirect()->route('projects.index')
             ->with('success', 'Project created successfully.');

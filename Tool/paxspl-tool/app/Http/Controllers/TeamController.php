@@ -45,19 +45,32 @@ class TeamController extends Controller
         $team = new Team();
         $user = new User();
         $user = DB::table('users')->where('email', $request->email)->first();
-
-        echo ($user->id);
-        $team->role = $request->role;
-        $team->project_id = $request->project_id;
-        $team->user_id = $user->id;
-        $team->save();
-
-        
         $project = $request->project_id;
+        if ($user == null) {
+            return redirect()->route('projects.teams.index', compact('project'))
+                ->with('error', 'User not found. Check user email!');
+        }
+
+        $team = DB::table('teams')->where('user_id', $user->id)->where('project_id', $request->project_id)->first();
+
+        if ($team == null) {
+
+            $team = new Team();
+            $team->role = $request->role;
+            $team->project_id = $request->project_id;
+            $team->user_id = $user->id;
+            $team->save();
 
 
-        return redirect()->route('projects.teams.index', compact('project'))
-            ->with('success', 'Team member added successfully');
+
+
+
+            return redirect()->route('projects.teams.index', compact('project'))
+                ->with('success', 'Team member added successfully');
+        } else {
+            return redirect()->route('projects.teams.index', compact('project'))
+                ->with('error', 'Team member already in the project.');
+        }
     }
 
     /**
