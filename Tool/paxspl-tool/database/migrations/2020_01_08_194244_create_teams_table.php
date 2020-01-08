@@ -16,6 +16,16 @@ class CreateTeamsTable extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->increments('id');
             $table->string('role');
+            $table->string('company_role')->nullable(true);
+            $table->text('spl_exp')->nullable(true);
+            $table->text('retrieval_exp')->nullable(true);
+            $table->text('obs')->nullable(true);
+            $table->boolean('fca')->default(false);
+            $table->boolean('lsi')->default(false);
+            $table->boolean('vsm')->default(false);
+            $table->boolean('cluster')->default(false);
+            $table->boolean('data_flow')->default(false);
+            $table->boolean('dependency')->default(false);
             $table->timestamps();
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->integer('project_id')->unsigned();

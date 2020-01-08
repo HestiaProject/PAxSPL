@@ -22,7 +22,7 @@
 
 @if ($errors->any())
 <div class="alert alert-danger">
-    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+    There were some problems with your input.<br><br>
     <ul>
         @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
@@ -68,6 +68,7 @@
 
                     <th>Name</th>
                     <th>Role</th>
+                    <th>Status</th>
                     <th width="280px">Action</th>
                 </tr>
 
@@ -76,14 +77,18 @@
 
                     <td>{{ $team->user->name }}</td>
                     <td>{{ $team->role }}</td>
+                    
+                    <td>{{ $team->role }}</td>
                     <td>
-                        <form action="{{ route('projects.teams.destroy', ['team'=>$team->id, 'project'=>$project]) }}" method="post">
+                        <form action="{{ route('projects.teams.destroy', ['team'=>$team->id,'project'=>$project->id]) }}" method="post">
 
+                            <a class="btn btn-primary" href="{{ route('projects.teams.edit', ['team'=>$team->id, 'project'=>$project]) }}">Details <i class="fas fa-info-circle"></i></a>
 
                             @csrf
                             @method('DELETE')
-
+                            @if ($project->owner_id != $team->user_id)
                             <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
+                            @endif
                         </form>
                     </td>
                 </tr>

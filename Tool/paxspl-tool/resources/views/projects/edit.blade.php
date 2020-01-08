@@ -5,15 +5,13 @@
             <div class="pull-left">
                 <h2>Edit Project</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('projects.index') }}"> Back</a>
-            </div>
+             
         </div>
     </div>
    
     @if ($errors->any())
         <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+           There were some problems with your input.<br><br>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -40,7 +38,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Update <i class="fas fa-save"></i></button>
             </div>
         </div>
    

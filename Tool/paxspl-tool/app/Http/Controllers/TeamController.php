@@ -41,17 +41,16 @@ class TeamController extends Controller
             'role' => 'required',
             'email' => 'required',
         ]);
-
-        $team = new Team();
+ 
         $user = new User();
-        $user = DB::table('users')->where('email', $request->email)->first();
+        $user = User::where('email', $request->email)->first();
         $project = $request->project_id;
         if ($user == null) {
             return redirect()->route('projects.teams.index', compact('project'))
                 ->with('error', 'User not found. Check user email!');
         }
 
-        $team = DB::table('teams')->where('user_id', $user->id)->where('project_id', $request->project_id)->first();
+        $team = Team::where('user_id', $user->id)->where('project_id', $request->project_id)->first();
 
         if ($team == null) {
 
@@ -87,15 +86,16 @@ class TeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function search(Request $request, User $user, Team $team)
+    public function edit(Request $request)
     {
-        $request->validate([
-            'email' => 'required',
-        ]);
-        return $user->where('email', $request->input('email'))->get();
+        $team = new Team();
+        $team = DB::table('teams')->where('id', $request->team)->first();
+        $project = new Project();
+        $project = DB::table('projects')->where('id', $request->project)->first();
+        return view('projects.teams.edit', compact('team', 'project'));
     }
 
     /**
@@ -105,9 +105,21 @@ class TeamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'company_role' => 'required',
+            'spl_exp' => 'required',
+            'retrieval_exp' => 'required',
+
+        ]);
+
+        $team =  Team::find($request->team);
+        $team->update($request->all());
+        $project = $request->project;
+
+        return redirect()->route('projects.teams.index', compact('project'))
+            ->with('success', 'Team member information saved successfully');
     }
 
     /**

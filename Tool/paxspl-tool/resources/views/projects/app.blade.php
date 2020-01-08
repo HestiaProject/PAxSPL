@@ -72,14 +72,42 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-cog"></i>
-                    <span>Settings</span>
+                <i class="fas fa-clipboard-list"></i>
+                    <span>Prepare</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Project Settings:</h6>
+                        <h6 class="collapse-header">Team:</h6>
                         
-                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Manage Team</a> 
+                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a> 
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                <i class="fas fa-puzzle-piece"></i>
+                    <span>Assemble</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Team:</h6>
+                        
+                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a> 
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                <i class="fas fa-tasks"></i>
+                    <span>Execute</span>
+                </a>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Team:</h6>
+                        
+                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a> 
                     </div>
                 </div>
             </li>
