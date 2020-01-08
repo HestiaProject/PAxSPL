@@ -2,7 +2,7 @@
 
 ![Process Overview](https://github.com/HestiaProject/PAxSPL/blob/master/process/img/Processo_Art.png)
 
-* :arrows_counterclockwise: [Process Structure](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Process-Structure)
+* :repeat_one: [Process Structure](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Process-Structure)
 
   * [Introduction](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Process-Structure#introduction)
   * [Artifacts](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Process-Structure#artifacts)
