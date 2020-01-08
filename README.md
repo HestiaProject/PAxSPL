@@ -18,7 +18,7 @@
   * [Generic Process](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Process-Overview#generic-process)
 
 
-# Phases
+# :fast_forward: Phases
 
 * [1. Prepare](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Prepare)
     * [1.1 Collect Team Information](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Prepare#collect-team-information)
