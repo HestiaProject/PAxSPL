@@ -1,14 +1,14 @@
-**P**repare, **A**ssemble and E**x**ecute Process for **SPL** (PAxSPL)
+:arrows_counterclockwise: **P**repare, **A**ssemble and E**x**ecute Process for **SPL** (PAxSPL)
 
 ![Process Overview](https://github.com/HestiaProject/PAxSPL/blob/master/process/img/Processo_Art.png)
 
-* [Process Structure](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Process-Structure)
+* :arrows_counterclockwise: [Process Structure](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Process-Structure)
 
   * [Introduction](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Process-Structure#introduction)
   * [Artifacts](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Process-Structure#artifacts)
   * [Guidelines](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Process-Structure#guidelines)
 
-* [Process Overview](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Process-Overview)
+* :arrows_clockwise: [Process Overview](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Process-Overview)
 
   * [Description](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Process-Overview#description)
   * [Authors](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Process-Overview#authors)
@@ -44,7 +44,7 @@
   * [3.2 Document Feature Artifacts](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Execute#document-feature-artifacts)
   * [3.3 Document Process Experience](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Execute#document-process-experience)
 
-* [Guidelines](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Guidelines)
+* :scroll: [Guidelines](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Guidelines)
 
   * Static Analysis Techniques 
 
@@ -64,7 +64,7 @@
     * [Heuristics](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Heuristics)
     * [Rule-Based](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Rule-Based)
   
-  * [Support Checklist](https://github.com/HestiaProject/PAxSPL/wiki/Support-Checklist)
-  * [Tool Support](https://github.com/HestiaProject/PAxSPL/wiki/Tool-Support)  
+  * :clipboard: [Support Checklist](https://github.com/HestiaProject/PAxSPL/wiki/Support-Checklist)
+  * :computer: [Tool Support](https://github.com/HestiaProject/PAxSPL/wiki/Tool-Support)  
 
-* [Bibliography](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Bibliography)
+* :books: [Bibliography](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Bibliography)
