@@ -93,3 +93,14 @@
   * :computer: [Tool Support](https://github.com/HestiaProject/PAxSPL/wiki/Tool-Support)  
 
 * :books: [Bibliography](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Bibliography)
+
+
+# :pager: LESSE
+
+PAxSPL is a project developed within the [Laboratory of Empirical Studies in Software Engineering](http://lesse.com.br/)
+
+# :pushpin: Authors:
+
+[Luciano Marchezan](https://www.researchgate.net/profile/Luciano_Marchezan3/)
+[Elder Rodrigues](https://www.researchgate.net/profile/Elder_Rodrigues)
+[Maicon Bernardino](https://www.researchgate.net/profile/Maicon_Da_Silveira2)
