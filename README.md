@@ -101,6 +101,6 @@ PAxSPL is a project developed within the [Laboratory of Empirical Studies in Sof
 
 # :pushpin: Authors:
 
-[Luciano Marchezan](https://www.researchgate.net/profile/Luciano_Marchezan3/)
-[Elder Rodrigues](https://www.researchgate.net/profile/Elder_Rodrigues)
-[Maicon Bernardino](https://www.researchgate.net/profile/Maicon_Da_Silveira2)
+[Luciano Marchezan](https://www.researchgate.net/profile/Luciano_Marchezan3/);
+[Elder Rodrigues](https://www.researchgate.net/profile/Elder_Rodrigues); and
+[Maicon Bernardino](https://www.researchgate.net/profile/Maicon_Da_Silveira2).
