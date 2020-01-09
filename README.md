@@ -32,6 +32,7 @@
        * [1.3.6 Collect Artifact Information](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Perform-Documentation-Analysis#collect-artifact-information)
        * [1.3.7 Register Development Information](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Perform-Documentation-Analysis#register-development-information)
        * [1.3.8 Register Technological Information](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Perform-Documentation-Analysis#register-technological-information)
+  * [1.4 Assemble Scoping Process](https://github.com/HestiaProject/PAxSPL/wiki/Prepare#assemble-scoping-process)
 
 * [2. Assemble](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Assemble)
   * [2.1 Select Techniques](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Assemble#select-techniques)
@@ -43,6 +44,7 @@
   * [3.1 Execute Assembled Process](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Execute#execute-assembled-process) 
   * [3.2 Document Feature Artifacts](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Execute#document-feature-artifacts)
   * [3.3 Document Process Experience](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Execute#document-process-experience)
+  * [3.4 Execute Scoping Process](https://github.com/HestiaProject/PAxSPL/wiki/Execute#execute-scoping-process)
 
 * :scroll: [Guidelines](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Guidelines)
 
@@ -63,6 +65,29 @@
     * [Expert Driven](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Expert-Driven)
     * [Heuristics](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Heuristics)
     * [Rule-Based](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Rule-Based)
+
+  * [Domain Scoping](https://github.com/HestiaProject/PAxSPL/wiki/Domain-Scoping)
+
+    * [Market Analysis](https://github.com/HestiaProject/PAxSPL/wiki/Domain-Scoping#market-analysis) 
+    * [Cost-Benefit Analysis](https://github.com/HestiaProject/PAxSPL/wiki/Domain-Scoping#cost-benefit-analysis)
+    * [Product RoadMap](https://github.com/HestiaProject/PAxSPL/wiki/Domain-Scoping#product-roadmap)
+
+  * [Asset Scoping](https://github.com/HestiaProject/PAxSPL/wiki/Asset-Scoping)
+
+    * [Prioritize Products](https://github.com/HestiaProject/PAxSPL/wiki/Asset-Scoping#prioritize-products) 
+    * [Architecture Definition](https://github.com/HestiaProject/PAxSPL/wiki/Asset-Scoping#architecture-definition)
+    * [Variability Analysis](https://github.com/HestiaProject/PAxSPL/wiki/Asset-Scoping#variability-analysis)
+
+  * [Product Scoping](https://github.com/HestiaProject/PAxSPL/wiki/Product-Scoping)
+
+    * [Candidate Analysis](https://github.com/HestiaProject/PAxSPL/wiki/Product-Scoping#candidate-analysis) 
+    * [Feature Definition](https://github.com/HestiaProject/PAxSPL/wiki/Product-Scoping#feature-definition)
+
+  * [Supporting Concepts](https://github.com/HestiaProject/PAxSPL/wiki/Scoping-Support-Concepts)
+
+    * [Metrics Definition](https://github.com/HestiaProject/PAxSPL/wiki/Scoping-Support-Concepts#metrics-definition) 
+    * [Scoping Meta-model](https://github.com/HestiaProject/PAxSPL/wiki/Scoping-Support-Concepts#scoping-meta-model)
+    * [Evolution Planning](https://github.com/HestiaProject/PAxSPL/wiki/Scoping-Support-Concepts#evolution-planning)
   
   * :clipboard: [Support Checklist](https://github.com/HestiaProject/PAxSPL/wiki/Support-Checklist)
   * :computer: [Tool Support](https://github.com/HestiaProject/PAxSPL/wiki/Tool-Support)  
