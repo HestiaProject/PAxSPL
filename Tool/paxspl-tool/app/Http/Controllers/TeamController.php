@@ -41,7 +41,7 @@ class TeamController extends Controller
             'role' => 'required',
             'email' => 'required',
         ]);
- 
+
         $user = new User();
         $user = User::where('email', $request->email)->first();
         $project = $request->project_id;
@@ -115,6 +115,12 @@ class TeamController extends Controller
         ]);
 
         $team =  Team::find($request->team);
+        $team->fca = 0;
+        $team->vsm = 0;
+        $team->lsi = 0;
+        $team->dependency = 0;
+        $team->cluster = 0;
+        $team->data_flow = 0;
         $team->update($request->all());
         $project = $request->project;
 

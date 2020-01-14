@@ -49,6 +49,23 @@
                 <textarea class="form-control" style="height:120px" name="obs" placeholder="">{{ $team->obs }}</textarea>
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <strong>Experience with Retrieval Techniques:</strong>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <label> <input type="checkbox" name="fca" value="1" class="custom-checkbox" {{ $team->fca == 1 ? 'checked="checked"' : '' }}>
+                    Formal Concept Analysis (FCA) </label>
+                <label><input type="checkbox" name="vsm" value="1" class="custom-checkbox" {{ $team->vsm == 1 ? 'checked="checked"' : '' }}> Vector Space Model (VSM)</label>
+                <label><input type="checkbox" name="lsi" value="1" class="custom-checkbox" {{ $team->lsi == 1 ? 'checked="checked"' : '' }}> Latent Semantic Indexing</label>
+            </div>
+            <div class="form-group">
+                <label> <input type="checkbox" name="cluster" value="1" class="custom-checkbox" {{ $team->cluster == 1 ? 'checked="checked"' : '' }}> Clustering</label>
+                <label><input type="checkbox" name="dependency" value="1" class="custom-checkbox" {{ $team->dependency == 1 ? 'checked="checked"' : '' }}> Dependency Analysis</label>
+                <label> <input type="checkbox" name="data_flow" value="1" class="custom-checkbox" {{ $team->data_flow == 1 ? 'checked="checked"' : '' }}> Data Flow Analysis</label>
+            </div>
+
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Save <i class="fas fa-save"></i></button>
         </div>

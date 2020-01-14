@@ -58,7 +58,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <i class="fas fa-project-diagram"></i>
+                    <i class="fas fa-project-diagram"></i>
                     <span>Projects</span>
                 </a>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
@@ -72,49 +72,74 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-clipboard-list"></i>
+                    <i class="fas fa-clipboard-list"></i>
                     <span>Prepare</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Team:</h6>
-                        
-                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a> 
+
+                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                <i class="fas fa-puzzle-piece"></i>
+                    <i class="fas fa-puzzle-piece"></i>
                     <span>Assemble</span>
                 </a>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Team:</h6>
-                        
-                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a> 
+
+                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a>
                     </div>
                 </div>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                <i class="fas fa-tasks"></i>
+                    <i class="fas fa-tasks"></i>
                     <span>Execute</span>
                 </a>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Team:</h6>
-                        
-                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a> 
+
+                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                    <i class="fas fa-scroll"></i>
+                    <span>Guidelines</span>
+                </a>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">General:</h6>
+
+                        <a class="collapse-item" href="https://github.com/HestiaProject/PAxSPL/wiki/Guidelines#spl-concepts" target="_blank">SPL Concepts</a>
+                        <a class="collapse-item" href="https://github.com/HestiaProject/PAxSPL/wiki/Guidelines#how-to-choose-a-strategy" target="_blank">Feature Retrieval</a>
+                        <a class="collapse-item" href="https://github.com/HestiaProject/PAxSPL/wiki/Guidelines#spl-scoping-concepts" target="_blank">SPL Scoping</a>
+
+                    </div>
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Support:</h6>
+
+                        <a class="collapse-item" href="https://github.com/HestiaProject/PAxSPL/wiki/Support-Checklist" target="_blank"> Support Checklist</a>
+                        <a class="collapse-item" href="https://github.com/HestiaProject/PAxSPL/wiki/Tool-Support" target="_blank">Tool Support</a>
+
                     </div>
                 </div>
             </li>
 
 
+
+
             <!-- Nav Item - Utilities Collapse Menu -->
-            
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -203,7 +228,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; PAxSPL 2020</span>
+                        <span>Visit PAxSPL <a href="https://github.com/HestiaProject/PAxSPL/blob/master/README.md" target="_blank">Wiki</a> at GitHub </span>
                     </div>
                 </div>
             </footer>
@@ -228,9 +253,9 @@
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}" defer></script>
     <script src="{{ asset('js/sb-admin-2.min.js') }}" defer></script>
-    
 
-    <!-- Page level plugins --> 
+
+    <!-- Page level plugins -->
 
 </body>
 
