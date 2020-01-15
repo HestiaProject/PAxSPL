@@ -27,6 +27,12 @@ class TeamController extends Controller
         return  view('projects.teams.index', compact('project'));
     }
 
+    public function roles(Project $project)
+    {
+
+
+        return  view('projects.teams.roles', compact('project'));
+    }
 
 
     /**

@@ -16,6 +16,7 @@ class CreateTeamsTable extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->increments('id');
             $table->string('role');
+            $table->string('retrieval_role')->default('Feature Retriever');
             $table->string('company_role')->nullable(true);
             $table->string('status')->default('Incomplete');
             $table->text('spl_exp')->nullable(true);

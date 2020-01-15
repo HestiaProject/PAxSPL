@@ -14,13 +14,11 @@
 
 
 Auth::routes();
-Route::resource('projects','ProjectController');
-Route::resource('projects.teams','TeamController'); 
-
-
+Route::resource('projects', 'ProjectController');
+Route::resource('projects.teams', 'TeamController');
  
+
+
+
 Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth'); 
- 
-
-
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

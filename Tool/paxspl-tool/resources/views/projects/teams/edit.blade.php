@@ -31,6 +31,7 @@
                 <input type="text" name="company_role" value="{{ $team->company_role }}" class="form-control" placeholder="Analyst, Developer, etc">
             </div>
         </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Experience working with Software Product Lines:</strong>
@@ -65,6 +66,21 @@
                 <label> <input type="checkbox" name="data_flow" value="1" class="custom-checkbox" {{ $team->data_flow == 1 ? 'checked="checked"' : '' }}> Data Flow Analysis</label>
             </div>
             <input type="hidden" id="status" name="status" value="Complete">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Role During Feature Retrieval:</strong>
+                <select class="custom-select" name="retrieval_role" value='{{$team->retrieval_role}}'>
+
+                    <option value="Feature Retriever" {{ $team->retrieval_role == 'Feature Retriever' ? 'selected="selected"' : '' }}>Feature Retriever</option>
+                    <option value="Feature Tester" {{ $team->retrieval_role == 'Feature Tester' ? 'selected="selected"' : '' }}>Feature Tester</option>
+                    <option value="Domain Engineer" {{ $team->retrieval_role == 'Domain Engineer' ? 'selected="selected"' : '' }}>Domain Engineer</option>
+                    <option value="Architect" {{ $team->retrieval_role == 'Architect' ? 'selected="selected"' : '' }}>Architect</option>
+                    <option value="Analyst" {{ $team->retrieval_role == 'Analyst' ? 'selected="selected"' : '' }}>Analyst</option>
+                    <option value="Developer" {{ $team->retrieval_role == 'Developer' ? 'selected="selected"' : '' }}>Developer</option>
+                </select>
+            </div>
+
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Save <i class="fas fa-save"></i></button>

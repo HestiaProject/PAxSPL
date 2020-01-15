@@ -81,6 +81,17 @@
 
                         <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a>
                     </div>
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Documentation Analysis:</h6>
+
+                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Domain Information</a>
+                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Constraints and Vocabulary</a>
+                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Requirements Information</a>
+                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Architectural Information</a>
+                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Artifact Information</a>
+                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Development Information</a>
+                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Technological Information</a>
+                    </div>
                 </div>
             </li>
 
@@ -95,6 +106,7 @@
 
                         <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a>
                     </div>
+                    
                 </div>
             </li>
 
