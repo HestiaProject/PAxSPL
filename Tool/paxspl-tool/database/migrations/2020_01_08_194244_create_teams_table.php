@@ -17,6 +17,7 @@ class CreateTeamsTable extends Migration
             $table->increments('id');
             $table->string('role');
             $table->string('company_role')->nullable(true);
+            $table->string('status')->default('Incomplete');
             $table->text('spl_exp')->nullable(true);
             $table->text('retrieval_exp')->nullable(true);
             $table->text('obs')->nullable(true);

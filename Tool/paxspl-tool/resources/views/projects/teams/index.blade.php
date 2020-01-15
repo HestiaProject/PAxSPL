@@ -77,8 +77,13 @@
 
                     <td>{{ $team->user->name }}</td>
                     <td>{{ $team->role }}</td>
+                    @if($team->status == 'Incomplete')
+                    <td style="color:red;">{{ $team->status }}</td>
+                    @else
+
+                    <td style="color:green;">{{ $team->status }}</td>
                     
-                    <td>{{ $team->role }}</td>
+                    @endif
                     <td>
                         <form action="{{ route('projects.teams.destroy', ['team'=>$team->id,'project'=>$project->id]) }}" method="post">
 

@@ -64,7 +64,7 @@
                 <label><input type="checkbox" name="dependency" value="1" class="custom-checkbox" {{ $team->dependency == 1 ? 'checked="checked"' : '' }}> Dependency Analysis</label>
                 <label> <input type="checkbox" name="data_flow" value="1" class="custom-checkbox" {{ $team->data_flow == 1 ? 'checked="checked"' : '' }}> Data Flow Analysis</label>
             </div>
-
+            <input type="hidden" id="status" name="status" value="Complete">
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Save <i class="fas fa-save"></i></button>

@@ -41,4 +41,14 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Project');
     }
+
+    public function teams()
+    {
+        return $this->hasMany('App\Teams');
+    }
+
+    public function team(String $project)
+    {
+        return Team::where('project_id', $project)->where('user_id', $this->id);
+    }
 }

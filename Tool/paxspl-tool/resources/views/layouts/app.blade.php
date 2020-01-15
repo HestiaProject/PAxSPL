@@ -160,7 +160,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Visiti PAxSPL <a href="https://github.com/HestiaProject/PAxSPL/blob/master/README.md" target="_blank">Wiki</a> at GitHub  </span>
+                        <span>Visit PAxSPL <a href="https://github.com/HestiaProject/PAxSPL/blob/master/README.md" target="_blank">Wiki</a> at GitHub  </span>
                     </div>
                 </div>
             </footer>

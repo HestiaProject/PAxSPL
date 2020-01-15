@@ -8,7 +8,7 @@ class Team extends Model
 {
     protected $fillable = [
         'role', 'project_id', 'user_id', 'company_role', 'spl_exp', 'retrieval_exp',
-        'obs', 'fca', 'lsi', 'vsm', 'cluster', 'data_flow', 'dependency'
+        'obs', 'fca', 'lsi', 'vsm', 'cluster', 'data_flow', 'dependency', 'status'
     ];
 
     /**
@@ -27,12 +27,5 @@ class Team extends Model
         return $this->belongsTo('App\Project', 'project_id');
     }
 
-    /**
-     * Get the status .
-     */
-    public function status()
-    {
-         
-        return $this->belongsTo('App\Project', 'project_id');
-    }
+     
 }
