@@ -22,7 +22,7 @@
 
 * [1. Prepare](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Prepare)
     * [1.1 Collect Team Information](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Prepare#collect-team-information)
-    * [1.2 Define Roles and Tasks](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Prepare#define-roles-and-tasks)
+    * [1.2 Assign Roles](https://github.com/HestiaProject/PAxSPL/wiki/Prepare#assign-roles)
     * [1.3 Perform Documentation Analysis](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Prepare#perform-documentation-analysis)
        * [1.3.1 Collect Domain Information](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Perform-Documentation-Analysis#collect-domain-information) 
        * [1.3.2 Create Vocabulary](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Perform-Documentation-Analysis#create-vocabulary)
