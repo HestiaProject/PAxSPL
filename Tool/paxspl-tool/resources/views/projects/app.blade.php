@@ -84,7 +84,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Documentation Analysis:</h6>
 
-                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Domain Information</a>
+                        <a class="collapse-item" href="{{ route('projects.domain.index', $project -> id) }}">Domain Information</a>
                         <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Constraints and Vocabulary</a>
                         <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Requirements Information</a>
                         <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Architectural Information</a>

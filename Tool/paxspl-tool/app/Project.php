@@ -15,7 +15,7 @@ class Project extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\User' , 'owner_id');
+        return $this->belongsTo('App\User', 'owner_id');
     }
 
     public function teams()
@@ -23,4 +23,8 @@ class Project extends Model
         return $this->hasMany('App\Team');
     }
 
+    public function domains()
+    {
+        return $this->hasMany('App\Artifact')->where('type', 'domain');
+    }
 }
