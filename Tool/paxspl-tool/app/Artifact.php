@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artifact extends Model
 {
     protected $fillable = [
-        'name', 'project_id', 'owner_id', 'type', 'description', 'external_link', 'last_update_date', 'last_update_user'
+        'name', 'project_id', 'owner_id', 'type', 'description', 'external_link', 'last_update_date', 'last_update_user', 'extension'
     ];
 
     /**

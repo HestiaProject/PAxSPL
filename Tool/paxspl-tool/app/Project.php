@@ -23,8 +23,8 @@ class Project extends Model
         return $this->hasMany('App\Team');
     }
 
-    public function domains()
+    public function artifacts()
     {
-        return $this->hasMany('App\Artifact')->where('type', 'domain');
+        return $this->hasMany('App\Artifact');
     }
 }

@@ -3,10 +3,10 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2> Domain Artifacts of project: {{ $project->title }}</h2>
+            <h2>Artifacts of project: {{ $project->title }}</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('projects.domain.create',$project -> id) }}">New Artifact <i class="fas fa-plus"></i></a>
+            <a class="btn btn-success" href="{{ route('projects.artifact.create',$project -> id) }}">New Artifact <i class="fas fa-plus"></i></a>
         </div>
     </div>
 </div>
@@ -43,25 +43,27 @@
                 <tr>
 
                     <th>Name</th>
+                    <th>Type</th>
                     <th>Owner</th>
                     <th>Last Update Date</th>
                     <th>Last Update by</th>
                     <th width="320px">Action</th>
                 </tr>
 
-                @foreach ($project->domains as $domain)
+                @foreach ($project->artifacts as $artifact)
                 <tr>
 
-                    <td>{{ $domain->name }}</td>
-                    <td>{{ $domain->owner->name }}</td>
-                    <td>{{ date('d-m-Y', strtotime($domain->last_update_date))}}</td>
-                    <td>{{ $domain->update_user->name }}</td>
+                    <td>{{ $artifact->name }}</td>
+                    <td>{{ $artifact->type }}</td>
+                    <td>{{ $artifact->owner->name }}</td>
+                    <td>{{ date('d-m-Y', strtotime($artifact->last_update_date))}}</td>
+                    <td>{{ $artifact->update_user->name }}</td>
 
 
                     <td>
-                        <form action="{{ route('projects.domain.destroy', ['domain'=>$domain->id,'project'=>$project->id]) }}" method="post">
-                            <a class="btn btn-info " href="{{ route('projects.domain.show', ['project'=>$project->id,'domain'=>$domain->id]) }}">View <i class="fas fa-eye"></i> </a>
-                            <a class="btn btn-primary" href="{{ route('projects.domain.edit', ['project'=>$project->id,'domain'=>$domain->id]) }}">Edit <i class="fas fa-pen"></i></a>
+                        <form action="{{ route('projects.artifact.destroy', ['artifact'=>$artifact->id,'project'=>$project->id]) }}" method="post">
+                            <a class="btn btn-info " href="{{ route('projects.artifact.show', ['project'=>$project->id,'artifact'=>$artifact->id]) }}">View <i class="fas fa-eye"></i> </a>
+                            <a class="btn btn-primary" href="{{ route('projects.artifact.edit', ['project'=>$project->id,'artifact'=>$artifact->id]) }}">Edit <i class="fas fa-pen"></i></a>
                             @csrf
                             @method('DELETE')
 

@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Artifact;
-use App\DomainArtifact;
+use App\Artifact; 
 use App\Project;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
-class DomainArtifactController extends Controller
+class ArtifactController extends Controller
 {
 
     public function __construct()
@@ -23,7 +22,7 @@ class DomainArtifactController extends Controller
      */
     public function index(Project $project)
     {
-        return  view('projects.domain.index', compact('project'));
+        return  view('projects.artifact.index', compact('project'));
     }
 
     /**
@@ -33,7 +32,7 @@ class DomainArtifactController extends Controller
      */
     public function create(Project $project)
     {
-        return view('projects.domain.create', compact('project'));
+        return view('projects.artifact.create', compact('project'));
     }
 
     /**
@@ -47,57 +46,60 @@ class DomainArtifactController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
+            'type' => 'required',
+            'extension' => 'required',
         ]);
 
-        $domain = new Artifact();
-        $domain->type = "domain";
-        $domain->name = $request->name;
-        $domain->description = $request->description;
-        $domain->external_link = $request->external_link;
-        $domain->project_id = $request->project_id;
-        $domain->owner_id = auth()->id();
-        $domain->last_update_user = auth()->id();
-        $domain->last_update_date = Carbon::now();
-        $domain->save();
+        $artifact = new Artifact(); 
+        $artifact->name = $request->name;
+        $artifact->description = $request->description;
+        $artifact->external_link = $request->external_link;
+        $artifact->type = $request->type;
+        $artifact->extension = $request->extension;
+        $artifact->project_id = $request->project_id;
+        $artifact->owner_id = auth()->id();
+        $artifact->last_update_user = auth()->id();
+        $artifact->last_update_date = Carbon::now();
+        $artifact->save();
 
         $project = Project::find($request->project_id);
 
-        return redirect()->route('projects.domain.index', compact('project'))
+        return redirect()->route('projects.artifact.index', compact('project'))
             ->with('success', 'Artifact information saved successfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\DomainArtifact  $domainArtifact
+     * @param  \App\Artifact  $artifact
      * @return \Illuminate\Http\Response
      */
     public function show(Request $request)
     {
-        $domain = Artifact::where('id', $request->domain)->first();
+        $artifact = Artifact::where('id', $request->artifact)->first();
         $project = Project::where('id', $request->project)->first();
-        return view('projects.domain.show', compact('project', 'domain'));
+        return view('projects.artifact.show', compact('project', 'artifact'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\DomainArtifact  $domainArtifact
+     * @param  \App\Artifact  $artifact
      * @return \Illuminate\Http\Response
      */
     public function edit(Request $request)
     {
 
-        $domain = Artifact::where('id', $request->domain)->first();
+        $artifact = Artifact::where('id', $request->artifact)->first();
         $project = Project::where('id', $request->project)->first();
-        return view('projects.domain.edit', compact('domain', 'project'));
+        return view('projects.artifact.edit', compact('artifact', 'project'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\DomainArtifact  $domainArtifact
+     * @param  \App\Artifact  $artifact
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
@@ -107,30 +109,30 @@ class DomainArtifactController extends Controller
             'description' => 'required',
         ]);
 
-        $domain =  Artifact::find($request->domain);
+        $artifact =  Artifact::find($request->artifact);
 
-        $domain->last_update_user = auth()->id();
-        $domain->last_update_date = Carbon::now();
-        $domain->update($request->all());
+        $artifact->last_update_user = auth()->id();
+        $artifact->last_update_date = Carbon::now();
+        $artifact->update($request->all());
 
 
         $project = $request->project;
 
-        return redirect()->route('projects.domain.index', compact('project'))
+        return redirect()->route('projects.artifact.index', compact('project'))
             ->with('success', 'Artifact information updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Artifact  $domainArtifact
+     * @param  \App\Artifact  $artifact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project, Artifact $domain)
+    public function destroy(Project $project, Artifact $artifact)
     {
-        $domain->delete();
+        $artifact->delete();
 
-        return redirect()->route('projects.domain.index', compact('project'))
+        return redirect()->route('projects.artifact.index', compact('project'))
             ->with('success', 'Artifact deleted successfully');
     }
 }
