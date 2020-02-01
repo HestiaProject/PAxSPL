@@ -32,13 +32,12 @@
        * [1.3.6 Collect Artifact Information](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Perform-Documentation-Analysis#collect-artifact-information)
        * [1.3.7 Register Development Information](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Perform-Documentation-Analysis#register-development-information)
        * [1.3.8 Register Technological Information](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Perform-Documentation-Analysis#register-technological-information)
-  * [1.4 Assemble Scoping Process](https://github.com/HestiaProject/PAxSPL/wiki/Prepare#assemble-scoping-process)
 
 * [2. Assemble](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Assemble)
   * [2.1 Select Techniques](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Assemble#select-techniques)
   * [2.2 Assemble Techniques](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Assemble#assemble-techniques)
   * [2.3 Assign Tasks](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Assemble#assign-tasks)
-  
+  * [2.4 Assemble Scoping Process](https://github.com/HestiaProject/PAxSPL/wiki/Prepare#assemble-scoping-process)
 
 * [3. Execute](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Execute)
   * [3.1 Execute Assembled Process](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Execute#execute-assembled-process) 
