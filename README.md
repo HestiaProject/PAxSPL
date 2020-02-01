@@ -37,7 +37,7 @@
   * [2.1 Select Techniques](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Assemble#select-techniques)
   * [2.2 Assemble Techniques](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Assemble#assemble-techniques)
   * [2.3 Assign Tasks](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Assemble#assign-tasks)
-  * [2.4 Assemble Scoping Process](https://github.com/HestiaProject/PAxSPL/wiki/Prepare#assemble-scoping-process)
+  * [2.4 Assemble Scoping Process](https://github.com/HestiaProject/PAxSPL/wiki/Assemble#assemble-scoping-process)
 
 * [3. Execute](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Execute)
   * [3.1 Execute Assembled Process](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Execute#execute-assembled-process) 
