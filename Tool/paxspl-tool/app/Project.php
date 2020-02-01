@@ -25,6 +25,6 @@ class Project extends Model
 
     public function artifacts()
     {
-        return $this->hasMany('App\Artifact');
+        return $this->hasMany('App\Artifact')->orderBy('type', 'asc');
     }
 }
