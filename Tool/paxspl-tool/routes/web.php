@@ -17,6 +17,7 @@ Auth::routes();
 Route::resource('projects', 'ProjectController');
 Route::resource('projects.teams', 'TeamController');
 Route::resource('projects.artifact', 'ArtifactController'); 
+Route::resource('projects.techniques', 'TechiniqueController'); 
  
 
 
