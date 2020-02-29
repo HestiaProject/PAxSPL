@@ -11,8 +11,17 @@ class Technique extends Model
     ];
 
     // user.php
-    public function related_techniques()
+    public function related_techniques_from()
     {
-        return $this->hasMany(Technique::class);
+        return $this->hasMany('App\RelatedTechniques', 'related_from');
     }
+
+    // user.php
+    public function related_techniques_to()
+    {
+        return $this->hasMany('App\RelatedTechniques', "related_to");
+    }
+
+
+    
 }

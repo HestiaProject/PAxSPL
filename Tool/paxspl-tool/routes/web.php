@@ -18,6 +18,7 @@ Route::resource('projects', 'ProjectController');
 Route::resource('projects.teams', 'TeamController');
 Route::resource('projects.artifact', 'ArtifactController'); 
 Route::resource('projects.technique_projects', 'TechniqueProjectController'); 
+Route::resource('projects.technique', 'TechniqueProjectController'); 
  
 
 

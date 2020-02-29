@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
          
         DB::table('techniques')->insert([
             'id' => 1,
-            'name' => "Cluster",
+            'name' => "Clustering",
             'inputs' => "Development",
             'definition' => "Group features based on their dependencies.",
             'type' => "Static Analysis",

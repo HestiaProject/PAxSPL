@@ -23,7 +23,7 @@ class Project extends Model
         return $this->hasMany('App\Team');
     }
 
-    public function techniques()
+    public function techniques_project()
     {
         return $this->hasMany('App\TechniqueProject');
     }
@@ -51,17 +51,22 @@ class Project extends Model
 
     public function status_user()
     {
-        
+
 
 
         foreach ($this->teams as $team) {
 
-            print($team->status);
+
             if ($team->status == "Incomplete") {
                 return true;
                 break;
             }
         }
-        return true;
+        return false;
+    }
+
+    public function techniques()
+    {
+        return Technique::all();
     }
 }

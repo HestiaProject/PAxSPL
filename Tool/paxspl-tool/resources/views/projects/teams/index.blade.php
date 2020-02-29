@@ -87,7 +87,7 @@
                     <td>
                         <form action="{{ route('projects.teams.destroy', ['team'=>$team->id,'project'=>$project->id]) }}" method="post">
 
-                            <a class="btn btn-primary" href="{{ route('projects.teams.edit', ['team'=>$team->id, 'project'=>$project]) }}">Details <i class="fas fa-info-circle"></i></a>
+                            <a class="btn btn-primary" href="{{ route('projects.teams.edit', ['project'=>$project->id, 'team'=>$team->id]) }}">Details <i class="fas fa-info-circle"></i></a>
 
                             @csrf
                             @method('DELETE')

@@ -97,10 +97,10 @@ class TeamController extends Controller
      */
     public function edit(Request $request)
     {
-        $team = new Team();
-        $team = DB::table('teams')->where('id', $request->team)->first();
+        
+        $team = Team::where('id', $request->team)->first();
         $project = new Project();
-        $project = DB::table('projects')->where('id', $request->project)->first();
+        $project = Project::where('id', $request->project)->first();
         return view('projects.teams.edit', compact('team', 'project'));
     }
 

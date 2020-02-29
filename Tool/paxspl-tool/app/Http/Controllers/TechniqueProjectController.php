@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Technique;
 use App\TechniqueProject;
 use Illuminate\Http\Request;
 
@@ -50,9 +51,11 @@ class TechniqueProjectController extends Controller
      * @param  \App\TechniqueProject  $techniqueProject
      * @return \Illuminate\Http\Response
      */
-    public function show(TechniqueProject $techniqueProject)
+    public function show(Request $request)
     {
-        //
+        $technique = Technique::where('id', $request->technique)->first();
+        $project = Project::where('id', $request->project)->first();
+        return view('projects.technique_projects.show', compact('project', 'technique'));
     }
 
     /**
