@@ -101,9 +101,9 @@
                 </a>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Team:</h6>
+                        <h6 class="collapse-header">Techniques:</h6>
 
-                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a>
+                        <a class="collapse-item" href="{{ route('projects.technique_projects.index', $project -> id) }}">Select Techniques</a>
                     </div>
 
                 </div>

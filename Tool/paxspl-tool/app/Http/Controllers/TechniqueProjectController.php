@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Technique;
 use App\Project;
+use App\TechniqueProject;
 use Illuminate\Http\Request;
 
-class TechniqueController extends Controller
+class TechniqueProjectController extends Controller
 {
 
     public function __construct()
@@ -20,7 +20,7 @@ class TechniqueController extends Controller
      */
     public function index(Project $project)
     {
-        return  view('projects.techniques.index', compact('project'));
+        return  view('projects.technique_projects.index', compact('project'));
     }
 
     /**
@@ -47,21 +47,21 @@ class TechniqueController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Technique  $technique
+     * @param  \App\TechniqueProject  $techniqueProject
      * @return \Illuminate\Http\Response
      */
-    public function show(Technique $technique)
+    public function show(TechniqueProject $techniqueProject)
     {
-         
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Technique  $technique
+     * @param  \App\TechniqueProject  $techniqueProject
      * @return \Illuminate\Http\Response
      */
-    public function edit(Technique $technique)
+    public function edit(TechniqueProject $techniqueProject)
     {
         //
     }
@@ -70,10 +70,10 @@ class TechniqueController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Technique  $technique
+     * @param  \App\TechniqueProject  $techniqueProject
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Technique $technique)
+    public function update(Request $request, TechniqueProject $techniqueProject)
     {
         //
     }
@@ -81,10 +81,10 @@ class TechniqueController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Technique  $technique
+     * @param  \App\TechniqueProject  $techniqueProject
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Technique $technique)
+    public function destroy(TechniqueProject $techniqueProject)
     {
         //
     }
