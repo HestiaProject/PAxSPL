@@ -42,7 +42,16 @@ class TechniqueProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tech_pro = new TechniqueProject();
+        $tech_pro->project_id = $request->project;
+
+        $tech_pro->technique_id = $request->technique;
+
+        $tech_pro->save();
+        $project = Project::find($request->project);
+
+        return redirect()->route('projects.technique_projects.index', compact('project'))
+            ->with('success', 'Technique added to project!');
     }
 
     /**
@@ -87,8 +96,12 @@ class TechniqueProjectController extends Controller
      * @param  \App\TechniqueProject  $techniqueProject
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TechniqueProject $techniqueProject)
+    public function destroy(Project $project, Technique $technique_project)
     {
-        //
+        $techniqueProject = TechniqueProject::where("technique_id", $technique_project->id)->where("project_id", $project->id);
+        $techniqueProject->delete();
+
+        return redirect()->route('projects.technique_projects.index', compact('project'))
+            ->with('success', 'Technique Removed from project!');
     }
 }

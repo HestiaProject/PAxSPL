@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Technique;
 use App\Project;
+use App\TechniqueProject;
 use Illuminate\Http\Request;
 
 class TechniqueController extends Controller
@@ -41,7 +42,16 @@ class TechniqueController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tech_pro = new TechniqueProject();
+        $tech_pro->project_id = $request->project_id;
+
+        $tech_pro->technique_id = $request->technique;
+
+        $tech_pro->save();
+        $project = Project::find($request->project_id);
+
+        return redirect()->route('projects.technique_projects.index', compact('project'))
+            ->with('success', 'Technique added to project successfully');
     }
 
     /**
@@ -52,7 +62,6 @@ class TechniqueController extends Controller
      */
     public function show(Technique $technique)
     {
-         
     }
 
     /**

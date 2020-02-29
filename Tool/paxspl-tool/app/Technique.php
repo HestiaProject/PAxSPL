@@ -23,5 +23,17 @@ class Technique extends Model
     }
 
 
-    
+    // user.php
+    public function status(Project $project)
+    {
+        $techniques = TechniqueProject::where('project_id', $project->id)->get();
+
+        foreach ($techniques as $technique) {
+            if ($technique->technique_id == $this->id) {
+                return true;
+                break;
+            }
+        }
+        return false;
+    }
 }

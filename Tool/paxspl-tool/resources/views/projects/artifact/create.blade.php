@@ -66,7 +66,7 @@
         </div>
         <input type="hidden" id="project_id" name="project_id" value=" {{ $project->id }}">
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Save <i class="fas fa-save"></i></button>
         </div>
     </div>
 

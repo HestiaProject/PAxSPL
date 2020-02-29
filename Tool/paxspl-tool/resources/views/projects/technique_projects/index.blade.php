@@ -5,9 +5,9 @@
         <div class="pull-left">
             <h2>Techniques from project: {{ $project->title }}</h2>
         </div>
-        <div class="pull-right">
+        <!-- <div class="pull-right">
             <a class="btn btn-success" href="{{ route('projects.technique_projects.create',$project -> id) }}">New Technique <i class="fas fa-plus"></i></a>
-        </div>
+        </div> -->
     </div>
 </div>
 @if ($message = Session::get('success'))
@@ -33,6 +33,8 @@
 </div>
 @endif
 
+
+
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         @if ($project->status_user())
@@ -40,7 +42,13 @@
             Before continuing, all team members information must be completed!<br><br>
             <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a>
         </div>
-        @endif
+        @elseif ($project->artifacts->count()==0)
+        <div class="alert alert-danger">
+            Before continuing, at least one artifact must be created!<br><br>
+            <a class="collapse-item" href="{{ route('projects.artifact.index', $project -> id) }}">Register Artifacts</a>
+        </div> 
+        @else
+
 
 
         <div class="table-responsive">
@@ -49,6 +57,7 @@
 
                     <th>Name</th>
                     <th>Type</th>
+                    <th>Status</th>
                     <th width="320px">Action</th>
                 </tr>
 
@@ -57,6 +66,13 @@
 
                     <td>{{ $technique->name }}</td>
                     <td>{{ $technique->type }}</td>
+                    @if ($technique->status($project))
+                    <td style="color:green;">Included</td>
+
+                    @else
+                    <td style="color:red;">Not Included</td>
+                    @endif
+
 
 
                     <td>
@@ -71,6 +87,7 @@
             </table>
 
         </div>
+        @endif
     </div>
 
 
