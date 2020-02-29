@@ -27,4 +27,20 @@ class Project extends Model
     {
         return $this->hasMany('App\Artifact')->orderBy('type', 'asc');
     }
+
+    public function authUser()
+    {
+        $user = User::find(auth()->id());
+        
+
+        foreach ($this->teams as $team) {
+            
+             
+            if ($team->user_id == $user->id) {
+                return false;
+                break;
+            }
+        }
+        return true;
+    }
 }

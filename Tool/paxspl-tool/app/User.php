@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Team;
 
 class User extends Authenticatable
 {
@@ -44,7 +45,7 @@ class User extends Authenticatable
 
     public function teams()
     {
-        return $this->hasMany('App\Teams');
+        return $this->hasMany('App\Team');
     }
 
     public function team(String $project)

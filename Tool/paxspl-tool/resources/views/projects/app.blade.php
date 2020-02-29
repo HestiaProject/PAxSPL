@@ -23,6 +23,11 @@
 </head>
 
 <body id="page-top">
+@if($project->authUser()) 
+<script type="text/javascript">
+    window.location = "{{ url('/projects') }}";//here double curly bracket
+</script>
+@endif 
 
     <!-- Page Wrapper -->
     <div id="wrapper">
