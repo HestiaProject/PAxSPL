@@ -46,7 +46,7 @@
         <div class="alert alert-danger">
             Before continuing, at least one artifact must be created!<br><br>
             <a class="collapse-item" href="{{ route('projects.artifact.index', $project -> id) }}">Register Artifacts</a>
-        </div> 
+        </div>
         @else
 
 
@@ -57,6 +57,7 @@
 
                     <th>Name</th>
                     <th>Type</th>
+                    <th>Recommendation</th>
                     <th>Status</th>
                     <th width="320px">Action</th>
                 </tr>
@@ -66,6 +67,14 @@
 
                     <td>{{ $technique->name }}</td>
                     <td>{{ $technique->type }}</td>
+                    <td>
+
+                        <div class="progress mb-4">
+                            <div class="progress-bar" role="progressbar" style="width: {{$technique->recommend_level($project)}}%; background-color:{{$technique->recommend_level_color($project)}};" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                {{$technique->recommend_level($project)}}%
+                            </div>
+                        </div>
+                    </td>
                     @if ($technique->status($project))
                     <td style="color:green;">Included</td>
 

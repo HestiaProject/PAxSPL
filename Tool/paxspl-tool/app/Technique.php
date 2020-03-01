@@ -10,20 +10,19 @@ class Technique extends Model
         'name', 'definition', 'variations', 'priority_order', 'recommended_situation', 'not_recommended_situation', 'type', 'inputs'
     ];
 
-    // user.php
+
     public function related_techniques_from()
     {
         return $this->hasMany('App\RelatedTechniques', 'related_from');
     }
 
-    // user.php
+
     public function related_techniques_to()
     {
         return $this->hasMany('App\RelatedTechniques', "related_to");
     }
 
 
-    // user.php
     public function status(Project $project)
     {
         $techniques = TechniqueProject::where('project_id', $project->id)->get();
@@ -35,5 +34,30 @@ class Technique extends Model
             }
         }
         return false;
+    }
+
+    public function recommend_level(Project $project)
+    {
+        
+        return 78 ;
+    }
+
+    public function recommend_level_color(Project $project)
+    {
+        $result = $this->recommend_level($project);
+        if ($result < 25)
+            return "red";
+        else 
+        if ($result < 50  && $result >= 25)
+            return "orange";
+        else 
+        if ($result < 75  && $result >= 50)
+            return "dodgerblue";
+        else 
+            if ($result < 100  && $result >= 75)
+            return "limegreen";
+        else 
+            if ($result >= 100)
+            return "green";
     }
 }
