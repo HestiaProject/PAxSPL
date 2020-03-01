@@ -36,10 +36,18 @@ class Technique extends Model
         return false;
     }
 
+    public function reason(Project $project)
+    {
+        $tech_proj = TechniqueProject::where('project_id', $project->id)->where('technique_id', $this->id)->first()->fresh();
+
+
+        return $tech_proj->reason;
+    }
+
     public function recommend_level(Project $project)
     {
-        
-        return 78 ;
+
+        return 78;
     }
 
     public function recommend_level_color(Project $project)

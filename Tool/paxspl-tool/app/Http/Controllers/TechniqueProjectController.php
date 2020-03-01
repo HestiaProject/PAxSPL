@@ -46,7 +46,7 @@ class TechniqueProjectController extends Controller
         $tech_pro->project_id = $request->project;
 
         $tech_pro->technique_id = $request->technique;
-
+        $tech_pro->reason = $request->reason;
         $tech_pro->save();
         $project = Project::find($request->project);
 

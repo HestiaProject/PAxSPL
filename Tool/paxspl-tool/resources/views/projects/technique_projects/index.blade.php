@@ -57,8 +57,7 @@
 
                     <th>Name</th>
                     <th>Type</th>
-                    <th>Recommendation</th>
-                    <th>Status</th>
+                    <th>Recommendation</th> 
                     <th width="320px">Action</th>
                 </tr>
 
@@ -75,21 +74,37 @@
                             </div>
                         </div>
                     </td>
-                    @if ($technique->status($project))
-                    <td style="color:green;">Included</td>
-
-                    @else
-                    <td style="color:red;">Not Included</td>
-                    @endif
+                    
 
 
 
                     <td>
-                        <form method="post">
-                            <a class="btn btn-info " href="{{ route('projects.technique.show', ['project'=>$project->id,'technique'=>$technique->id]) }}">View <i class="fas fa-eye"></i> </a>
+                        @if ($technique->status($project))
+                        <form action="{{ route('projects.technique_projects.destroy', ['project'=>$project->id,'technique_project'=>$technique->id]) }}" method="POST">
 
 
-                        </form>
+                            @else
+                            <form action="{{ route('projects.technique_projects.store', ['project'=>$project->id,'technique'=>$technique->id]) }}" method="POST">
+
+
+                                @csrf
+                                @method('post')
+                                @endif
+                                <a class="btn btn-info " href="{{ route('projects.technique.show', ['project'=>$project->id,'technique'=>$technique->id]) }}">View <i class="fas fa-eye"></i> </a>
+
+                                @csrf
+                                @if ($technique->status($project))
+
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
+
+                                @else
+                                <button type="submit" class="btn btn-success ">Add <i class="fas fa-plus"></i> </button>
+                                @endif
+
+
+
+                            </form>
                     </td>
                 </tr>
                 @endforeach
@@ -101,4 +116,30 @@
 
 
 </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form action="{{ route('projects.technique_projects.store', ['project'=>$project->id,'technique'=>$technique->id]) }}" method="POST">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Register Reasons</h5>
+
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Explain why this technique is being choosen:</strong>
+                        <textarea class="form-control" style="height:150px" name="reason" placeholder="" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="submit" class="btn btn-info ">Register <i class="fas fa-save"></i></button>
+                    <button class="btn btn-danger" class="btn btn-default" data-dismiss="modal">Cancel</button>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
 @endsection

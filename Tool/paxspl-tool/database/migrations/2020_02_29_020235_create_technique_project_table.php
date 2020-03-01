@@ -17,6 +17,7 @@ class CreateTechniqueProjectTable extends Migration
             $table->increments('id');
             $table->timestamps();
 
+            $table->text('reason')->nullable();;
             $table->integer('project_id')->unsigned();
             $table->integer('technique_id')->unsigned(); 
 
