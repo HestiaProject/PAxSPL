@@ -19,7 +19,32 @@
         @endforeach
     </ul>
 </div>
+
 @endif
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Recommendation Level</h6>
+    </div>
+    <div class="card-body">
+        <h4 class="small font-weight-bold"><span class="float-right">{{$technique->recommend_level($project)}}%</span></h4>
+        <div class="progress mb-4">
+            <div class="progress-bar" role="progressbar" style=" background-color:{{$technique->recommend_level_color($project)}}; width: {{$technique->recommend_level($project)}}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+    </div>
+</div>
+<div class="card shadow mb-4">
+    <!-- Card Header - Accordion -->
+    <a href="#collapseCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+        <h6 class="m-0 font-weight-bold text-primary">Reasons for recommendation:</h6>
+    </a>
+    <!-- Card Content - Collapse -->
+    <div class="collapse" id="collapseCard" style="">
+        <div class="card-body">
+            <strong>{{$technique->recommend_members($project)}} member(s)</strong> of your team with experience working with this technique. Also, <strong>{{$technique->recommend_artifacts($project)}} artifact(s)</strong> may be used as input for this technique.
+        </div>
+    </div>
+</div>
 @if ($technique->status($project))
 <form action="{{ route('projects.technique_projects.destroy', ['project'=>$project->id,'technique_project'=>$technique->id]) }}" method="POST">
 
@@ -119,7 +144,7 @@
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Remove from Project <i class="fas fa-trash"></i></button>
                 @else
-                <button type="submit" class="btn btn-primary">Add to Project <i class="fas fa-plus"></i></button>
+                <button type="submit" class="btn btn-success">Add to Project <i class="fas fa-plus"></i></button>
                 @endif
                 <a class="btn  " href="{{ route('projects.technique_projects.index', ['project'=>$project->id]) }}">Back <i class="fas fa-arrow-left"></i></a>
 
