@@ -69,6 +69,29 @@
                     </div>
                 </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                    <i class="fas fa-scroll"></i>
+                    <span>Guidelines</span>
+                </a>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">General:</h6>
+
+                        <a class="collapse-item" href="https://github.com/HestiaProject/PAxSPL/wiki/Guidelines#spl-concepts" target="_blank">SPL Concepts</a>
+                        <a class="collapse-item" href="https://github.com/HestiaProject/PAxSPL/wiki/Guidelines#how-to-choose-a-strategy" target="_blank">Feature Retrieval</a>
+                        <a class="collapse-item" href="https://github.com/HestiaProject/PAxSPL/wiki/Guidelines#spl-scoping-concepts" target="_blank">SPL Scoping</a>
+
+                    </div>
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Support:</h6>
+
+                        <a class="collapse-item" href="https://github.com/HestiaProject/PAxSPL/wiki/Support-Checklist" target="_blank"> Support Checklist</a>
+                        <a class="collapse-item" href="https://github.com/HestiaProject/PAxSPL/wiki/Tool-Support" target="_blank">Tool Support</a>
+
+                    </div>
+                </div>
+            </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             

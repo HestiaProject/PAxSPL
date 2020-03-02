@@ -115,31 +115,7 @@
     </div>
 
 
-</div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <form action="{{ route('projects.technique_projects.store', ['project'=>$project->id,'technique'=>$technique->id]) }}" method="POST">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Register Reasons</h5>
-
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Explain why this technique is being choosen:</strong>
-                        <textarea class="form-control" style="height:150px" name="reason" placeholder="" required></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer">
-
-                    <button type="submit" class="btn btn-info ">Register <i class="fas fa-save"></i></button>
-                    <button class="btn btn-danger" class="btn btn-default" data-dismiss="modal">Cancel</button>
-
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
+</div> 
 
 
 @endsection

@@ -102,6 +102,6 @@ class TechniqueProjectController extends Controller
         $techniqueProject->delete();
 
         return redirect()->route('projects.technique_projects.index', compact('project'))
-            ->with('success', 'Technique Removed from project!');
+            ->with('error', 'Technique removed from project.');
     }
 }
