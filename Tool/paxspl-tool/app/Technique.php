@@ -38,10 +38,13 @@ class Technique extends Model
 
     public function reason(Project $project)
     {
-        $tech_proj = TechniqueProject::where('project_id', $project->id)->where('technique_id', $this->id)->first()->fresh();
+        $tech_projs = TechniqueProject::where('project_id', $project->id)->where('technique_id', $this->id)->get();
 
-
-        return $tech_proj->reason;
+        $reason = "";
+        foreach ($tech_projs as $tech_proj) {
+            $reason = $tech_proj->reason;
+        }
+        return $reason;
     }
 
     public function recommend_level(Project $project)

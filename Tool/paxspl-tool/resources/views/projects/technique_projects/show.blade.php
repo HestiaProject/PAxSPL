@@ -140,6 +140,8 @@
                 @if ($technique->status($project))
 
                 @method('DELETE')
+                <a class="btn btn-info " style="color:#fff" data-toggle="modal" data-target="#myModalR">Reasons <i class="fas fa-question"></i></a>
+                
                 <button type="submit" class="btn btn-danger">Remove from Project <i class="fas fa-trash"></i></button>
                 @else
                 <a class="btn btn-success " style="color:#fff" data-toggle="modal" data-target="#myModal">Add to Project <i class="fas fa-plus"></i></a>
@@ -162,7 +164,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Explain why this technique is being choosen:</strong>
+                            <strong>Explain why this technique is being chosen:</strong>
                             <textarea class="form-control" style="height:150px" name="reason" placeholder="" required></textarea>
                         </div>
                     </div>
@@ -175,5 +177,26 @@
                 </div>
             </div>
         </form>
+    </div>
+    <div class="modal fade" id="myModalR" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Reasons</h5>
+
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Why this technique was chosen:</strong>
+                        <textarea class="form-control" style="height:150px" name="reason" placeholder="" disabled>{{$technique->reason($project)}}</textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+ 
+                    <button class="btn btn-danger" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
     </div>
     @endsection
