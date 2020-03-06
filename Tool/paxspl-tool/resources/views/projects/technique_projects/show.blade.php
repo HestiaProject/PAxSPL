@@ -50,11 +50,9 @@
 
 
     @else
-    <form action="{{ route('projects.technique_projects.store', ['project'=>$project->id,'technique'=>$technique->id]) }}" method="POST">
+    <form>
 
 
-        @csrf
-        @method('post')
         @endif
         <div class="row">
             <div class="col-xs-5 col-sm-5 col-md-5">
@@ -144,7 +142,7 @@
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Remove from Project <i class="fas fa-trash"></i></button>
                 @else
-                <button type="submit" class="btn btn-success">Add to Project <i class="fas fa-plus"></i></button>
+                <a class="btn btn-success " style="color:#fff" data-toggle="modal" data-target="#myModal">Add to Project <i class="fas fa-plus"></i></a>
                 @endif
                 <a class="btn  " href="{{ route('projects.technique_projects.index', ['project'=>$project->id]) }}">Back <i class="fas fa-arrow-left"></i></a>
 
@@ -152,4 +150,30 @@
 
         </div>
     </form>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <form action="{{ route('projects.technique_projects.store', ['project'=>$project->id,'technique'=>$technique->id]) }}" method="POST">
+            @csrf
+            @method('post')
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Register Reasons</h5>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Explain why this technique is being choosen:</strong>
+                            <textarea class="form-control" style="height:150px" name="reason" placeholder="" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="submit" class="btn btn-success ">Register <i class="fas fa-save"></i></button>
+                        <button class="btn btn-danger" class="btn btn-default" data-dismiss="modal">Cancel</button>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
     @endsection

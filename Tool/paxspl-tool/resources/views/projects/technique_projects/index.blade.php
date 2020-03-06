@@ -57,7 +57,7 @@
 
                     <th>Name</th>
                     <th>Type</th>
-                    <th>Recommendation</th> 
+                    <th>Recommendation</th>
                     <th width="320px">Action</th>
                 </tr>
 
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                     </td>
-                    
+
 
 
 
@@ -84,11 +84,10 @@
 
 
                             @else
-                            <form action="{{ route('projects.technique_projects.store', ['project'=>$project->id,'technique'=>$technique->id]) }}" method="POST">
+                            <form >
 
 
-                                @csrf
-                                @method('post')
+                                
                                 @endif
                                 <a class="btn btn-info " href="{{ route('projects.technique.show', ['project'=>$project->id,'technique'=>$technique->id]) }}">View <i class="fas fa-eye"></i> </a>
 
@@ -99,7 +98,7 @@
                                 <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
 
                                 @else
-                                <button type="submit" class="btn btn-success ">Add <i class="fas fa-plus"></i> </button>
+                                <a class="btn btn-success " style="color:#fff" data-toggle="modal" data-target="#myModal">Add <i class="fas fa-plus"></i> </a>
                                 @endif
 
 
@@ -107,6 +106,32 @@
                             </form>
                     </td>
                 </tr>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <form action="{{ route('projects.technique_projects.store', ['project'=>$project->id,'technique'=>$technique->id]) }}" method="POST">
+                        @csrf
+                        @method('post')
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Register Reasons</h5>
+
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>Explain why this technique is being choosen:</strong>
+                                        <textarea class="form-control" style="height:150px" name="reason" placeholder="" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+
+                                    <button type="submit" class="btn btn-success ">Register <i class="fas fa-save"></i></button>
+                                    <button class="btn btn-danger" class="btn btn-default" data-dismiss="modal">Cancel</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
                 @endforeach
             </table>
 
@@ -115,7 +140,7 @@
     </div>
 
 
-</div> 
+</div>
 
 
 @endsection
