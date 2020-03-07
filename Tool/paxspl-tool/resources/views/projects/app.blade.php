@@ -104,6 +104,7 @@
                         <h6 class="collapse-header">Techniques:</h6>
 
                         <a class="collapse-item" href="{{ route('projects.technique_projects.index', $project -> id) }}">Select Techniques</a>
+                        <a class="collapse-item" href="{{ route('projects.assemble_process.index', $project -> id) }}">Assemble Techniques</a>
                     </div>
 
                 </div>

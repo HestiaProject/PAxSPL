@@ -49,6 +49,7 @@ class Project extends Model
         return true;
     }
 
+
     public function status_user()
     {
 
@@ -68,5 +69,16 @@ class Project extends Model
     public function techniques()
     {
         return Technique::all();
+    }
+
+    public function assemble_process()
+    {
+        return $this->hasMany('App\AssembleProcess');
+    }
+
+    public function activities(String $phase, AssembleProcess $ap)
+    {
+
+        return Activity::where("assemble_processes_id", $ap->id)::where("phase", $phase);
     }
 }

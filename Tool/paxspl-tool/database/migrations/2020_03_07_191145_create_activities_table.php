@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTechniqueProjectTable extends Migration
+class CreateActivitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,17 @@ class CreateTechniqueProjectTable extends Migration
      */
     public function up()
     {
-        Schema::create('technique_projects', function (Blueprint $table) {
+        Schema::create('activities', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('name');
+            $table->string('phase');
+            $table->integer('order');
 
-            $table->text('reason')->nullable();
-            $table->integer('project_id')->unsigned();
+            $table->integer('assemble_processes_id')->unsigned();
             $table->integer('technique_id')->unsigned(); 
 
-            $table->foreign('project_id')->references('id')->on('projects');
+            $table->foreign('assemble_processes_id')->references('id')->on('assemble_processes');
             $table->foreign('technique_id')->references('id')->on('techniques'); 
         });
     }
@@ -33,6 +35,7 @@ class CreateTechniqueProjectTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('technique_project');
+        Schema::dropIfExists('activities');
+        Schema::enableForeignKeyConstraints();
     }
 }
