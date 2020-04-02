@@ -71,7 +71,7 @@
         <input type="hidden" id="owner_id" name="owner_id" value=" {{ $artifact->owner_id }}">
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary">Update <i class="fas fa-save"></i></button>
         </div>
     </div>
 
