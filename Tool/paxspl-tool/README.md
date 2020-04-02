@@ -9,7 +9,7 @@
 
 ## Class Diagram
 
-<p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/Diagrams/class/general.png" width="600"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/finalclassdiagram.png" width="600"></p>
 
 ## Screenshots:
 
