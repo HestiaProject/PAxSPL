@@ -17,26 +17,26 @@ class AssembleProcess extends Model
 
     public function activities_phase($phase)
     {
-        return $this->hasMany('App\Activity')->where('phase', '=', $phase);
+        return $this->hasMany('App\Activity')->where('phase', '=', $phase)->orderBy('order', 'asc');
     }
 
     public function activities_phase2($phase)
     {
-        return Activity::where('phase', '=', $phase);
+        return Activity::where('phase', '=', $phase)->orderBy('order', 'asc');
     }
 
     public function activities_ext()
     {
-        return $this->hasMany('App\Activity')->where('phase', '=', 'extract');
+        return $this->hasMany('App\Activity')->where('phase', '=', 'extract')->orderBy('order', 'asc')->orderBy('order', 'asc');
     }
 
     public function activities_cat()
     {
-        return $this->hasMany('App\Activity')->where('phase', '=', 'categorize');
+        return $this->hasMany('App\Activity')->where('phase', '=', 'categorize')->orderBy('order', 'asc');
     }
 
     public function activities_group()
     {
-        return $this->hasMany('App\Activity')->where('phase', '=', 'group');
+        return $this->hasMany('App\Activity')->where('phase', '=', 'group')->orderBy('order', 'asc');
     }
 }

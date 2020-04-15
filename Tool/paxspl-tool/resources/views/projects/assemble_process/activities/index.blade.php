@@ -89,6 +89,7 @@
 
                                 <th>Name</th>
                                 <th>Order</th>
+                                <th>Retrieval Tech.</th>
 
                                 <th width="320px">Action</th>
                             </tr>
@@ -98,6 +99,7 @@
 
                                 <td>{{ $activity->name }}</td>
                                 <td>{{ $activity->order }}</td>
+                                <td>{{ $activity->technique->name }}</td>
 
 
 
@@ -110,7 +112,8 @@
 
 
                                         <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">View <i class="fas fa-eye"></i> </a>
-
+                                        <a class="btn btn-primary" href="{{ route('projects.assemble_process.activities.edit', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">Edit <i class="fas fa-pen"></i></a>
+   
                                         @csrf
 
 
@@ -170,7 +173,8 @@
 
 
                                             <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">View <i class="fas fa-eye"></i> </a>
-
+                                            <a class="btn btn-primary" href="{{ route('projects.assemble_process.activities.edit', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">Edit <i class="fas fa-pen"></i></a>
+   
                                             @csrf
 
 
@@ -229,7 +233,8 @@
 
 
                                                 <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">View <i class="fas fa-eye"></i> </a>
-
+                                                <a class="btn btn-primary" href="{{ route('projects.assemble_process.activities.edit', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">Edit <i class="fas fa-pen"></i></a>
+   
                                                 @csrf
 
 

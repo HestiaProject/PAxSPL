@@ -30,9 +30,9 @@
             <input type="text" name="name" class="form-control" placeholder="Activity Name" value="{{ $activity->name }}" disabled>
         </div>
     </div>
-    <div class="col-xs-3 col-sm-3 col-md-3">
+    <div class="col-xs-1 col-sm-1 col-md-1">
         <div class="form-group">
-            <strong>Activity Order:</strong>
+            <strong>Order:</strong>
             <input type="text" name="type" class="form-control" value="{{$activity->order}}" disabled>
         </div>
     </div>
@@ -40,6 +40,12 @@
         <div class="form-group">
             <strong>Retrieval Technique:</strong>
             <input type="text" name="type" class="form-control" value="{{$activity->technique->name}}" disabled>
+        </div>
+    </div>
+    <div class="col-xs-10 col-sm-10 col-md-10">
+        <div class="form-group">
+            <strong>Description:</strong>
+            <textarea class="form-control" id="description" style="height:150px" name="description" placeholder="Description" disabled>{{$activity->description}}</textarea>
         </div>
     </div>
 

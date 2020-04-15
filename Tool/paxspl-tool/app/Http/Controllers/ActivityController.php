@@ -41,6 +41,7 @@ class ActivityController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'description' => 'required',
             'technique_id' => 'required',
         ]);
 
@@ -48,6 +49,7 @@ class ActivityController extends Controller
         $activity->name = $request->name;
 
         $activity->phase = $request->phase;
+        $activity->description = $request->description;
         $activity->assemble_process_id = $request->assemble_process;
         $activity->technique_id = $request->technique_id;
         $assemble_process = AssembleProcess::where('id', $request->assemble_process)->first();
@@ -103,10 +105,17 @@ class ActivityController extends Controller
         $request->validate([
             'name' => 'required',
             'technique_id' => 'required',
+            'description' => 'required',
             'order' => 'required'
         ]);
 
+
         $activity =  Activity::find($request->activity);
+        if ($request->order != $activity->order) {
+            $activity2 =  Activity::where('order', '=', $request->order)
+                ->where('phase', '=', $activity->phase)->where('assemble_process_id', '=', $request->assemble_process)
+                ->update(['order' => $activity->order]);
+        }
         $activity->update($request->all());
 
 
@@ -125,6 +134,13 @@ class ActivityController extends Controller
      */
     public function destroy(Project $project, AssembleProcess $assemble_process, Activity $activity)
     {
+        
+        $n = $assemble_process->activities_phase($activity->phase)->count();
+        for ($i=$activity->order; $i < $n; $i++) { 
+            $activity2 =  Activity::where('phase', '=', $activity->phase)->where('order', '=', $i+1)->where('assemble_process_id', '=', $assemble_process->id)
+                ->update(['order' => $i]);
+        }
+
         $activity->delete();
 
         return redirect()->route('projects.assemble_process.activities.index', compact('assemble_process', 'project'))

@@ -33,15 +33,15 @@
             </div>
         </div>
 
-        <div class="col-xs-3 col-sm-3 col-md-3">
+        <div class="col-xs-1 col-sm-1 col-md-1">
             <div class="form-group">
-                <strong>Activity Order:</strong>
+                <strong>Order:</strong>
                 <select name="order" class="form-control" value="{{$activity->order}}">
 
                     @if ($activity->phase == 'extract')
 
                     @foreach($assemble_process->activities_ext as $ac)
-                    <option value="{{ $ac->id }}" {{ $activity->order == $ac->order ? 'selected="selected"' : '' }}>
+                    <option value="{{ $ac->order }}" {{ $activity->order == $ac->order ? 'selected="selected"' : '' }}>
                         {{ $ac->order }}
                     </option>
                     @endforeach
@@ -49,7 +49,7 @@
                     @if ($activity->phase == 'categorize')
 
                     @foreach($assemble_process->activities_cat as $ac)
-                    <option value="{{ $ac->id }}" {{ $activity->order == $ac->order ? 'selected="selected"' : '' }}>
+                    <option value="{{ $ac->order }}" {{ $activity->order == $ac->order ? 'selected="selected"' : '' }}>
                         {{ $ac->order }}
                     </option>
                     @endforeach
@@ -57,7 +57,7 @@
                     @if ($activity->phase == 'group')
 
                     @foreach($assemble_process->activities_group as $ac)
-                    <option value="{{ $ac->id }}" {{ $activity->order == $ac->order ? 'selected="selected"' : '' }}>
+                    <option value="{{ $ac->order }}" {{ $activity->order == $ac->order ? 'selected="selected"' : '' }}>
                         {{ $ac->order }}
                     </option>
                     @endforeach
@@ -79,11 +79,17 @@
                 </select>
             </div>
         </div>
+        <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="form-group">
+                <strong>Description:</strong>
+                <textarea class="form-control" id="description" style="height:150px" name="description" placeholder="Description">{{$activity->description}}</textarea>
+            </div>
+        </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Save <i class="fas fa-save"></i></button>
+                <button type="submit" class="btn btn-primary">Update <i class="fas fa-save"></i></button>
             </div>
         </div>
 

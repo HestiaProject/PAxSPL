@@ -19,6 +19,7 @@ class CreateActivitiesTable extends Migration
             $table->string('name');
             $table->string('phase');
             $table->integer('order'); 
+            $table->text('description');
             $table->string('status')->default("created");
             $table->integer('assemble_process_id')->unsigned();
             $table->integer('technique_id')->unsigned(); 
