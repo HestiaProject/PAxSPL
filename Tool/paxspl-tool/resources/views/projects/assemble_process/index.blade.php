@@ -57,8 +57,8 @@
             <a class="btn btn-success" href="{{ route('projects.assemble_process.create',$project -> id) }}">New Process <i class="fas fa-plus"></i></a>
         </div>
         <div class="pull-left">
-    <h2>My Processes:</h2>
-</div>
+            <h2>My Processes:</h2>
+        </div>
 
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
