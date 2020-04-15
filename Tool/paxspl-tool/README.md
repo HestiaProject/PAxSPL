@@ -35,6 +35,13 @@
 
 <p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/tech2.PNG" width="600"></p>
 
+### Assemble Activities
+
+<p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/activities.PNG" width="600"></p>
+
+
+<p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/activities2.PNG" width="600"></p>
+
 
 
 
