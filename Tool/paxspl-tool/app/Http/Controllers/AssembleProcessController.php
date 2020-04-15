@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\AssembleProcess;
 use App\Project;
+use Illuminate\Support\Facades\Route;
+
 class AssembleProcessController extends Controller
 {
 
@@ -42,12 +44,12 @@ class AssembleProcessController extends Controller
     {
         $request->validate([
             'name' => 'required',
-             
+
         ]);
 
-        $assemble_process = new AssembleProcess(); 
-        $assemble_process->name = $request->name; 
-        $assemble_process->project_id = $request->project_id;  
+        $assemble_process = new AssembleProcess();
+        $assemble_process->name = $request->name;
+        $assemble_process->project_id = $request->project_id;
         $assemble_process->save();
 
         $project = Project::find($request->project_id);
@@ -93,12 +95,12 @@ class AssembleProcessController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required', 
+            'name' => 'required',
         ]);
 
         $assemble_process =  AssembleProcess::find($request->assemble_process);
 
-       
+
         $assemble_process->update($request->all());
 
 
@@ -120,5 +122,20 @@ class AssembleProcessController extends Controller
 
         return redirect()->route('projects.assemble_process.index', compact('project'))
             ->with('success', 'Process deleted successfully');
+    }
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public static function finish(Project $project, AssembleProcess $assemble_process)
+    {
+        $assemble_process->status = 'assembled';
+
+
+        $assemble_process->update();
     }
 }

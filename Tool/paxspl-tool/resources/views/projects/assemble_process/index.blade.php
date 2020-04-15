@@ -60,37 +60,36 @@
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
                 <tr>
-                     
+
                     <th>Name</th>
-                     
+
                     <th width="300px">Action</th>
                 </tr>
                 @foreach ($project->assemble_process as $assemble_process)
                 <tr>
-                    
-                    <td>{{ $assemble_process->name }}</td> 
+
+                    <td>{{ $assemble_process->name }}</td>
                     <td>
                         <form action="{{ route('projects.assemble_process.destroy',['project'=>$project->id, 'assemble_process'=>$assemble_process->id]) }}" method="POST">
 
                             <a class="btn btn-info " href="{{ route('projects.assemble_process.show',['project'=>$project->id, 'assemble_process'=>$assemble_process->id]) }}">Enter <i class="fas fa-folder-open"></i> </a>
-                             
+
                             <a class="btn btn-primary" href="{{ route('projects.assemble_process.edit',['project'=>$project->id, 'assemble_process'=>$assemble_process->id]) }}">Edit <i class="fas fa-edit"></i></a>
 
-                           
+
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete <i class="fas fa-trash"></i></button>
-                            
+
                         </form>
                     </td>
                 </tr>
                 @endforeach
             </table>
             @endif
+
         </div>
-
-
     </div>
+</div>
 
-
-    @endsection
+@endsection

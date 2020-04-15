@@ -18,6 +18,8 @@ class CreateAssembleProcessesTable extends Migration
             $table->timestamps();
             $table->string('name');
 
+            
+            $table->string('status')->default("created");
             $table->integer('project_id')->unsigned(); 
 
             $table->foreign('project_id')->references('id')->on('projects'); 

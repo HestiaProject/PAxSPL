@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Activity extends Model
 {
     protected $fillable = [
-        'name', 'project_id', 'phase' , 'order' , 'assemble_processes_id' , 'technique_id'
+        'name',   'phase' , 'order' , 'assemble_process_id' , 'technique_id', 'status'
     ]; 
+
+    public function technique()
+    {
+        return $this->belongsTo('App\Technique');
+    }
+    
 }

@@ -18,12 +18,12 @@ class CreateActivitiesTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('phase');
-            $table->integer('order');
-
-            $table->integer('assemble_processes_id')->unsigned();
+            $table->integer('order'); 
+            $table->string('status')->default("created");
+            $table->integer('assemble_process_id')->unsigned();
             $table->integer('technique_id')->unsigned(); 
 
-            $table->foreign('assemble_processes_id')->references('id')->on('assemble_processes');
+            $table->foreign('assemble_process_id')->references('id')->on('assemble_processes');
             $table->foreign('technique_id')->references('id')->on('techniques'); 
         });
     }

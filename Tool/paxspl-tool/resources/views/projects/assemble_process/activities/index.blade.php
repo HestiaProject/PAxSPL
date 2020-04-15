@@ -5,9 +5,7 @@
         <div class="pull-left">
             <h2>Assemble techniques into project: {{ $project->title }}</h2>
         </div>
-        <!-- <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('projects.technique_projects.create',$project -> id) }}">New Technique <i class="fas fa-plus"></i></a>
-        </div> -->
+
     </div>
 </div>
 @if ($message = Session::get('success'))
@@ -53,7 +51,7 @@
             <a class="collapse-item" href="{{ route('projects.technique_projects.index', $project -> id) }}">Add Techniques</a>
         </div>
         @else
-         
+
         <div class="card shadow mb-4">
             <!-- Card Header - Accordion -->
             <a href="#collapseCard0" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
@@ -75,8 +73,13 @@
         <div class="card shadow mb-4">
             <!-- Card Header - Accordion -->
             <a href="#collapseCard" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+
                 <h6 class="m-0 font-weight-bold text-primary">Extract:</h6>
             </a>
+            <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('projects.assemble_process.activities.create',['project'=>$project -> id,'assemble_process'=>$assemble_process -> id,'phase'=>'extract']) }}">New Activity <i class="fas fa-plus"></i></a>
+            </div>
+
             <!-- Card Content - Collapse -->
             <div class="collapse" id="collapseCard" style="">
                 <div class="card-body">
@@ -85,54 +88,40 @@
                             <tr>
 
                                 <th>Name</th>
-                                <th>Type</th>
-                                <th>Recommendation</th>
+                                <th>Order</th>
+
                                 <th width="320px">Action</th>
                             </tr>
 
-                            @foreach ($project->techniques() as $technique)
+                            @foreach ($assemble_process->activities_ext as $activity)
                             <tr>
 
-                                <td>{{ $technique->name }}</td>
-                                <td>{{ $technique->type }}</td>
-                                <td>
+                                <td>{{ $activity->name }}</td>
+                                <td>{{ $activity->order }}</td>
 
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar" role="progressbar" style="width: {{$technique->recommend_level($project)}}%; background-color:{{$technique->recommend_level_color($project)}};" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                            {{$technique->recommend_level($project)}}%
-                                        </div>
-                                    </div>
-                                </td>
 
 
 
 
                                 <td>
-                                    @if ($technique->status($project))
-                                    <form action="{{ route('projects.technique_projects.destroy', ['project'=>$project->id,'technique_project'=>$technique->id]) }}" method="POST">
 
-
-                                        @else
-                                        <form action="{{ route('projects.technique_projects.store', ['project'=>$project->id,'technique'=>$technique->id]) }}" method="POST">
-
-
-                                            @csrf
-                                            @method('post')
-                                            @endif
-                                            <a class="btn btn-info " href="{{ route('projects.technique.show', ['project'=>$project->id,'technique'=>$technique->id]) }}">View <i class="fas fa-eye"></i> </a>
-
-                                            @csrf
-                                            @if ($technique->status($project))
-
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
-
-                                            @else
-                                            @endif
+                                    <form action="{{ route('projects.assemble_process.activities.destroy', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}" method="POST">
 
 
 
-                                        </form>
+                                        <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">View <i class="fas fa-eye"></i> </a>
+
+                                        @csrf
+
+
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
+
+
+
+
+
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
@@ -144,8 +133,13 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Accordion -->
                 <a href="#collapseCard3" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+
                     <h6 class="m-0 font-weight-bold text-primary">Categorize:</h6>
                 </a>
+                <div class="pull-right">
+                    <a class="btn btn-success" href="{{ route('projects.assemble_process.activities.create',['project'=>$project -> id,'assemble_process'=>$assemble_process -> id,'phase'=>'categorize']) }}">New Activity <i class="fas fa-plus"></i></a>
+                </div>
+
                 <!-- Card Content - Collapse -->
                 <div class="collapse" id="collapseCard3" style="">
                     <div class="card-body">
@@ -154,54 +148,40 @@
                                 <tr>
 
                                     <th>Name</th>
-                                    <th>Type</th>
-                                    <th>Recommendation</th>
+                                    <th>Order</th>
+
                                     <th width="320px">Action</th>
                                 </tr>
 
-                                @foreach ($project->techniques() as $technique)
+                                @foreach ($assemble_process->activities_cat as $activity)
                                 <tr>
 
-                                    <td>{{ $technique->name }}</td>
-                                    <td>{{ $technique->type }}</td>
-                                    <td>
+                                    <td>{{ $activity->name }}</td>
+                                    <td>{{ $activity->order }}</td>
 
-                                        <div class="progress mb-4">
-                                            <div class="progress-bar" role="progressbar" style="width: {{$technique->recommend_level($project)}}%; background-color:{{$technique->recommend_level_color($project)}};" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                                {{$technique->recommend_level($project)}}%
-                                            </div>
-                                        </div>
-                                    </td>
 
 
 
 
                                     <td>
-                                        @if ($technique->status($project))
-                                        <form action="{{ route('projects.technique_projects.destroy', ['project'=>$project->id,'technique_project'=>$technique->id]) }}" method="POST">
 
-
-                                            @else
-                                            <form action="{{ route('projects.technique_projects.store', ['project'=>$project->id,'technique'=>$technique->id]) }}" method="POST">
-
-
-                                                @csrf
-                                                @method('post')
-                                                @endif
-                                                <a class="btn btn-info " href="{{ route('projects.technique.show', ['project'=>$project->id,'technique'=>$technique->id]) }}">View <i class="fas fa-eye"></i> </a>
-
-                                                @csrf
-                                                @if ($technique->status($project))
-
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
-
-                                                @else
-                                                @endif
+                                        <form action="{{ route('projects.assemble_process.activities.destroy', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}" method="POST">
 
 
 
-                                            </form>
+                                            <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">View <i class="fas fa-eye"></i> </a>
+
+                                            @csrf
+
+
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
+
+
+
+
+
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -212,8 +192,13 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Accordion -->
                     <a href="#collapseCard2" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+
                         <h6 class="m-0 font-weight-bold text-primary">Group:</h6>
                     </a>
+                    <div class="pull-right">
+                        <a class="btn btn-success" href="{{ route('projects.assemble_process.activities.create',['project'=>$project -> id,'assemble_process'=>$assemble_process -> id,'phase'=>'group']) }}">New Activity <i class="fas fa-plus"></i></a>
+                    </div>
+
                     <!-- Card Content - Collapse -->
                     <div class="collapse" id="collapseCard2" style="">
                         <div class="card-body">
@@ -222,54 +207,40 @@
                                     <tr>
 
                                         <th>Name</th>
-                                        <th>Type</th>
-                                        <th>Recommendation</th>
+                                        <th>Order</th>
+
                                         <th width="320px">Action</th>
                                     </tr>
 
-                                    @foreach ($project->techniques() as $technique)
+                                    @foreach ($assemble_process->activities_group as $activity)
                                     <tr>
 
-                                        <td>{{ $technique->name }}</td>
-                                        <td>{{ $technique->type }}</td>
-                                        <td>
+                                        <td>{{ $activity->name }}</td>
+                                        <td>{{ $activity->order }}</td>
 
-                                            <div class="progress mb-4">
-                                                <div class="progress-bar" role="progressbar" style="width: {{$technique->recommend_level($project)}}%; background-color:{{$technique->recommend_level_color($project)}};" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                                    {{$technique->recommend_level($project)}}%
-                                                </div>
-                                            </div>
-                                        </td>
 
 
 
 
                                         <td>
-                                            @if ($technique->status($project))
-                                            <form action="{{ route('projects.technique_projects.destroy', ['project'=>$project->id,'technique_project'=>$technique->id]) }}" method="POST">
 
-
-                                                @else
-                                                <form action="{{ route('projects.technique_projects.store', ['project'=>$project->id,'technique'=>$technique->id]) }}" method="POST">
-
-
-                                                    @csrf
-                                                    @method('post')
-                                                    @endif
-                                                    <a class="btn btn-info " href="{{ route('projects.technique.show', ['project'=>$project->id,'technique'=>$technique->id]) }}">View <i class="fas fa-eye"></i> </a>
-
-                                                    @csrf
-                                                    @if ($technique->status($project))
-
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
-
-                                                    @else
-                                                    @endif
+                                            <form action="{{ route('projects.assemble_process.activities.destroy', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}" method="POST">
 
 
 
-                                                </form>
+                                                <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">View <i class="fas fa-eye"></i> </a>
+
+                                                @csrf
+
+
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
+
+
+
+
+
+                                            </form>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -281,8 +252,10 @@
                     @endif
                 </div>
 
-
             </div>
+        </div>
+    </div>
+    
+</div>
 
-
-            @endsection
+@endsection

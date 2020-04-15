@@ -22,6 +22,7 @@ class Technique extends Model
         return $this->hasMany('App\RelatedTechniques', "related_to");
     }
 
+   
 
     public function status(Project $project)
     {

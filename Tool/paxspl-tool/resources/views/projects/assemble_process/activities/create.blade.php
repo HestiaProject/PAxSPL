@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Technique Details</h2>
+            <h2>Activity Details</h2>
         </div>
 
     </div>
@@ -21,70 +21,40 @@
 </div>
 @endif
 
-<form action="{{ route('projects.technique.store', ['project'=>$project->id,'technique'=>$technique->id]) }}" method="POST">
+<form action="{{ route('projects.assemble_process.activities.store', ['project'=>$project->id,'assemble_process'=>$assemble_process->id]) }}" method="POST">
     @csrf
-    @method('post')
 
     <div class="row">
-        <div class="col-xs-5 col-sm-5 col-md-5">
+        <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Technique Name" >
-            </div>
-        </div>
-
-        <div class="col-xs-7 col-sm-7 col-md-7">
-            <div class="form-group">
-                <strong>Variations:</strong>
-                <input type="text" name="variations" class="form-control"  >
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Definition:</strong>
-                <textarea class="form-control" style="height:100px" name="definition" placeholder="" ></textarea>
-            </div>
-        </div>
-
-        <div class="col-xs-4 col-sm-4 col-md-4">
-            <div class="form-group">
-                <strong>Type:</strong>
-                <input type="text" name="extension" class="form-control" >
-            </div>
-        </div>
-        <div class="col-xs-3 col-sm-3 col-md-3">
-            <div class="form-group">
-                <strong>Priority Order:</strong>
-                <input type="text" name="priority_order" class="form-control">
-            </div>
-        </div>
-        <div class="col-xs-5 col-sm-5 col-md-5">
-            <div class="form-group">
-                <strong>Input Artifacts:</strong>
-                <input type="text" name="inputs" class="form-control"  >
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Recommended Situation:</strong>
-                <textarea class="form-control" style="height:150px" name="recommended_situation" placeholder="" ></textarea>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Not Recommended Situation:</strong>
-                <textarea class="form-control" style="height:120px" name="not_recommended_situation" placeholder="" ></textarea>
+                <input type="text" name="name" class="form-control" placeholder="Activity Name">
             </div>
         </div>
          
+        <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="form-group">
+                <strong>Retrieval Technique:</strong>
+                <select name="technique_id" class="form-control"> 
+                    @foreach($project->techniques_project as $technique)
+                    <option value="{{ $technique->technique_id }}">
+                        {{ $technique->techniques_pj->name }}
+                    </option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 
-            <button type="submit" class="btn btn-primary">Save <i class="fas fa-save"></i></button>
-
-            <a class="btn btn-danger" href="{{ route('projects.technique_projects.index', ['project'=>$project->id]) }}">Cancel <i class="fas fa-arrow-left"></i></a>
-
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Save <i class="fas fa-save"></i></button>
+            </div>
         </div>
 
     </div>
+    <input type="hidden" id="assemble_process_id" name="assemble_process_id" value=" {{ $assemble_process->id }}">
+    <input type="hidden" id="phase" name="phase" value=" {{ $phase }}">
 </form>
+
 @endsection

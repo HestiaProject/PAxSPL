@@ -19,8 +19,9 @@ Route::resource('projects.teams', 'TeamController');
 Route::resource('projects.artifact', 'ArtifactController'); 
 Route::resource('projects.technique_projects', 'TechniqueProjectController'); 
 Route::resource('projects.technique', 'TechniqueProjectController'); 
-Route::resource('projects.assemble_process', 'AssembleProcessController'); 
-Route::resource('projects.assemble_process.activities', 'AcitivityController'); 
+Route::resource('projects.assemble_process', 'AssembleProcessController');  
+
+Route::resource('projects.assemble_process.activities', 'ActivityController'); 
  
 
 

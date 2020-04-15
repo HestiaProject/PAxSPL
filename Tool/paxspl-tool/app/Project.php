@@ -25,8 +25,11 @@ class Project extends Model
 
     public function techniques_project()
     {
+        
         return $this->hasMany('App\TechniqueProject');
     }
+
+     
 
     public function artifacts()
     {
@@ -70,6 +73,8 @@ class Project extends Model
     {
         return Technique::all();
     }
+
+    
 
     public function assemble_process()
     {
