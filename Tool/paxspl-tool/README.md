@@ -9,8 +9,8 @@
 
 ## User Stories
 
-* 1. As a **Manager** I want **to create a new project** so that **I can start the SPL-reengineering**.
-* 1. As a **Manager** I want **to add team members to a project** so that **they can participate**.
+1. As a **Manager** I want **to create a new project** so that **I can start the SPL-reengineering**.
+1. As a **Manager** I want **to add team members to a project** so that **they can participate**.
 * 1. As a **Manager** I want **to register team information** so that **it can be used in the future**.
 * 1. As a **Manager** I want **to assign roles to myself and to other users** so that **the users may be distinguished**.
 * 1. As a **Team Member** I want **to collect artifacts information** so that **the document set is created**. 
