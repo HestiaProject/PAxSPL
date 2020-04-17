@@ -69,6 +69,7 @@
             </div>
         </div>
 
+        <a class="btn btn-primary btn-warning" href="{{action('ActivityController@generateDocx',['project' => $project, 'assemble_process' => $assemble_process])}}">Download Activities Report <i class="fas fa-file-download"></i></a>
 
         <div class="card shadow mb-4">
             <!-- Card Header - Accordion -->

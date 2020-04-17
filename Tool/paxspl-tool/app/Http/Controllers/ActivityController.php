@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use App\User;
 use App\AssembleProcess;
 use App\Activity;
 
@@ -145,5 +146,64 @@ class ActivityController extends Controller
 
         return redirect()->route('projects.assemble_process.activities.index', compact('assemble_process', 'project'))
             ->with('success', 'Activity deleted successfully');
+    }
+
+    /**
+     * Generate report 
+     *
+     * @param  \Illuminate\Http\Project  $project
+     * @return \Illuminate\Http\Response
+     */
+
+    public function generateDocx(Project $project,AssembleProcess $assemble_process)
+    {
+        setlocale(LC_TIME, 'es');
+
+        $date = date('m-d-Y');
+
+        $document = new \PhpOffice\PhpWord\TemplateProcessor('../templates/activities.docx');
+
+        
+        $user = User::find(auth()->id());
+        $document->setValue('admin', $user->name);
+        $document->setValue('date', $date);
+        $document->setValue('project', $project->title);
+        $document->setValue('process', $assemble_process->name);
+
+        $activities = $assemble_process->activities;
+        $i = 0;
+        $document->cloneRow('act', count($activities));
+        foreach ($activities as $activity) {
+            $i++;
+            
+            $document->setValue('act#' . $i, $i);
+            $document->setValue('act.name#' . $i, $activity->name);
+            $document->setValue('act.phase#' . $i, $activity->phase);
+            $document->setValue('act.description#' . $i, $activity->description);
+            $document->setValue('act.technique#' . $i, $activity->technique->name); 
+        }
+
+
+
+
+
+
+        $name = 'RetrievalActivitysSelected-' .  "$date" . '.docx';
+
+
+
+
+
+        $headers = array(
+            //'Content-Type: application/msword',
+            'Content-Type: vnd.openxmlformats-officedocument.wordprocessingml.document'
+        );
+
+        try {
+            $document->saveAs(storage_path($name));
+        } catch (Exception $e) {
+        }
+
+        return response()->download(storage_path($name));
     }
 }

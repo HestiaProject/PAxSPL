@@ -59,7 +59,7 @@
                     <td>{{ $artifact->name }}</td>
                     <td>{{ $artifact->type }}</td>
                     <td>{{ $artifact->owner->name }}</td>
-                    <td>{{ date('d-m-Y', strtotime($artifact->last_update_date))}}</td>
+                    <td>{{ date('m-d-Y', strtotime($artifact->last_update_date))}}</td>
                     <td>{{ $artifact->update_user->name }}</td>
 
 
