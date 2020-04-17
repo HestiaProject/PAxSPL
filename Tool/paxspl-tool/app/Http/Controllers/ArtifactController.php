@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Artifact; 
+use App\Artifact;
 use App\Project;
+use App\User;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -50,7 +51,7 @@ class ArtifactController extends Controller
             'extension' => 'required',
         ]);
 
-        $artifact = new Artifact(); 
+        $artifact = new Artifact();
         $artifact->name = $request->name;
         $artifact->description = $request->description;
         $artifact->external_link = $request->external_link;
@@ -134,5 +135,66 @@ class ArtifactController extends Controller
 
         return redirect()->route('projects.artifact.index', compact('project'))
             ->with('success', 'Artifact deleted successfully');
+    }
+
+    /**
+     * Generate report 
+     *
+     * @param  \Illuminate\Http\Project  $project
+     * @return \Illuminate\Http\Response
+     */
+
+    public function generateDocx(Project $project)
+    {
+        setlocale(LC_TIME, 'es');
+
+        $date = date('m-d-Y');
+
+        $document = new \PhpOffice\PhpWord\TemplateProcessor('../templates/artifacts.docx');
+
+        $artifacts = $project->artifacts;
+        $user = User::find(auth()->id());
+        $document->setValue('admin', $user->name);
+        $document->setValue('date', $date);
+        $document->setValue('project', $project->title);
+
+        $i = 0;
+        $document->cloneRow('art', count($artifacts));
+        foreach ($artifacts as $artifact) {
+            $i++;
+            $newdate = date_create($artifact->last_update_date);
+            $updated_date = date_format($newdate, 'm-d-Y');
+            $document->setValue('art#' . $i, $i);
+            $document->setValue('art.name#' . $i, $artifact->name);
+            $document->setValue('art.type#' . $i, $artifact->type);
+            $document->setValue('art.description#' . $i, $artifact->description);
+            $document->setValue('art.extension#' . $i, $artifact->extension);
+            $document->setValue('art.external_link#' . $i, $artifact->external_link);
+            $document->setValue('art.last_update_date#' . $i, $updated_date);
+            $document->setValue('art.last_update_user#' . $i, $artifact->update_user->name);
+        }
+
+
+
+
+
+
+        $name = 'InputArtifactsReport-' .  "$date" . '.docx';
+
+
+
+
+
+        $headers = array(
+            //'Content-Type: application/msword',
+            'Content-Type: vnd.openxmlformats-officedocument.wordprocessingml.document'
+        );
+
+        try {
+            $document->saveAs(storage_path($name));
+        } catch (Exception $e) {
+        }
+
+        return response()->download(storage_path($name));
     }
 }

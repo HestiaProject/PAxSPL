@@ -7,6 +7,9 @@
         </div>
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('projects.artifact.create',$project -> id) }}">New Artifact <i class="fas fa-plus"></i></a>
+
+            <a class="btn btn-primary btn-warning" href="{{action('ArtifactController@generateDocx',$project)}}">Download Artifact Report <i class="fas fa-file-download"></i></a>
+
         </div>
     </div>
 </div>

@@ -150,6 +150,13 @@ class TeamController extends Controller
             ->with('success', 'Team member removed successfully');
     }
 
+    /**
+     * Generate report 
+     *
+     * @param  \Illuminate\Http\Project  $project
+     * @return \Illuminate\Http\Response
+     */
+
     public function generateDocx(Project $project)
     {
         setlocale(LC_TIME, 'es');
@@ -162,8 +169,8 @@ class TeamController extends Controller
         $user = User::find(auth()->id());
         $document->setValue('admin', $user->name);
         $document->setValue('date', $date);
-        $document->setValue('project', $project->title);
-        $values = array();
+        $document->setValue('project', $project->title); 
+        
         $i = 0;
         $document->cloneRow('m', count($teams));
         foreach ($teams as $team) {
@@ -188,9 +195,7 @@ class TeamController extends Controller
 
 
 
-
-
-
+ 
         $headers = array(
             //'Content-Type: application/msword',
             'Content-Type: vnd.openxmlformats-officedocument.wordprocessingml.document'

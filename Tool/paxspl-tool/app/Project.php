@@ -36,6 +36,8 @@ class Project extends Model
         return $this->hasMany('App\Artifact')->orderBy('type', 'asc');
     }
 
+    
+
     public function authUser()
     {
         $user = User::find(auth()->id());

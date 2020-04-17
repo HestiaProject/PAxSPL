@@ -61,7 +61,7 @@
         </div>
     </div>
 </form>
-<a class="btn btn-primary btn-success" href="{{action('TeamController@generateDocx',$project)}}">Download Team Report <i class="fas fa-file-download"></i></a>
+<a class="btn btn-primary btn-warning" href="{{action('TeamController@generateDocx',$project)}}">Download Team Report <i class="fas fa-file-download"></i></a>
 
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -90,7 +90,7 @@
                     <td>
                         <form action="{{ route('projects.teams.destroy', ['team'=>$team->id,'project'=>$project->id]) }}" method="post">
 
-                            <a class="btn btn-primary" href="{{ route('projects.teams.edit', ['project'=>$project->id, 'team'=>$team->id]) }}">Details <i class="fas fa-info-circle"></i></a>
+                            <a class="btn btn-info" href="{{ route('projects.teams.edit', ['project'=>$project->id, 'team'=>$team->id]) }}">View <i class="fas fa-eye"></i></a>
 
                             @csrf
                             @method('DELETE')
