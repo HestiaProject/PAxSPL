@@ -33,6 +33,7 @@
 
 
 
+
 <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="{{ route('projects.teams.store' , $project->id) }}" method="post">
     @csrf
     <div class="input-group">
@@ -60,6 +61,8 @@
         </div>
     </div>
 </form>
+<a class="btn btn-primary btn-success" href="{{action('TeamController@generateDocx',$project)}}">Download Team Report <i class="fas fa-file-download"></i></a>
+
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="table-responsive">
@@ -82,7 +85,7 @@
                     @else
 
                     <td style="color:green;">{{ $team->status }}</td>
-                    
+
                     @endif
                     <td>
                         <form action="{{ route('projects.teams.destroy', ['team'=>$team->id,'project'=>$project->id]) }}" method="post">

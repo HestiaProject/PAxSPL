@@ -6,7 +6,9 @@ use App\Team;
 use App\Project;
 use App\User;
 use Illuminate\Support\Facades\DB;
+use PhpOffice\PhpWord;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TeamController extends Controller
 {
@@ -97,7 +99,7 @@ class TeamController extends Controller
      */
     public function edit(Request $request)
     {
-        
+
         $team = Team::where('id', $request->team)->first();
         $project = new Project();
         $project = Project::where('id', $request->project)->first();
@@ -146,5 +148,59 @@ class TeamController extends Controller
 
         return redirect()->route('projects.teams.index', compact('project'))
             ->with('success', 'Team member removed successfully');
+    }
+
+    public function generateDocx(Project $project)
+    {
+        setlocale(LC_TIME, 'es');
+
+        $date = date('m-d-Y');
+
+        $document = new \PhpOffice\PhpWord\TemplateProcessor('../templates/team_info.docx');
+
+        $teams = $project->teams;
+        $user = User::find(auth()->id());
+        $document->setValue('admin', $user->name);
+        $document->setValue('date', $date);
+        $document->setValue('project', $project->title);
+        $values = array();
+        $i = 0;
+        $document->cloneRow('m', count($teams));
+        foreach ($teams as $team) {
+            $i++;
+            $document->setValue('m#' . $i, $i);
+            $document->setValue('member.name#' . $i, $team->user->name);
+            $document->setValue('member.email#' . $i, $team->user->email);
+            $document->setValue('member.company_role#'. $i, $team->company_role);
+            $document->setValue('member.spl_exp#'. $i, $team->spl_exp);
+            $document->setValue('member.retrieval_exp#'. $i, $team->retrieval_exp);
+            $document->setValue('member.obs#'. $i, $team->obs);
+            $document->setValue('member.retrieval_role#'. $i, $team->retrieval_role);
+        }
+
+
+
+
+
+
+        $name = 'TeamInformationReport-' .  "$date" . '.docx';
+
+
+
+
+
+
+
+        $headers = array(
+            //'Content-Type: application/msword',
+            'Content-Type: vnd.openxmlformats-officedocument.wordprocessingml.document'
+        );
+
+        try {
+            $document->saveAs(storage_path($name));
+        } catch (Exception $e) {
+        }
+
+        return response()->download(storage_path($name));
     }
 }
