@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
         DB::table('techniques')->insert([
             'id' => 4,
             'name' => "Formal Concept Analysis",
-            'inputs' => "Development; Requirements; Desing; Domain",
+            'inputs' => "Development; Requirements; Design; Domain",
             'definition' => "A mathematical method that provides a way to identify meaningful groupings of objects that have common attributes.",
             'type' => "Information Retrieval Techniques",
             'priority_order' => "Extraction > Categorize > Group",
@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
         DB::table('techniques')->insert([
             'id' => 6,
             'name' => "Vector Space Model",
-            'inputs' => "Development; Requirements; Desing; Domain",
+            'inputs' => "Development; Requirements; Design; Domain",
             'definition' => "An algebraic model for representing text documents in a way where the objects retrieved are modeled as elements of a vector space.",
             'type' => "Information Retrieval Techniques",
             'priority_order' => "Extraction > Categorize > Group",
@@ -88,7 +88,7 @@ class DatabaseSeeder extends Seeder
         DB::table('techniques')->insert([
             'id' => 7,
             'name' => "Expert Driven",
-            'inputs' => "Development; Requirements; Desing; Domain",
+            'inputs' => "Development; Requirements; Design; Domain",
             'definition' => "This strategy is based on knowledge and experiences of specialists, such as domain engineers, software engineers, stakeholders, etc. This may include the addition of techniques that are not in this process documentation.",
             'type' => "Support",
             'priority_order' => "Categorize > Group > Extraction",
@@ -100,7 +100,7 @@ class DatabaseSeeder extends Seeder
         DB::table('techniques')->insert([
             'id' => 8,
             'name' => "Heuristics",
-            'inputs' => "Development; Requirements; Desing; Domain",
+            'inputs' => "Development; Requirements; Design; Domain",
             'definition' => "A proposed approach that uses a practical method not guaranteed to be perfect, but sufficient to obtain immediate goals.",
             'type' => "Support",
             'priority_order' => "Categorize > Group > Extraction",
@@ -112,7 +112,7 @@ class DatabaseSeeder extends Seeder
         DB::table('techniques')->insert([
             'id' => 9,
             'name' => "Rule Based",
-            'inputs' => "Development; Requirements; Desing; Domain",
+            'inputs' => "Development; Requirements; Design; Domain",
             'definition' => "A set of rules is created to guide and help whoever is performing the feature extraction.",
             'type' => "Support",
             'priority_order' => "Categorize > Group > Extraction",
