@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use App\Technique;
+use App\User;
 use App\TechniqueProject;
 use Illuminate\Http\Request;
 
@@ -103,5 +104,64 @@ class TechniqueProjectController extends Controller
 
         return redirect()->route('projects.technique_projects.index', compact('project'))
             ->with('error', 'Technique removed from project.');
+    }
+
+    /**
+     * Generate report 
+     *
+     * @param  \Illuminate\Http\Project  $project
+     * @return \Illuminate\Http\Response
+     */
+
+    public function generateDocx(Project $project)
+    {
+        setlocale(LC_TIME, 'es');
+
+        $date = date('m-d-Y');
+
+        $document = new \PhpOffice\PhpWord\TemplateProcessor('../templates/techniques.docx');
+
+        $techniques = $project->techniques_project;
+        $user = User::find(auth()->id());
+        $document->setValue('admin', $user->name);
+        $document->setValue('date', $date);
+        $document->setValue('project', $project->title);
+
+        $i = 0;
+        $document->cloneRow('tech', count($techniques));
+        foreach ($techniques as $technique) {
+            $i++;
+            
+            $document->setValue('tech#' . $i, $i);
+            $document->setValue('tech.name#' . $i, $technique->techniques_pj->name);
+            $document->setValue('tech.definition#' . $i, $technique->techniques_pj->definition);
+            $document->setValue('tech.inputs#' . $i, $technique->techniques_pj->inputs);
+            $document->setValue('tech.priority_order#' . $i, $technique->techniques_pj->priority_order);
+            $document->setValue('tech.level#' . $i, $technique->techniques_pj->recommend_level($project).'%');
+            $document->setValue('tech.reasons#' . $i, $technique->reason); 
+        }
+
+
+
+
+
+
+        $name = 'RetrievalTechniquesSelected-' .  "$date" . '.docx';
+
+
+
+
+
+        $headers = array(
+            //'Content-Type: application/msword',
+            'Content-Type: vnd.openxmlformats-officedocument.wordprocessingml.document'
+        );
+
+        try {
+            $document->saveAs(storage_path($name));
+        } catch (Exception $e) {
+        }
+
+        return response()->download(storage_path($name));
     }
 }

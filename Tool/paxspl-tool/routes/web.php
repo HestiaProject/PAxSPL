@@ -26,6 +26,7 @@ Route::resource('projects.assemble_process.activities', 'ActivityController');
 
 Route::get('projects/{project}/teams_generate/', 'TeamController@generateDocx');
 Route::get('projects/{project}/artifact_generate/', 'ArtifactController@generateDocx');
+Route::get('projects/{project}/technique_generate/', 'TechniqueProjectController@generateDocx');
 
 Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

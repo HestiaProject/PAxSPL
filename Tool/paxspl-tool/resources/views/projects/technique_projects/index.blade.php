@@ -48,6 +48,7 @@
             <a class="collapse-item" href="{{ route('projects.artifact.index', $project -> id) }}">Register Artifacts</a>
         </div>
         @else
+        <a class="btn btn-primary btn-warning" href="{{action('TechniqueProjectController@generateDocx',$project)}}">Download Techniques Report <i class="fas fa-file-download"></i></a>
 
 
 
@@ -57,7 +58,7 @@
 
                     <th>Name</th>
                     <th>Type</th>
-                    <th>Recommendation</th> 
+                    <th>Recommendation</th>
                     <th width="320px">Action</th>
                 </tr>
 
@@ -74,7 +75,7 @@
                             </div>
                         </div>
                     </td>
-                    
+
 
 
 
@@ -98,7 +99,7 @@
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
 
-                                @else 
+                                @else
                                 @endif
 
 
@@ -114,7 +115,7 @@
     </div>
 
 
-</div> 
+</div>
 
 
 @endsection
