@@ -25,7 +25,7 @@
 
 ## Current Status
 
-<p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/status.PNG" width="60"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/status.PNG" width="160"></p>
 
 ## Class Diagram
 
