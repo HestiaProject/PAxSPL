@@ -23,6 +23,9 @@
 1. As a **Manager** I want **to document the process experience** so that **the experience may be used in the future**.
 1. As a **User** I want **download reports of all tasks** so that **these reports may be stored**.
 
+## Current Status
+
+<p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/status.PNG" width="160"></p>
 
 ## Class Diagram
 
