@@ -19,6 +19,7 @@ class CreateAssembleProcessesTable extends Migration
             $table->string('name');
 
             
+            $table->string('type');
             $table->string('status')->default("created");
             $table->integer('project_id')->unsigned(); 
 

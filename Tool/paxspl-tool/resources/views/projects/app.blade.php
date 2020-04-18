@@ -105,7 +105,7 @@
 
                         <a class="collapse-item" href="{{ route('projects.technique_projects.index', $project -> id) }}">Select Techniques</a>
                         <a class="collapse-item" href="{{ route('projects.assemble_process.index', $project -> id) }}">Retrieval Process</a>
-                        <a class="collapse-item" href="{{ route('projects.assemble_process.index', $project -> id) }}">Scoping Process</a>
+                        <a class="collapse-item" href="{{ route('projects.scoping_process.index', $project -> id) }}">Scoping Process</a>
                     </div>
 
                 </div>

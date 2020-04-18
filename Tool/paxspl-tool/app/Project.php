@@ -25,18 +25,18 @@ class Project extends Model
 
     public function techniques_project()
     {
-        
+
         return $this->hasMany('App\TechniqueProject');
     }
 
-     
+
 
     public function artifacts()
     {
         return $this->hasMany('App\Artifact')->orderBy('type', 'asc');
     }
 
-    
+
 
     public function authUser()
     {
@@ -76,11 +76,21 @@ class Project extends Model
         return Technique::all();
     }
 
-    
+    public function scoping_techniques($type)
+    {
+        return Technique::where('type', $type)->get();;
+    }
+
+     
 
     public function assemble_process()
     {
-        return $this->hasMany('App\AssembleProcess');
+        return $this->hasMany('App\AssembleProcess')->where('type','r');;
+    }
+
+    public function scoping_process()
+    {
+        return $this->hasMany('App\AssembleProcess')->where('type','s');
     }
 
     public function activities(String $phase, AssembleProcess $ap)

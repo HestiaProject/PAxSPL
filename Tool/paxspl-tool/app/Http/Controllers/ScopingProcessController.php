@@ -5,11 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\AssembleProcess;
 use App\Project;
-use Illuminate\Support\Facades\Route;
 
-class AssembleProcessController extends Controller
+class ScopingProcessController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -21,7 +19,7 @@ class AssembleProcessController extends Controller
      */
     public function index(Project $project)
     {
-        return  view('projects.assemble_process.index', compact('project'));
+        return  view('projects.scoping_process.index', compact('project'));
     }
 
     /**
@@ -31,7 +29,7 @@ class AssembleProcessController extends Controller
      */
     public function create(Project $project)
     {
-        return view('projects.assemble_process.create', compact('project'));
+        return view('projects.scoping_process.create', compact('project'));
     }
 
     /**
@@ -49,13 +47,13 @@ class AssembleProcessController extends Controller
 
         $assemble_process = new AssembleProcess();
         $assemble_process->name = $request->name;
-        $assemble_process->type = 'r';
+        $assemble_process->type = 's';
         $assemble_process->project_id = $request->project_id;
         $assemble_process->save();
 
         $project = Project::find($request->project_id);
 
-        return redirect()->route('projects.assemble_process.index', compact('project'))
+        return redirect()->route('projects.scoping_process.index', compact('project'))
             ->with('success', 'Process created!');
     }
 
@@ -67,9 +65,9 @@ class AssembleProcessController extends Controller
      */
     public function show(Request $request)
     {
-        $assemble_process = AssembleProcess::where('id', $request->assemble_process)->first();
+        $scoping_process = AssembleProcess::where('id', $request->scoping_process)->first();
         $project = Project::where('id', $request->project)->first();
-        return view('projects.assemble_process.activities.index', compact('assemble_process', 'project'));
+        return view('projects.scoping_process.activities.index', compact('scoping_process', 'project'));
     }
 
     /**
@@ -81,9 +79,9 @@ class AssembleProcessController extends Controller
     public function edit(Request $request)
     {
 
-        $assemble_process = AssembleProcess::where('id', $request->assemble_process)->first();
+        $scoping_process = AssembleProcess::where('id', $request->scoping_process)->first();
         $project = Project::where('id', $request->project)->first();
-        return view('projects.assemble_process.edit', compact('assemble_process', 'project'));
+        return view('projects.scoping_process.edit', compact('scoping_process', 'project'));
     }
 
     /**
@@ -99,7 +97,7 @@ class AssembleProcessController extends Controller
             'name' => 'required',
         ]);
 
-        $assemble_process =  AssembleProcess::find($request->assemble_process);
+        $assemble_process =  AssembleProcess::find($request->scoping_process);
 
 
         $assemble_process->update($request->all());
@@ -107,7 +105,7 @@ class AssembleProcessController extends Controller
 
         $project = $request->project;
 
-        return redirect()->route('projects.assemble_process.index', compact('project'))
+        return redirect()->route('projects.scoping_process.index', compact('project'))
             ->with('success', 'Process information updated successfully');
     }
 
@@ -117,11 +115,11 @@ class AssembleProcessController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project, AssembleProcess $assemble_process)
+    public function destroy(Project $project, AssembleProcess $scoping_process)
     {
-        $assemble_process->delete();
+        $scoping_process->delete();
 
-        return redirect()->route('projects.assemble_process.index', compact('project'))
+        return redirect()->route('projects.scoping_process.index', compact('project'))
             ->with('success', 'Process deleted successfully');
     }
 

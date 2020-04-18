@@ -54,10 +54,10 @@
         </div>
         @else
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('projects.assemble_process.create',$project -> id) }}">New Process <i class="fas fa-plus"></i></a>
+            <a class="btn btn-success" href="{{ route('projects.scoping_process.create',$project -> id) }}">New Process <i class="fas fa-plus"></i></a>
         </div>
         <div class="pull-left">
-            <h2>My Retrieval Processes:</h2>
+            <h2>My Scoping Processes:</h2>
         </div>
 
         <div class="table-responsive">
@@ -68,16 +68,16 @@
 
                     <th width="300px">Action</th>
                 </tr>
-                @foreach ($project->assemble_process as $assemble_process)
+                @foreach ($project->scoping_process as $assemble_process)
                 <tr>
 
                     <td>{{ $assemble_process->name }}</td>
                     <td>
-                        <form action="{{ route('projects.assemble_process.destroy',['project'=>$project->id, 'assemble_process'=>$assemble_process->id]) }}" method="POST">
+                        <form action="{{ route('projects.scoping_process.destroy',['project'=>$project->id, 'scoping_process'=>$assemble_process->id]) }}" method="POST">
 
-                            <a class="btn btn-info " href="{{ route('projects.assemble_process.show',['project'=>$project->id, 'assemble_process'=>$assemble_process->id]) }}">Enter <i class="fas fa-folder-open"></i> </a>
+                            <a class="btn btn-info " href="{{ route('projects.scoping_process.show',['project'=>$project->id, 'scoping_process'=>$assemble_process->id]) }}">Enter <i class="fas fa-folder-open"></i> </a>
 
-                            <a class="btn btn-primary" href="{{ route('projects.assemble_process.edit',['project'=>$project->id, 'assemble_process'=>$assemble_process->id]) }}">Edit <i class="fas fa-edit"></i></a>
+                            <a class="btn btn-primary" href="{{ route('projects.scoping_process.edit',['project'=>$project->id, 'scoping_process'=>$assemble_process->id]) }}">Edit <i class="fas fa-edit"></i></a>
 
 
                             @csrf

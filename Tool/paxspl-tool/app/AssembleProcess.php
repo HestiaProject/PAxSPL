@@ -39,4 +39,23 @@ class AssembleProcess extends Model
     {
         return $this->hasMany('App\Activity')->where('phase', '=', 'group')->orderBy('order', 'asc');
     }
+
+    public function activities_support()
+    {
+        return $this->hasMany('App\Activity')->where('phase', '=', 'SupportS')->orderBy('order', 'asc');
+    }
+    public function activities_domain()
+    {
+        return $this->hasMany('App\Activity')->where('phase', '=', 'domain')->orderBy('order', 'asc');
+    }
+
+    public function activities_asset()
+    {
+        return $this->hasMany('App\Activity')->where('phase', '=', 'asset')->orderBy('order', 'asc');
+    }
+
+    public function activities_product()
+    {
+        return $this->hasMany('App\Activity')->where('phase', '=', 'product')->orderBy('order', 'asc');
+    }
 }
