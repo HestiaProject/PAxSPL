@@ -12,7 +12,7 @@ class AssembleProcess extends Model
 
     public function activities()
     {
-        return $this->hasMany('App\Activity');
+        return $this->hasMany('App\Activity')->orderBy('phase_id', 'asc')->orderBy('order', 'asc');;
     }
 
     public function activities_phase($phase)

@@ -18,6 +18,7 @@ class CreateActivitiesTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('phase');
+            $table->integer('phase_id')->default(1);;
             $table->integer('order'); 
             $table->text('description');
             $table->string('status')->default("created");

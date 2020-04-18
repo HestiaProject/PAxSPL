@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Activity extends Model
 {
     protected $fillable = [
-        'name',   'phase' , 'order' , 'assemble_process_id' , 'technique_id', 'status', 'description'
+        'name',   'phase','phase_id' , 'order' , 'assemble_process_id' , 'technique_id', 'status', 'description'
     ]; 
 
     public function technique()

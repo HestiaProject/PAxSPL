@@ -23,11 +23,11 @@
 </head>
 
 <body id="page-top">
-@if($project->authUser()) 
-<script type="text/javascript">
-    window.location = "{{ url('/projects') }}";//here double curly bracket
-</script>
-@endif 
+    @if($project->authUser())
+    <script type="text/javascript">
+        window.location = "{{ url('/projects') }}"; //here double curly bracket
+    </script>
+    @endif
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -89,7 +89,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Documentation Analysis:</h6>
 
-                        <a class="collapse-item" href="{{ route('projects.artifact.index', $project -> id) }}">Register Artifacts</a> 
+                        <a class="collapse-item" href="{{ route('projects.artifact.index', $project -> id) }}">Register Artifacts</a>
                     </div>
                 </div>
             </li>
@@ -104,7 +104,8 @@
                         <h6 class="collapse-header">Techniques:</h6>
 
                         <a class="collapse-item" href="{{ route('projects.technique_projects.index', $project -> id) }}">Select Techniques</a>
-                        <a class="collapse-item" href="{{ route('projects.assemble_process.index', $project -> id) }}">Assemble Techniques</a>
+                        <a class="collapse-item" href="{{ route('projects.assemble_process.index', $project -> id) }}">Retrieval Process</a>
+                        <a class="collapse-item" href="{{ route('projects.assemble_process.index', $project -> id) }}">Scoping Process</a>
                     </div>
 
                 </div>

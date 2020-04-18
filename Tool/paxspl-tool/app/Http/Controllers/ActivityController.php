@@ -50,6 +50,15 @@ class ActivityController extends Controller
         $activity->name = $request->name;
 
         $activity->phase = $request->phase;
+
+        $activity->phase_id = 1;
+        if ($activity->phase == "categorize") {
+            $activity->phase_id = 2;
+        }
+        if ($activity->phase == "group") {
+            $activity->phase_id = 3;
+        }
+
         $activity->description = $request->description;
         $activity->assemble_process_id = $request->assemble_process;
         $activity->technique_id = $request->technique_id;
@@ -135,10 +144,10 @@ class ActivityController extends Controller
      */
     public function destroy(Project $project, AssembleProcess $assemble_process, Activity $activity)
     {
-        
+
         $n = $assemble_process->activities_phase($activity->phase)->count();
-        for ($i=$activity->order; $i < $n; $i++) { 
-            $activity2 =  Activity::where('phase', '=', $activity->phase)->where('order', '=', $i+1)->where('assemble_process_id', '=', $assemble_process->id)
+        for ($i = $activity->order; $i < $n; $i++) {
+            $activity2 =  Activity::where('phase', '=', $activity->phase)->where('order', '=', $i + 1)->where('assemble_process_id', '=', $assemble_process->id)
                 ->update(['order' => $i]);
         }
 
@@ -155,7 +164,7 @@ class ActivityController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function generateDocx(Project $project,AssembleProcess $assemble_process)
+    public function generateDocx(Project $project, AssembleProcess $assemble_process)
     {
         setlocale(LC_TIME, 'es');
 
@@ -163,7 +172,7 @@ class ActivityController extends Controller
 
         $document = new \PhpOffice\PhpWord\TemplateProcessor('../templates/activities.docx');
 
-        
+
         $user = User::find(auth()->id());
         $document->setValue('admin', $user->name);
         $document->setValue('date', $date);
@@ -175,12 +184,12 @@ class ActivityController extends Controller
         $document->cloneRow('act', count($activities));
         foreach ($activities as $activity) {
             $i++;
-            
+
             $document->setValue('act#' . $i, $i);
             $document->setValue('act.name#' . $i, $activity->name);
             $document->setValue('act.phase#' . $i, $activity->phase);
             $document->setValue('act.description#' . $i, $activity->description);
-            $document->setValue('act.technique#' . $i, $activity->technique->name); 
+            $document->setValue('act.technique#' . $i, $activity->technique->name);
         }
 
 
