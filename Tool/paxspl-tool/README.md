@@ -64,7 +64,7 @@
 
 ### Assemble Scoping Activities
 
-<p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/sactivities.PNG" width="600"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/activitiess.PNG" width="600"></p>
 
  
 
