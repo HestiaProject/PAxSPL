@@ -1,27 +1,131 @@
 @extends('projects.app')
 @section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2> Project: {{ $project->title }}</h2>
+<div class="container">
+    <div class="row justify-content-center">
+
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="row">
+                <strong> Project: </strong> {{ $project->title }}
+            </div>
+
+
         </div>
 
-    </div>
-</div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="row">
 
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Description:</strong>
-            {{ $project->description }}
+                <strong>Description: </strong>
+                {{ $project->description }}
+
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="row">
+                <strong>Owner: </strong>
+                {{ $project->user->name }}
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="card">
+
+                <div class="card-header py-3">
+                    <i class="fas fa-clipboard-list"></i> Prepare</div>
+
+                <div class="card-body">
+
+
+
+                    <a href="{{ route('projects.teams.index', $project -> id) }}" class="btn btn-primary btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-user-friends"></i>
+                        </span>
+                        <span class="text">Collect Team Information </span>
+                    </a>
+                    <div class="my-2"></div>
+                    <a href="{{ route('projects.artifact.index', $project -> id) }}" class=" btn btn-primary btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-file-code"></i>
+                        </span>
+                        <span class="text">Register Artifacts</span>
+                    </a>
+
+
+
+
+                </div>
+            </div>
+            <div class="card">
+
+                <div class="card-header py-3"><i class="fas fa-puzzle-piece"></i> Assemble</div>
+
+                <div class="card-body">
+
+
+
+                    <a href="{{ route('projects.technique_projects.index', $project -> id) }}" class="btn btn-secondary btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-tasks"></i>
+                        </span>
+                        <span class="text">Select Techniques </span>
+                    </a>
+                    <div class="my-2"></div>
+                    <a href="{{ route('projects.assemble_process.index', $project -> id) }}" class=" btn btn-secondary btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-sitemap"></i>
+                        </span>
+                        <span class="text">Assemble Retrieval Process</span>
+                    </a>
+                    <div class="my-2"></div>
+                    <a href="{{ route('projects.scoping_process.index', $project -> id) }}" class=" btn btn-secondary btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-sitemap"></i>
+                        </span>
+                        <span class="text">Assemble Scoping Process</span>
+                    </a>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header py-3"><i class="fas fa-play-circle"></i> Execute</div>
+
+            <div class="card-body">
+
+
+
+                <a href="{{ route('projects.technique_projects.index', $project -> id) }}" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-play"></i>
+                    </span>
+                    <span class="text">Execute Retrieval Process </span>
+                </a>
+                <div class="my-2"></div>
+                <a href="{{ route('projects.assemble_process.index', $project -> id) }}" class=" btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-play"></i>
+                    </span>
+                    <span class="text">Execute Scoping Process</span>
+                </a>
+                <div class="my-2"></div>
+                <a href="{{ route('projects.scoping_process.index', $project -> id) }}" class=" btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-file-alt"></i>
+                    </span>
+                    <span class="text">Register Process Experience</span>
+                </a>
+
+
+
+
+            </div>
         </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Owner:</strong>
-            {{ $project->user->name }}
-        </div>
-    </div>
+
 </div>
 
 @endsection

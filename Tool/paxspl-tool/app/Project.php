@@ -73,12 +73,12 @@ class Project extends Model
 
     public function techniques()
     {
-        return Technique::all();
+        return Technique::where('type', '!=' , 'domain')->where('type', '!=' , 'supports')->where('type', '!=' , 'asset')->where('type', '!=' , 'product')->get();
     }
 
     public function scoping_techniques($type)
     {
-        return Technique::where('type', $type)->get();;
+        return Technique::where('type', $type)->get();
     }
 
      
