@@ -176,6 +176,7 @@ class ScopingActController extends Controller
 
 
         $user = User::find(auth()->id());
+        $document->setValue('doc', "Assembled Scoping Process");
         $document->setValue('admin', $user->name);
         $document->setValue('date', $date);
         $document->setValue('project', $project->title);

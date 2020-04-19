@@ -80,9 +80,9 @@
             <div class="form-group">
                 <strong>Retrieval Technique:</strong>
                 <select name="technique_id" class="form-control" value="{{$activity->technique->name}}">
-                    @foreach($project->techniques_project as $technique)
-                    <option value="{{ $technique->technique_id }}" {{ $activity->technique_id == $technique->technique_id ? 'selected="selected"' : '' }}>
-                        {{ $technique->techniques_pj->name }}
+                    @foreach($project->scoping_techniques($activity->phase)  as $technique)
+                    <option value="{{ $technique->id }}" {{ $activity->technique_id == $technique->id ? 'selected="selected"' : '' }}>
+                        {{ $technique->name }}
                     </option>
                     @endforeach
                 </select>
