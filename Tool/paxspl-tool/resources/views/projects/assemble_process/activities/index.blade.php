@@ -215,7 +215,7 @@
 
                                         <th>Name</th>
                                         <th>Order</th>
-                                        <td>Retrieval Tech.</td>
+                                        <th>Retrieval Tech.</th>
 
                                         <th width="320px">Action</th>
                                     </tr>
