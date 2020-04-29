@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and abstract="true" mandatory="true" name="SPLScoping">
+            <and abstract="true" mandatory="true" name="ScopinpType">
+                <and name="Domain">
+                    <feature name="MarketAnalysis"/>
+                    <or name="CostBenefitAnalysis">
+                        <or name="CostModels">
+                            <feature name="MathematicalModels"/>
+                            <feature name="Algorithms"/>
+                        </or>
+                        <feature name="CustomerNeeds"/>
+                    </or>
+                    <feature name="ProductRoadmap"/>
+                </and>
+                <and name="Asset">
+                    <feature name="PrioritizeProducts"/>
+                    <feature name="ArchitectureDefinition"/>
+                    <feature name="VaribiabilityAnalysis"/>
+                </and>
+                <or name="Product">
+                    <feature name="CandidateAnalysis"/>
+                    <feature name="FeatureDefinition"/>
+                </or>
+            </and>
+            <and name="SupportingConcepts">
+                <feature name="MetricsDefinition"/>
+                <feature name="ScopingMetamodel"/>
+                <feature name="EvolutionPlanning"/>
+            </and>
+        </and>
+    </struct>
+    <constraints/>
+    <calculations Auto="false" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>
