@@ -21,7 +21,7 @@
 1. As a **Feature Retriever** I want **to document the feature retrieval artifacts** so that **the features retrieved may be documented**.
 1. As a **Feature Tester** I want **to check the feature artifacts** so that **the features retrieved may be verified**.
 1. As a **Manager** I want **to document the process experience** so that **the experience may be used in the future**.
-1. As a **User** I want **download reports of all tasks** so that **these reports may be stored**.
+1. As a **Team Member** I want **download reports of all tasks** so that **these reports may be stored**.
 
 ## Current Status
 
