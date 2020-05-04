@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Assemble techniques into project: {{ $project->title }}</h2>
+            <h2>Scoping Activities: {{ $project->title }}</h2>
         </div>
 
     </div>
@@ -132,7 +132,10 @@
                     </div>
                 </div>
             </div>
-            <!-- Card Header - Accordion -->
+
+        </div>
+        <!-- Card Header - Accordion -->
+        <div class="card shadow mb-4">
             <a href="#collapseCard" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 
                 <h6 class="m-0 font-weight-bold text-primary">Domain:</h6>
@@ -194,138 +197,142 @@
                 </div>
             </div>
 
-            <div class="card shadow mb-4">
-                <!-- Card Header - Accordion -->
-                <a href="#collapseCard3" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
-
-                    <h6 class="m-0 font-weight-bold text-primary">Asset:</h6>
-                </a>
-                <div class="pull-right">
-                    <a class="btn btn-success" href="{{ route('projects.scoping_process.activities.create',['project'=>$project -> id,'scoping_process'=>$scoping_process -> id,'phase'=>'asset']) }}">New Activity <i class="fas fa-plus"></i></a>
-                </div>
-
-                <!-- Card Content - Collapse -->
-                <div class="collapse" id="collapseCard3" style="">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
-                                <tr>
-
-                                    <th>Name</th>
-                                    <th>Order</th>
-                                    <th>Scoping Tech.</th>
-
-                                    <th width="320px">Action</th>
-                                </tr>
-
-                                @foreach ($scoping_process->activities_asset as $activity)
-                                <tr>
-
-                                    <td>{{ $activity->name }}</td>
-                                    <td>{{ $activity->order }}</td>
-                                    <td>{{ $activity->technique->name }}</td>
-
-
-
-
-
-                                    <td>
-
-                                        <form action="{{ route('projects.scoping_process.activities.destroy', ['project'=>$project->id,'scoping_process'=>$scoping_process->id,'activity'=>$activity->id]) }}" method="POST">
-
-
-
-                                            <a class="btn btn-info " href="{{ route('projects.scoping_process.activities.show', ['project'=>$project->id,'scoping_process'=>$scoping_process->id,'activity'=>$activity->id]) }}">View <i class="fas fa-eye"></i> </a>
-                                            <a class="btn btn-primary" href="{{ route('projects.scoping_process.activities.edit', ['project'=>$project->id,'scoping_process'=>$scoping_process->id,'activity'=>$activity->id]) }}">Edit <i class="fas fa-pen"></i></a>
-
-                                            @csrf
-
-
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
-
-
-
-
-
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="card shadow mb-4">
-                    <!-- Card Header - Accordion -->
-                    <a href="#collapseCard2" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
-
-                        <h6 class="m-0 font-weight-bold text-primary">Product:</h6>
-                    </a>
-                    <div class="pull-right">
-                        <a class="btn btn-success" href="{{ route('projects.scoping_process.activities.create',['project'=>$project -> id,'scoping_process'=>$scoping_process -> id,'phase'=>'product']) }}">New Activity <i class="fas fa-plus"></i></a>
-                    </div>
-
-                    <!-- Card Content - Collapse -->
-                    <div class="collapse" id="collapseCard2" style="">
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
-                                    <tr>
-
-                                        <th>Name</th>
-                                        <th>Order</th>
-                                        <th>Scoping Tech.</th>
-
-                                        <th width="320px">Action</th>
-                                    </tr>
-
-                                    @foreach ($scoping_process->activities_product as $activity)
-                                    <tr>
-
-                                        <td>{{ $activity->name }}</td>
-                                        <td>{{ $activity->order }}</td>
-                                        <td>{{ $activity->technique->name }}</td>
-
-
-
-
-
-                                        <td>
-
-                                            <form action="{{ route('projects.scoping_process.activities.destroy', ['project'=>$project->id,'scoping_process'=>$scoping_process->id,'activity'=>$activity->id]) }}" method="POST">
-
-
-
-                                                <a class="btn btn-info " href="{{ route('projects.scoping_process.activities.show', ['project'=>$project->id,'scoping_process'=>$scoping_process->id,'activity'=>$activity->id]) }}">View <i class="fas fa-eye"></i> </a>
-                                                <a class="btn btn-primary" href="{{ route('projects.scoping_process.activities.edit', ['project'=>$project->id,'scoping_process'=>$scoping_process->id,'activity'=>$activity->id]) }}">Edit <i class="fas fa-pen"></i></a>
-
-                                                @csrf
-
-
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
-
-
-
-
-
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    @endif
-                </div>
-
-            </div>
         </div>
+
+        <div class="card shadow mb-4">
+            <!-- Card Header - Accordion -->
+            <a href="#collapseCard3" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+
+                <h6 class="m-0 font-weight-bold text-primary">Asset:</h6>
+            </a>
+            <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('projects.scoping_process.activities.create',['project'=>$project -> id,'scoping_process'=>$scoping_process -> id,'phase'=>'asset']) }}">New Activity <i class="fas fa-plus"></i></a>
+            </div>
+
+            <!-- Card Content - Collapse -->
+            <div class="collapse" id="collapseCard3" style="">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
+                            <tr>
+
+                                <th>Name</th>
+                                <th>Order</th>
+                                <th>Scoping Tech.</th>
+
+                                <th width="320px">Action</th>
+                            </tr>
+
+                            @foreach ($scoping_process->activities_asset as $activity)
+                            <tr>
+
+                                <td>{{ $activity->name }}</td>
+                                <td>{{ $activity->order }}</td>
+                                <td>{{ $activity->technique->name }}</td>
+
+
+
+
+
+                                <td>
+
+                                    <form action="{{ route('projects.scoping_process.activities.destroy', ['project'=>$project->id,'scoping_process'=>$scoping_process->id,'activity'=>$activity->id]) }}" method="POST">
+
+
+
+                                        <a class="btn btn-info " href="{{ route('projects.scoping_process.activities.show', ['project'=>$project->id,'scoping_process'=>$scoping_process->id,'activity'=>$activity->id]) }}">View <i class="fas fa-eye"></i> </a>
+                                        <a class="btn btn-primary" href="{{ route('projects.scoping_process.activities.edit', ['project'=>$project->id,'scoping_process'=>$scoping_process->id,'activity'=>$activity->id]) }}">Edit <i class="fas fa-pen"></i></a>
+
+                                        @csrf
+
+
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
+
+
+
+
+
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card shadow mb-4">
+            <!-- Card Header - Accordion -->
+            <a href="#collapseCard2" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+
+                <h6 class="m-0 font-weight-bold text-primary">Product:</h6>
+            </a>
+            <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('projects.scoping_process.activities.create',['project'=>$project -> id,'scoping_process'=>$scoping_process -> id,'phase'=>'product']) }}">New Activity <i class="fas fa-plus"></i></a>
+            </div>
+
+            <!-- Card Content - Collapse -->
+            <div class="collapse" id="collapseCard2" style="">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
+                            <tr>
+
+                                <th>Name</th>
+                                <th>Order</th>
+                                <th>Scoping Tech.</th>
+
+                                <th width="320px">Action</th>
+                            </tr>
+
+                            @foreach ($scoping_process->activities_product as $activity)
+                            <tr>
+
+                                <td>{{ $activity->name }}</td>
+                                <td>{{ $activity->order }}</td>
+                                <td>{{ $activity->technique->name }}</td>
+
+
+
+
+
+                                <td>
+
+                                    <form action="{{ route('projects.scoping_process.activities.destroy', ['project'=>$project->id,'scoping_process'=>$scoping_process->id,'activity'=>$activity->id]) }}" method="POST">
+
+
+
+                                        <a class="btn btn-info " href="{{ route('projects.scoping_process.activities.show', ['project'=>$project->id,'scoping_process'=>$scoping_process->id,'activity'=>$activity->id]) }}">View <i class="fas fa-eye"></i> </a>
+                                        <a class="btn btn-primary" href="{{ route('projects.scoping_process.activities.edit', ['project'=>$project->id,'scoping_process'=>$scoping_process->id,'activity'=>$activity->id]) }}">Edit <i class="fas fa-pen"></i></a>
+
+                                        @csrf
+
+
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
+
+
+
+
+
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            @endif
+        </div>
+
+
+
+
+
     </div>
 
-</div>
-
-@endsection
+    @endsection

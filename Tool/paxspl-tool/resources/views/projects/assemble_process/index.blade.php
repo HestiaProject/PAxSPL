@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Assemble techniques into project: {{ $project->title }}</h2>
+            <h2>Feature Retrieval processes: {{ $project->title }}</h2>
         </div>
         <!-- <div class="pull-right">
             <a class="btn btn-success" href="{{ route('projects.technique_projects.create',$project -> id) }}">New Technique <i class="fas fa-plus"></i></a>

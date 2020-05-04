@@ -58,4 +58,19 @@ class AssembleProcess extends Model
     {
         return $this->hasMany('App\Activity')->where('phase', '=', 'product')->orderBy('order', 'asc');
     }
+
+    public function activities_retrieval_doing()
+    {
+        return $this->hasMany('App\Activity')->where('status', '=', 'doing')->orderBy('phase_id', 'asc')->orderBy('order', 'asc');
+    }
+
+    public function activities_retrieval_todo()
+    {
+        return $this->hasMany('App\Activity')->where('status', '=', 'created')->orderBy('phase_id', 'asc')->orderBy('order', 'asc');
+    }
+
+    public function activities_retrieval_done()
+    {
+        return $this->hasMany('App\Activity')->where('status', '=', 'done')->orderBy('phase_id', 'asc')->orderBy('order', 'asc');
+    }
 }

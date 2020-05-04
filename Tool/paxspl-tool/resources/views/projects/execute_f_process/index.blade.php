@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Scoping processes: {{ $project->title }}</h2>
+            <h2>Select a process to execute from project: {{ $project->title }}</h2>
         </div>
         <!-- <div class="pull-right">
             <a class="btn btn-success" href="{{ route('projects.technique_projects.create',$project -> id) }}">New Technique <i class="fas fa-plus"></i></a>
@@ -51,13 +51,16 @@
         <div class="alert alert-danger">
             Before continuing, at least one technique must be added to the project!<br><br>
             <a class="collapse-item" href="{{ route('projects.technique_projects.index', $project -> id) }}">Add Techniques</a>
+        </div> 
+        @elseif ($project->assemble_process->count()==0)
+        <div class="alert alert-danger">
+            Before continuing, at least one technique must be added to the project!<br><br>
+            <a class="collapse-item" href="{{ route('projects.technique_projects.index', $project -> id) }}">Add Techniques</a>
         </div>
         @else
-        <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('projects.scoping_process.create',$project -> id) }}">New Process <i class="fas fa-plus"></i></a>
-        </div>
+         
         <div class="pull-left">
-            <h2>My Scoping Processes:</h2>
+            <h2>My Retrieval Processes:</h2>
         </div>
 
         <div class="table-responsive">
@@ -68,21 +71,15 @@
 
                     <th width="300px">Action</th>
                 </tr>
-                @foreach ($project->scoping_process as $assemble_process)
+                @foreach ($project->assemble_process as $assemble_process)
                 <tr>
 
                     <td>{{ $assemble_process->name }}</td>
                     <td>
-                        <form action="{{ route('projects.scoping_process.destroy',['project'=>$project->id, 'scoping_process'=>$assemble_process->id]) }}" method="POST">
+                        <form action="" method="POST">
 
-                            <a class="btn btn-info " href="{{ route('projects.scoping_process.show',['project'=>$project->id, 'scoping_process'=>$assemble_process->id]) }}">Enter <i class="fas fa-folder-open"></i> </a>
-
-                            <a class="btn btn-primary" href="{{ route('projects.scoping_process.edit',['project'=>$project->id, 'scoping_process'=>$assemble_process->id]) }}">Edit <i class="fas fa-edit"></i></a>
-
-
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete <i class="fas fa-trash"></i></button>
+                            <a class="btn btn-info " href="{{ route('projects.execute_f_process.show',['project'=>$project->id, 'execute_f_process'=>$assemble_process->id]) }}">Execute <i class="fas fa-play"></i> </a>
+ 
 
                         </form>
                     </td>

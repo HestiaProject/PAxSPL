@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Retrieval Activities: {{ $project->title }}</h2>
+            <h2>Execute Retrieval Activities: {{ $project->title }}</h2>
         </div>
 
     </div>
@@ -50,36 +50,22 @@
             Before continuing, at least one technique must be added to the project!<br><br>
             <a class="collapse-item" href="{{ route('projects.technique_projects.index', $project -> id) }}">Add Techniques</a>
         </div>
+        @elseif ($project->assemble_process->count()==0)
+        <div class="alert alert-danger">
+            Before continuing, at least one technique must be added to the project!<br><br>
+            <a class="collapse-item" href="{{ route('projects.technique_projects.index', $project -> id) }}">Add Techniques</a>
+        </div>
         @else
 
-        <div class="card shadow mb-4">
-            <!-- Card Header - Accordion -->
-            <a href="#collapseCard0" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
-                <h6 class="m-0 font-weight-bold text-primary">Generic Process</h6>
-            </a>
-            <!-- Card Content - Collapse -->
-            <div class="collapse" id="collapseCard0" style="">
-                <div class="card-body">
-                    <figure style="display: block;  margin-left: auto;  margin-right: auto;  width: 50%;">
-                        <img src="https://raw.githubusercontent.com/HestiaProject/Generic-SPL-Re-engineering-Process/master/process/img/genericProcess.png" alt="Generic Feature Retrieval Process">
-                        <figcaption>Generic Feature Retrieval Process</figcaption>
-                    </figure>
+         
 
-                </div>
-            </div>
-        </div>
-
-        <a class="btn btn-primary btn-warning" href="{{action('ActivityController@generateDocx',['project' => $project, 'assemble_process' => $assemble_process])}}">Download Activities Report <i class="fas fa-file-download"></i></a>
 
         <div class="card shadow mb-4">
             <!-- Card Header - Accordion -->
             <a href="#collapseCard" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 
-                <h6 class="m-0 font-weight-bold text-primary">Extract:</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Doing:</h6>
             </a>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('projects.assemble_process.activities.create',['project'=>$project -> id,'assemble_process'=>$assemble_process -> id,'phase'=>'extract']) }}">New Activity <i class="fas fa-plus"></i></a>
-            </div>
 
             <!-- Card Content - Collapse -->
             <div class="collapse" id="collapseCard" style="">
@@ -89,18 +75,18 @@
                             <tr>
 
                                 <th>Name</th>
+                                <th>Phase</th>
                                 <th>Order</th>
-                                <th>Retrieval Tech.</th>
 
                                 <th width="320px">Action</th>
                             </tr>
 
-                            @foreach ($assemble_process->activities_ext as $activity)
+                            @foreach ($assemble_process->activities_retrieval_doing as $activity)
                             <tr>
 
                                 <td>{{ $activity->name }}</td>
+                                <td>{{ $activity->phase }}</td>
                                 <td>{{ $activity->order }}</td>
-                                <td>{{ $activity->technique->name }}</td>
 
 
 
@@ -112,18 +98,7 @@
 
 
 
-                                        <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">View <i class="fas fa-eye"></i> </a>
-                                        <a class="btn btn-primary" href="{{ route('projects.assemble_process.activities.edit', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">Edit <i class="fas fa-pen"></i></a>
-
-                                        @csrf
-
-
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
-
-
-
-
+                                        <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">Execute <i class="fas fa-play"></i> </a>
 
                                     </form>
                                 </td>
@@ -139,11 +114,9 @@
             <!-- Card Header - Accordion -->
             <a href="#collapseCard3" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 
-                <h6 class="m-0 font-weight-bold text-primary">Categorize:</h6>
+                <h6 class="m-0 font-weight-bold text-primary">To Do:</h6>
             </a>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('projects.assemble_process.activities.create',['project'=>$project -> id,'assemble_process'=>$assemble_process -> id,'phase'=>'categorize']) }}">New Activity <i class="fas fa-plus"></i></a>
-            </div>
+
 
             <!-- Card Content - Collapse -->
             <div class="collapse" id="collapseCard3" style="">
@@ -153,18 +126,18 @@
                             <tr>
 
                                 <th>Name</th>
+                                <th>Phase</th>
                                 <th>Order</th>
-                                <th>Retrieval Tech.</th>
 
                                 <th width="320px">Action</th>
                             </tr>
 
-                            @foreach ($assemble_process->activities_cat as $activity)
+                            @foreach ($assemble_process->activities_retrieval_todo as $activity)
                             <tr>
 
                                 <td>{{ $activity->name }}</td>
+                                <td>{{ $activity->phase }}</td>
                                 <td>{{ $activity->order }}</td>
-                                <td>{{ $activity->technique->name }}</td>
 
 
 
@@ -176,18 +149,7 @@
 
 
 
-                                        <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">View <i class="fas fa-eye"></i> </a>
-                                        <a class="btn btn-primary" href="{{ route('projects.assemble_process.activities.edit', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">Edit <i class="fas fa-pen"></i></a>
-
-                                        @csrf
-
-
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
-
-
-
-
+                                        <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">Execute <i class="fas fa-play"></i> </a>
 
                                     </form>
                                 </td>
@@ -203,11 +165,8 @@
             <!-- Card Header - Accordion -->
             <a href="#collapseCard2" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 
-                <h6 class="m-0 font-weight-bold text-primary">Group:</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Done:</h6>
             </a>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('projects.assemble_process.activities.create',['project'=>$project -> id,'assemble_process'=>$assemble_process -> id,'phase'=>'group']) }}">New Activity <i class="fas fa-plus"></i></a>
-            </div>
 
             <!-- Card Content - Collapse -->
             <div class="collapse" id="collapseCard2" style="">
@@ -217,18 +176,18 @@
                             <tr>
 
                                 <th>Name</th>
+                                <th>Phase</th>
                                 <th>Order</th>
-                                <th>Retrieval Tech.</th>
 
                                 <th width="320px">Action</th>
                             </tr>
 
-                            @foreach ($assemble_process->activities_group as $activity)
+                            @foreach ($assemble_process->activities_retrieval_done as $activity)
                             <tr>
 
                                 <td>{{ $activity->name }}</td>
+                                <td>{{ $activity->phase }}</td>
                                 <td>{{ $activity->order }}</td>
-                                <td>{{ $activity->technique->name }}</td>
 
 
 
@@ -240,18 +199,7 @@
 
 
 
-                                        <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">View <i class="fas fa-eye"></i> </a>
-                                        <a class="btn btn-primary" href="{{ route('projects.assemble_process.activities.edit', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">Edit <i class="fas fa-pen"></i></a>
-
-                                        @csrf
-
-
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
-
-
-
-
+                                        <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">Execute <i class="fas fa-play"></i> </a>
 
                                     </form>
                                 </td>
@@ -263,8 +211,8 @@
             </div>
 
             @endif
-
         </div>
+
     </div>
 
 </div>

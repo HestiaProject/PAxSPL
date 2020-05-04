@@ -118,9 +118,9 @@
                 </a>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Team:</h6>
+                        <h6 class="collapse-header">Processes:</h6>
 
-                        <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a>
+                        <a class="collapse-item" href="{{ route('projects.execute_f_process.index', $project -> id) }}">Retrieval Process</a>
                     </div>
                 </div>
             </li>
