@@ -16,9 +16,9 @@ class ExecuteActivityFProcessController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Project $project, AssembleProcess $assemble_process)
+    public function index(Project $project, AssembleProcess $execute_f_process)
     {
-        return  view('projects.execute_f_process.activities.index', compact('assemble_process', 'project'));
+        return  view('projects.execute_f_process.activities.index', compact('execute_f_process', 'project'));
     }
 
     /**
@@ -59,23 +59,40 @@ class ExecuteActivityFProcessController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+
+        $activity = Activity::where('id', $request->activity)->first();
+        $project = Project::where('id', $request->project)->first();
+        $execute_f_process = AssembleProcess::where('id', $request->execute_f_process)->first();
+        return view('projects.execute_f_process.activities.edit', compact('activity', 'execute_f_process', 'project'));
     }
 
-    /**
+   /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
-    }
+        $request->validate([
+             
+        ]);
 
+
+        $activity =  Activity::find($request->activity);
+        $activity->status = $request->status;
+        $activity->update($request->all());
+
+
+        $project = $request->project;
+        $execute_f_process = $request->execute_f_process;
+
+        return redirect()->route('projects.execute_f_process.activities.index', compact('execute_f_process', 'project'))
+            ->with('success', 'Activity updated successfully');
+    } 
     /**
      * Remove the specified resource from storage.
      *

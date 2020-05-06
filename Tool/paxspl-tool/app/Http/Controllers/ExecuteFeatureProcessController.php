@@ -47,9 +47,9 @@ class ExecuteFeatureProcessController extends Controller
      */
     public function show(Request $request)
     {
-        $assemble_process = AssembleProcess::where('id', $request->execute_f_process)->first();
+        $execute_f_process  = AssembleProcess::where('id', $request->execute_f_process)->first();
         $project = Project::where('id', $request->project)->first();
-        return view('projects.execute_f_process.activities.index', compact('assemble_process', 'project'));
+        return view('projects.execute_f_process.activities.index', compact('execute_f_process', 'project'));
     }
 
     /**

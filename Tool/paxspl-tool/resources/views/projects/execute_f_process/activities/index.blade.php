@@ -81,7 +81,7 @@
                                 <th width="320px">Action</th>
                             </tr>
 
-                            @foreach ($assemble_process->activities_retrieval_doing as $activity)
+                            @foreach ($execute_f_process->activities_retrieval_doing as $activity)
                             <tr>
 
                                 <td>{{ $activity->name }}</td>
@@ -94,11 +94,11 @@
 
                                 <td>
 
-                                    <form action="{{ route('projects.assemble_process.activities.destroy', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}" method="POST">
+                                    <form action="{{ route('projects.execute_f_process.activities.destroy', ['project'=>$project->id,'execute_f_process'=>$execute_f_process->id,'activity'=>$activity->id]) }}" method="POST">
 
 
 
-                                        <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">Execute <i class="fas fa-play"></i> </a>
+                                        <a class="btn btn-info " href="{{ route('projects.execute_f_process.activities.edit', ['project'=>$project->id,'execute_f_process'=>$execute_f_process->id,'activity'=>$activity->id]) }}">Continue <i class="fas fa-play"></i> </a>
 
                                     </form>
                                 </td>
@@ -132,7 +132,7 @@
                                 <th width="320px">Action</th>
                             </tr>
 
-                            @foreach ($assemble_process->activities_retrieval_todo as $activity)
+                            @foreach ($execute_f_process->activities_retrieval_todo as $activity)
                             <tr>
 
                                 <td>{{ $activity->name }}</td>
@@ -145,11 +145,11 @@
 
                                 <td>
 
-                                    <form action="{{ route('projects.assemble_process.activities.destroy', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}" method="POST">
+                                    <form action="{{ route('projects.execute_f_process.activities.destroy', ['project'=>$project->id,'execute_f_process'=>$execute_f_process->id,'activity'=>$activity->id]) }}" method="POST">
 
 
 
-                                        <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">Execute <i class="fas fa-play"></i> </a>
+                                        <a class="btn btn-info " href="{{ route('projects.execute_f_process.activities.edit', ['project'=>$project->id,'execute_f_process'=>$execute_f_process->id,'activity'=>$activity->id]) }}">Execute <i class="fas fa-play"></i> </a>
 
                                     </form>
                                 </td>
@@ -182,7 +182,7 @@
                                 <th width="320px">Action</th>
                             </tr>
 
-                            @foreach ($assemble_process->activities_retrieval_done as $activity)
+                            @foreach ($execute_f_process->activities_retrieval_done as $activity)
                             <tr>
 
                                 <td>{{ $activity->name }}</td>
@@ -195,11 +195,11 @@
 
                                 <td>
 
-                                    <form action="{{ route('projects.assemble_process.activities.destroy', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}" method="POST">
+                                    <form action="{{ route('projects.execute_f_process.activities.destroy', ['project'=>$project->id,'execute_f_process'=>$execute_f_process->id,'activity'=>$activity->id]) }}" method="POST">
 
 
 
-                                        <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">Execute <i class="fas fa-play"></i> </a>
+                                        <a class="btn btn-info " href="{{ route('projects.execute_f_process.activities.edit', ['project'=>$project->id,'execute_f_process'=>$execute_f_process->id,'activity'=>$activity->id]) }}">Continue <i class="fas fa-play"></i> </a>
 
                                     </form>
                                 </td>

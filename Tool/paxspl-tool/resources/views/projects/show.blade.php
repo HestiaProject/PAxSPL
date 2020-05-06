@@ -98,14 +98,14 @@
 
 
 
-                <a href="{{ route('projects.technique_projects.index', $project -> id) }}" class="btn btn-info btn-icon-split">
+                <a href="{{ route('projects.execute_f_process.index', $project -> id) }}" class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
                         <i class="fas fa-play"></i>
                     </span>
                     <span class="text">Execute Retrieval Process </span>
                 </a>
                 <div class="my-2"></div>
-                <a href="{{ route('projects.assemble_process.index', $project -> id) }}" class=" btn btn-info btn-icon-split">
+                <a href="{{ route('projects.execute_f_process.index', $project -> id) }}" class=" btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
                         <i class="fas fa-play"></i>
                     </span>

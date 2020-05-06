@@ -71,17 +71,12 @@
 
                     <th width="300px">Action</th>
                 </tr>
-                @foreach ($project->assemble_process as $assemble_process)
+                @foreach ($project->assemble_process as $execute_f_process)
                 <tr>
 
-                    <td>{{ $assemble_process->name }}</td>
+                    <td>{{ $execute_f_process->name }}</td>
                     <td>
-                        <form action="" method="POST">
-
-                            <a class="btn btn-info " href="{{ route('projects.execute_f_process.show',['project'=>$project->id, 'execute_f_process'=>$assemble_process->id]) }}">Execute <i class="fas fa-play"></i> </a>
- 
-
-                        </form>
+                        
                     </td>
                 </tr>
                 @endforeach

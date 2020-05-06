@@ -133,7 +133,7 @@ class ActivityController extends Controller
         $assemble_process = $request->assemble_process;
 
         return redirect()->route('projects.assemble_process.activities.index', compact('assemble_process', 'project'))
-            ->with('success', 'Activity deleted successfully');
+            ->with('success', 'Activity updated successfully');
     }
 
     /**
