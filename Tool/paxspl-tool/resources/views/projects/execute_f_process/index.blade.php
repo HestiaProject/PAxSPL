@@ -76,7 +76,12 @@
 
                     <td>{{ $execute_f_process->name }}</td>
                     <td>
-                        
+                        <form action="" method="POST">
+
+                            <a class="btn btn-info " href="{{ route('projects.execute_f_process.show',['project'=>$project->id, 'execute_f_process'=>$execute_f_process->id]) }}">Execute <i class="fas fa-play"></i> </a>
+ 
+
+                        </form>
                     </td>
                 </tr>
                 @endforeach

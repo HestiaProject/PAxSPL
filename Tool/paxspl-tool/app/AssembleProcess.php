@@ -73,4 +73,20 @@ class AssembleProcess extends Model
     {
         return $this->hasMany('App\Activity')->where('status', '=', 'done')->orderBy('phase_id', 'asc')->orderBy('order', 'asc');
     }
+
+    public function progress()
+    {
+        $progress = 0;
+        $doing = $this->activities_retrieval_doing()->count();
+        $todo = $this->activities_retrieval_todo()->count();
+        $done = $this->activities_retrieval_done()->count();
+        $progress = $done * 100;
+        $defict = $doing + $todo + $done;
+        if ($defict == 0 || $progress == 0) {
+            return 0;
+        } else {
+            $progress = $progress / $defict;
+            return $progress;
+        }
+    }
 }

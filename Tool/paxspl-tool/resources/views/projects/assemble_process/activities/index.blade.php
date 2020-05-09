@@ -117,10 +117,10 @@
 
                                         @csrf
 
-
+                                        @if($activity->input_artifacts->count()==0 and $activity->output_artifacts->count()==0)
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
-
+                                        @endif
 
 
 
@@ -181,11 +181,11 @@
 
                                         @csrf
 
-
+                                        @if($activity->input_artifacts->count()==0 and $activity->output_artifacts->count()==0)
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
 
-
+                                        @endif
 
 
 
@@ -245,10 +245,10 @@
 
                                         @csrf
 
-
+                                        @if($activity->input_artifacts->count()==0 and $activity->output_artifacts->count()==0)
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
-
+                                        @endif
 
 
 

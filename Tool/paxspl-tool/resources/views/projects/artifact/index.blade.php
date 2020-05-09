@@ -67,10 +67,13 @@
                         <form action="{{ route('projects.artifact.destroy', ['artifact'=>$artifact->id,'project'=>$project->id]) }}" method="post">
                             <a class="btn btn-info " href="{{ route('projects.artifact.show', ['project'=>$project->id,'artifact'=>$artifact->id]) }}">View <i class="fas fa-eye"></i> </a>
                             <a class="btn btn-primary" href="{{ route('projects.artifact.edit', ['project'=>$project->id,'artifact'=>$artifact->id]) }}">Edit <i class="fas fa-pen"></i></a>
+
+                            @if($artifact->input_artifacts->count()==0 and $artifact->output_artifacts->count()==0)
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
+                            <button type="submit" class="btn btn-danger">Delete <i class="fas fa-trash"></i></button>
+                            @endif
                         </form>
                     </td>
                 </tr>

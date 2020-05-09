@@ -31,6 +31,7 @@ Route::resource('projects.execute_f_process', 'ExecuteFeatureProcessController')
 
 Route::resource('projects.execute_f_process.activities', 'ExecuteActivityFProcessController'); 
 
+Route::resource('projects.execute_f_process.activities.artifact', 'ExecuteArtifactController'); 
 
 Route::get('projects/{project}/teams_generate/', 'TeamController@generateDocx');
 Route::get('projects/{project}/artifact_generate/', 'ArtifactController@generateDocx');

@@ -14,4 +14,13 @@ class Activity extends Model
     {
         return $this->belongsTo('App\Technique');
     }
+    public function input_artifacts()
+    {
+        return $this->hasMany('App\ActivitiesArtifact')->where('io', 'i');
+    }
+
+    public function output_artifacts()
+    {
+        return $this->hasMany('App\ActivitiesArtifact')->where('io', 'o');
+    }
 }

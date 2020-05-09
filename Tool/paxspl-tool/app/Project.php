@@ -88,6 +88,7 @@ class Project extends Model
         return $this->hasMany('App\AssembleProcess')->where('type','r');;
     }
 
+    
     public function scoping_process()
     {
         return $this->hasMany('App\AssembleProcess')->where('type','s');

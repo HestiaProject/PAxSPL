@@ -108,6 +108,8 @@ class ArtifactController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
+            'type' => 'required',
+            'extension' => 'required',
         ]);
 
         $artifact =  Artifact::find($request->artifact);

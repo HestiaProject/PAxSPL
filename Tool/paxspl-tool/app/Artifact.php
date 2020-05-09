@@ -25,4 +25,14 @@ class Artifact extends Model
     {
         return $this->belongsTo('App\User', 'last_update_user');
     }
+
+    public function input_artifacts()
+    {
+        return $this->hasMany('App\ActivitiesArtifact')->where('io', 'i');
+    }
+
+    public function output_artifacts()
+    {
+        return $this->hasMany('App\ActivitiesArtifact')->where('io', 'o');
+    }
 }

@@ -57,9 +57,20 @@
         </div>
         @else
 
-         
 
+        <div class="card shadow mb-4">
 
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary"> Progress:</h6>
+            </div>
+            <div class="card-body">
+                <div class="progress mb-4">
+                    <div class="progress-bar" role="progressbar" style="width:  {{$execute_f_process->progress()}}%; background-color:limegreen;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        {{$execute_f_process->progress()}}%
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="card shadow mb-4">
             <!-- Card Header - Accordion -->
             <a href="#collapseCard" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
