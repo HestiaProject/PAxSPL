@@ -79,11 +79,11 @@
 
                             <a class="btn btn-primary" href="{{ route('projects.assemble_process.edit',['project'=>$project->id, 'assemble_process'=>$assemble_process->id]) }}">Edit <i class="fas fa-edit"></i></a>
 
-
+                            @if($assemble_process->activities->count()==0)
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete <i class="fas fa-trash"></i></button>
-
+                            @endif
                         </form>
                     </td>
                 </tr>

@@ -27,11 +27,12 @@ Route::resource('projects.scoping_process.activities', 'ScopingActController');
 
 
 Route::resource('projects.execute_f_process', 'ExecuteFeatureProcessController'); 
-
-
 Route::resource('projects.execute_f_process.activities', 'ExecuteActivityFProcessController'); 
-
 Route::resource('projects.execute_f_process.activities.artifact', 'ExecuteArtifactController'); 
+
+Route::resource('projects.execute_s_process', 'ExecuteScopingProcessController'); 
+Route::resource('projects.execute_s_process.activities', 'ExecuteActivitySProcessController'); 
+Route::resource('projects.execute_s_process.activities.artifact', 'ExecuteArtifactSProcessController'); 
 
 Route::get('projects/{project}/teams_generate/', 'TeamController@generateDocx');
 Route::get('projects/{project}/artifact_generate/', 'ArtifactController@generateDocx');

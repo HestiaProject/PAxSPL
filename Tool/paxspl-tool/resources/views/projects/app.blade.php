@@ -121,6 +121,8 @@
                         <h6 class="collapse-header">Processes:</h6>
 
                         <a class="collapse-item" href="{{ route('projects.execute_f_process.index', $project -> id) }}">Retrieval Process</a>
+                        <a class="collapse-item" href="{{ route('projects.execute_s_process.index', $project -> id) }}">Scoping Process</a>
+
                     </div>
                 </div>
             </li>
