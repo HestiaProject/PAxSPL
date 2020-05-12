@@ -37,10 +37,16 @@
 
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
+
         @if ($project->status_user())
         <div class="alert alert-danger">
             Before continuing, all team members information must be completed!<br><br>
             <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a>
+        </div>
+        @elseif (!$project->retriever())
+        <div class="alert alert-danger">
+            You Must be a feature retriver to execute the process!<br><br>
+            
         </div>
         @elseif ($project->artifacts->count()==0)
         <div class="alert alert-danger">
@@ -68,6 +74,7 @@
                 <tr>
 
                     <th>Name</th>
+                    <th>Progress</th>
 
                     <th width="300px">Action</th>
                 </tr>
@@ -75,6 +82,14 @@
                 <tr>
 
                     <td>{{ $execute_s_process->name }}</td>
+                    <td>
+
+                        <div class="progress mb-4">
+                            <div class="progress-bar" role="progressbar" style="width:  {{$execute_s_process->progress()}}%; background-color:{{$execute_s_process->progress_color()}};" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                {{$execute_s_process->progress()}}%
+                            </div>
+                        </div>
+                    </td>
                     <td>
                         <form action="" method="POST">
 

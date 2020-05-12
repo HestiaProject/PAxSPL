@@ -118,10 +118,27 @@
                 </a>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Processes:</h6>
+                        <h6 class="collapse-header">Execute:</h6>
 
                         <a class="collapse-item" href="{{ route('projects.execute_f_process.index', $project -> id) }}">Retrieval Process</a>
                         <a class="collapse-item" href="{{ route('projects.execute_s_process.index', $project -> id) }}">Scoping Process</a>
+
+                    </div>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Check:</h6>
+
+                        <a class="collapse-item" href="{{ route('projects.check_f_process.index', $project -> id) }}">Retrieval Artifacts</a>
+                        <a class="collapse-item" href="{{ route('projects.check_s_process.index', $project -> id) }}">Scoping Artifacts</a>
+
+                    </div>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Document:</h6>
+
+                        <a class="collapse-item" href="{{ route('projects.execute_f_process.index', $project -> id) }}">Process Experience</a> 
 
                     </div>
                 </div>

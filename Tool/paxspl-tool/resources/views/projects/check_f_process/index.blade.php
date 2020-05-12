@@ -42,9 +42,9 @@
             Before continuing, all team members information must be completed!<br><br>
             <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a>
         </div>
-        @elseif (!$project->retriever())
+        @elseif ($project->retriever())
         <div class="alert alert-danger">
-            You Must be a feature retriver to check the artifacts!<br><br>
+            You Must be a feature tester to to check the artifacts!<br><br>
 
         </div>
         @elseif ($project->artifacts->count()==0)
@@ -73,21 +73,13 @@
                 <tr>
 
                     <th>Name</th>
-                    <th>Progress</th>
+
                     <th width="300px">Action</th>
                 </tr>
                 @foreach ($project->assemble_process as $execute_f_process)
                 <tr>
 
                     <td>{{ $execute_f_process->name }}</td>
-                    <td>
-
-                        <div class="progress mb-4">
-                            <div class="progress-bar" role="progressbar" style="width:  {{$execute_f_process->progress()}}%; background-color:{{$execute_f_process->progress_color()}};" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                {{$execute_f_process->progress()}}%
-                            </div>
-                        </div>
-                    </td>
                     <td>
                         <form action="" method="POST">
 

@@ -33,6 +33,8 @@ Route::resource('projects.execute_f_process.activities.artifact', 'ExecuteArtifa
 Route::resource('projects.execute_s_process', 'ExecuteScopingProcessController'); 
 Route::resource('projects.execute_s_process.activities', 'ExecuteActivitySProcessController'); 
 Route::resource('projects.execute_s_process.activities.artifact', 'ExecuteArtifactSProcessController'); 
+Route::resource('projects.check_f_process', 'CheckArtifactsController'); 
+Route::resource('projects.check_s_process', 'CheckSArtifactsController'); 
 
 Route::get('projects/{project}/teams_generate/', 'TeamController@generateDocx');
 Route::get('projects/{project}/artifact_generate/', 'ArtifactController@generateDocx');

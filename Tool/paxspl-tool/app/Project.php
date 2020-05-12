@@ -54,6 +54,19 @@ class Project extends Model
         return true;
     }
 
+    public function retriever()
+    {
+
+
+        $team = Team::where('user_id', auth()->id())->where('project_id', $this->id)->first();
+
+        if ($team->retrieval_role == 'Feature Retriever') {
+            return true;
+        } else  if ($team->retrieval_role == 'Feature Tester') {
+            return false;
+        }
+    }
+
 
     public function status_user()
     {
@@ -73,7 +86,7 @@ class Project extends Model
 
     public function techniques()
     {
-        return Technique::where('type', '!=' , 'domain')->where('type', '!=' , 'supports')->where('type', '!=' , 'asset')->where('type', '!=' , 'product')->get();
+        return Technique::where('type', '!=', 'domain')->where('type', '!=', 'supports')->where('type', '!=', 'asset')->where('type', '!=', 'product')->get();
     }
 
     public function scoping_techniques($type)
@@ -81,17 +94,17 @@ class Project extends Model
         return Technique::where('type', $type)->get();
     }
 
-     
+
 
     public function assemble_process()
     {
-        return $this->hasMany('App\AssembleProcess')->where('type','r');;
+        return $this->hasMany('App\AssembleProcess')->where('type', 'r');;
     }
 
-    
+
     public function scoping_process()
     {
-        return $this->hasMany('App\AssembleProcess')->where('type','s');
+        return $this->hasMany('App\AssembleProcess')->where('type', 's');
     }
 
     public function activities(String $phase, AssembleProcess $ap)

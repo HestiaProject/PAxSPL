@@ -40,6 +40,11 @@
             Before continuing, all team members information must be completed!<br><br>
             <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a>
         </div>
+        @elseif (!$project->retriever())
+        <div class="alert alert-danger">
+            You Must be a feature retriver to execute the process!<br><br>
+
+        </div>
         @elseif ($project->artifacts->count()==0)
         <div class="alert alert-danger">
             Before continuing, at least one artifact must be created!<br><br>
@@ -65,7 +70,7 @@
             </div>
             <div class="card-body">
                 <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width:  {{$execute_s_process->progress()}}%; background-color:limegreen;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" role="progressbar" style="width:  {{$execute_s_process->progress()}}%; background-color:{{$execute_s_process->progress_color()}};" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                         {{$execute_s_process->progress()}}%
                     </div>
                 </div>

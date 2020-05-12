@@ -86,7 +86,26 @@ class AssembleProcess extends Model
             return 0;
         } else {
             $progress = $progress / $defict;
-            return $progress;
+            return round($progress, 0);
         }
+    }
+
+    public function progress_color()
+    {
+        $result = $this->progress();
+        if ($result < 25)
+            return "red";
+        else 
+        if ($result < 50  && $result >= 25)
+            return "orange";
+        else 
+        if ($result < 75  && $result >= 50)
+            return "dodgerblue";
+        else 
+            if ($result < 100  && $result >= 75)
+            return "limegreen";
+        else 
+            if ($result >= 100)
+            return "green";
     }
 }
