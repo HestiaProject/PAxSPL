@@ -130,7 +130,7 @@
                         <h6 class="collapse-header">Check:</h6>
 
                         <a class="collapse-item" href="{{ route('projects.check_f_process.index', $project -> id) }}">Retrieval Artifacts</a>
-                        <a class="collapse-item" href="{{ route('projects.check_s_process.index', $project -> id) }}">Scoping Artifacts</a>
+                        <a class="collapse-item" href="{{ route('projects.check_f_process.index', $project -> id) }}">Scoping Artifacts</a>
 
                     </div>
                 </div>

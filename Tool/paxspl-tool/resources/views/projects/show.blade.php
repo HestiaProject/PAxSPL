@@ -104,6 +104,7 @@
                     </span>
                     <span class="text">Execute Retrieval Process </span>
                 </a>
+                
                 <div class="my-2"></div>
                 <a href="{{ route('projects.execute_s_process.index', $project -> id) }}" class=" btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
@@ -111,6 +112,21 @@
                     </span>
                     <span class="text">Execute Scoping Process</span>
                 </a>
+                <div class="my-2"></div> 
+                <a href="{{ route('projects.check_f_process.index', $project -> id) }}" class=" btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check-double"></i>
+                    </span>
+                    <span class="text">Check Retrieval Process</span>
+                </a>
+                <div class="my-2"></div> 
+                <a href="{{ route('projects.check_f_process.index', $project -> id) }}" class=" btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check-double"></i>
+                    </span>
+                    <span class="text">Check Scoping Process</span>
+                </a>
+               
                 <div class="my-2"></div>
                 <a href="{{ route('projects.scoping_process.index', $project -> id) }}" class=" btn btn-info btn-icon-split">
                     <span class="icon text-white-50">

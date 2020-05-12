@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-lg-12 margin-tb">
+    <div class="col-lg-9 margin-tb">
         <div class="pull-left">
             <h2>Add New Artifact</h2>
         </div>
@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Description:</strong>
                 <textarea class="form-control" style="height:150px" name="description" placeholder="Description">{{ $artifact->description }}</textarea>
@@ -70,7 +70,7 @@
         <input type="hidden" id="project_id" name="project_id" value=" {{ $artifact->project_id }}">
         <input type="hidden" id="owner_id" name="owner_id" value=" {{ $artifact->owner_id }}">
 
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+        <div class="col-xs-9 col-sm-9 col-md-9 text-center">
             <button type="submit" class="btn btn-primary">Update <i class="fas fa-save"></i></button>
         </div>
     </div>

@@ -10,9 +10,23 @@ class AssembleProcess extends Model
         'name', 'project_id', 'status'
     ];
 
+
+    public function artifacts()
+    {
+        $artifacts = [];
+        $activities = Activity::where('assemble_process_id', $this->id)->get();
+        foreach ($activities as $activity){
+            $artifactsA = $activity->output_artifacts;
+            foreach ($artifactsA as $art) {
+                $artifacts[] = $art;
+            }
+        }
+        return $artifacts;
+    }
+
     public function activities()
     {
-        return $this->hasMany('App\Activity')->orderBy('phase_id', 'asc')->orderBy('order', 'asc');;
+        return $this->hasMany('App\Activity')->orderBy('phase_id', 'asc')->orderBy('order', 'asc');
     }
 
     public function activities_phase($phase)

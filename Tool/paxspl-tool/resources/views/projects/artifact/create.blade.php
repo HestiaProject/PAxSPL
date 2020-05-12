@@ -58,14 +58,14 @@
                 <input type="text" name="extension" class="form-control" placeholder="File Extension (pdf, doc, xml, etc)">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Description:</strong>
                 <textarea class="form-control" style="height:150px" name="description" placeholder="Description"></textarea>
             </div>
         </div>
         <input type="hidden" id="project_id" name="project_id" value=" {{ $project->id }}">
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+        <div class="col-xs-9 col-sm-9 col-md-9 text-center">
             <button type="submit" class="btn btn-primary">Save <i class="fas fa-save"></i></button>
         </div>
     </div>

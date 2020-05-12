@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-lg-12 margin-tb">
+    <div class="col-lg-9 margin-tb">
         <div class="pull-left">
             <h2>Artifact Details</h2>
         </div>
@@ -48,13 +48,13 @@
             <input type="text" name="extension" class="form-control" value="{{$artifact->extension}}" disabled>
         </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="col-xs-9 col-sm-9 col-md-9">
         <div class="form-group">
             <strong>Description:</strong>
             <textarea class="form-control" style="height:150px" name="description" placeholder="Description" disabled>{{ $artifact->description }}</textarea>
         </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+    <div class="col-xs-9 col-sm-9 col-md-9 text-center">
 
         <a class="btn btn-primary" href="{{ route('projects.artifact.edit', ['project'=>$project->id,'artifact'=>$artifact->id]) }}">Edit <i class="fas fa-pen"></i></a>
     </div>

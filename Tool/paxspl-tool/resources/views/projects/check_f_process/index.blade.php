@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Select a process to execute from project: {{ $project->title }}</h2>
+            <h2>Select a process to check the artifacts from project: {{ $project->title }}</h2>
         </div>
         <!-- <div class="pull-right">
             <a class="btn btn-success" href="{{ route('projects.technique_projects.create',$project -> id) }}">New Technique <i class="fas fa-plus"></i></a>
@@ -83,7 +83,7 @@
                     <td>
                         <form action="" method="POST">
 
-                            <a class="btn btn-info " href="{{ route('projects.execute_f_process.show',['project'=>$project->id, 'execute_f_process'=>$execute_f_process->id]) }}">Execute <i class="fas fa-play"></i> </a>
+                            <a class="btn btn-info " href="{{ route('projects.check_f_process.artifact.index',['project'=>$project->id, 'check_f_process'=>$execute_f_process->id]) }}">Check <i class="fas fa-check-double"></i> </a>
 
 
                         </form>
