@@ -94,7 +94,7 @@
 
                             @csrf
                             @method('DELETE')
-                            @if ($project->owner_id != $team->user_id)
+                            @if ($project->owner_id != $team->user_id && $team->current_user())
                             <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
                             @endif
                         </form>

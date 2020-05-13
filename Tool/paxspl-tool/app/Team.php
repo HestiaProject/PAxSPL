@@ -27,5 +27,12 @@ class Team extends Model
         return $this->belongsTo('App\Project', 'project_id');
     }
 
-     
+    public function current_user()
+    {
+
+        if ($this->user_id == auth()->id())
+            return false;
+        else
+            return true;
+    }
 }
