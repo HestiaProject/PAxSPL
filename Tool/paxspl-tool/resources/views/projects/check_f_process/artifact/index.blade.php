@@ -43,6 +43,7 @@
 
                     <th>Name</th>
                     <th>Type</th>
+                    <th>Status</th>
                     <th>Last Update Date</th>
                     <th width="320px">Action</th>
                 </tr>
@@ -52,6 +53,7 @@
 
                     <td>{{ $artifact->artifact->name }}</td>
                     <td>{{ $artifact->artifact->type }}</td>
+                    <td style="color:{{$artifact->status_color()}}">{{ $artifact->status() }}</td>
                     <td>{{ date('m-d-Y', strtotime($artifact->artifact->last_update_date))}}</td>
  
                     <td>

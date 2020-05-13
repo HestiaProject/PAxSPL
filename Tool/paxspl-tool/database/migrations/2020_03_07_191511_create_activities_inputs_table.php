@@ -17,6 +17,8 @@ class CreateActivitiesInputsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('io');
+            $table->string('status')->default("created");;
+            $table->text('obs')->nullable();;
 
             $table->integer('activity_id')->unsigned();
             $table->integer('artifact_id')->unsigned(); 

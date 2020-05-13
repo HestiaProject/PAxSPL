@@ -116,6 +116,7 @@
                     <i class="fas fa-play-circle"></i>
                     <span>Execute</span>
                 </a>
+                @if ($project->retriever())
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Execute:</h6>
@@ -124,24 +125,26 @@
                         <a class="collapse-item" href="{{ route('projects.execute_s_process.index', $project -> id) }}">Scoping Process</a>
 
                     </div>
-                </div>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Check:</h6>
 
-                        <a class="collapse-item" href="{{ route('projects.check_f_process.index', $project -> id) }}">Retrieval Artifacts</a>
-                        <a class="collapse-item" href="{{ route('projects.check_f_process.index', $project -> id) }}">Scoping Artifacts</a>
+                    @else
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Check:</h6>
 
+                            <a class="collapse-item" href="{{ route('projects.check_f_process.index', $project -> id) }}">Retrieval Artifacts</a>
+                            <a class="collapse-item" href="{{ route('projects.check_f_process.index', $project -> id) }}">Scoping Artifacts</a>
+
+                        </div>
+
+                        @endif
+
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Document:</h6>
+
+                            <a class="collapse-item" href="{{ route('projects.execute_f_process.index', $project -> id) }}">Process Experience</a>
+
+                        </div>
                     </div>
-                </div>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Document:</h6>
-
-                        <a class="collapse-item" href="{{ route('projects.execute_f_process.index', $project -> id) }}">Process Experience</a> 
-
-                    </div>
-                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
