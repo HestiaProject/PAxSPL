@@ -35,4 +35,5 @@ class Team extends Model
         else
             return true;
     }
+    
 }

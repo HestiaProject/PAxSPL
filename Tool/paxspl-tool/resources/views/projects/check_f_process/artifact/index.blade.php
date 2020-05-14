@@ -61,7 +61,7 @@
                         <form action="{{ route('projects.check_f_process.artifact.destroy', ['project'=>$project->id,'check_f_process'=>$check_f_process->id,'artifact'=>$artifact->id]) }}" method="POST">
 
 
-                            <a class="btn btn-info " href="{{ route('projects.check_f_process.artifact.edit', ['project'=>$project->id,'check_f_process'=>$check_f_process->id,'artifact'=>$artifact->artifact->id,'io'=>'i']) }}">Check <i class="fas fa-check"></i> </a>
+                            <a class="btn btn-info " href="{{ route('projects.check_f_process.artifact.edit', ['project'=>$project->id,'check_f_process'=>$check_f_process->id,'artifact'=>$artifact->id,'io'=>'i']) }}">Check <i class="fas fa-check"></i> </a>
 
 
                         </form>

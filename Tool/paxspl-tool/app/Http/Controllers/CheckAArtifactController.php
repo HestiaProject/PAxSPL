@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\ActivitiesArtifact;
+use App\Activity;
 use App\Artifact;
 use App\AssembleProcess;
 use App\Project;
@@ -60,9 +62,9 @@ class CheckAArtifactController extends Controller
     public function edit(Request $request)
     {
 
-        $artifact = Artifact::where('id', $request->artifact)->first();
+        $artifact = ActivitiesArtifact::where('id', $request->artifact)->first();
         $project = Project::where('id', $request->project)->first();
-        $check_f_process  = AssembleProcess::where('id', $request->check_f_process )->first();
+        $check_f_process  = AssembleProcess::where('id', $request->check_f_process)->first();
         return view('projects.check_f_process.artifact.edit', compact('artifact', 'check_f_process', 'project'));
     }
 
@@ -73,9 +75,31 @@ class CheckAArtifactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $artifact =  ActivitiesArtifact::find($request->artifact);
+        $artifact->status = $request->status;
+        $return_message = 'Artifact checked successfully';
+        $return_type = 'success';
+        if ($artifact->status == 'problem') {
+            $request->validate([
+                'obs' => 'required',
+            ]);
+            $artifact->obs = $request->obs;
+            $return_message = 'Problem reported successfully';
+            $return_type = 'error';
+            $activity = Activity::find($artifact->activity_id);
+            $activity->status = 'doing';
+            $activity->update();
+        }
+
+
+        $artifact->update($request->all());
+        $project = $request->project;
+        $check_f_process = $request->check_f_process;
+
+        return redirect()->route('projects.check_f_process.artifact.index', compact('check_f_process', 'project'))
+            ->with($return_type, $return_message);
     }
 
     /**

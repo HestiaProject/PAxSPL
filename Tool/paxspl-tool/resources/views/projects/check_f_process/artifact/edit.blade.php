@@ -28,20 +28,20 @@
         <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Artifact Name" value="{{ $artifact->name }}" disabled>
+                <input type="text" name="name" class="form-control" placeholder="Artifact Name" value="{{ $artifact->artifact->name }}" disabled>
             </div>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3">
             <div class="form-group">
                 <strong>Artifact Type:</strong>
-                <select class="custom-select" name="type" value='{{$artifact->type}}' disabled>
+                <select class="custom-select" name="type" value='{{$artifact->artifact->type}}' disabled>
 
-                    <option value="Domain" {{ $artifact->type == 'Domain' ? 'selected="selected"' : '' }}>Domain</option>
-                    <option value="Requirements" {{ $artifact->type == 'Requirements' ? 'selected="selected"' : '' }}>Requirements</option>
-                    <option value="Design" {{ $artifact->type == 'Design' ? 'selected="selected"' : '' }}>Design</option>
-                    <option value="Architecture" {{ $artifact->type == 'Architecture' ? 'selected="selected"' : '' }}>Architecture</option>
-                    <option value="Development" {{ $artifact->type == 'Development' ? 'selected="selected"' : '' }}>Development</option>
-                    <option value="Technological" {{ $artifact->type == 'Technological' ? 'selected="selected"' : '' }}>Technological</option>
+                    <option value="Domain" {{ $artifact->artifact->type == 'Domain' ? 'selected="selected"' : '' }}>Domain</option>
+                    <option value="Requirements" {{ $artifact->artifact->type == 'Requirements' ? 'selected="selected"' : '' }}>Requirements</option>
+                    <option value="Design" {{ $artifact->artifact->type == 'Design' ? 'selected="selected"' : '' }}>Design</option>
+                    <option value="Architecture" {{ $artifact->artifact->type == 'Architecture' ? 'selected="selected"' : '' }}>Architecture</option>
+                    <option value="Development" {{ $artifact->artifact->type == 'Development' ? 'selected="selected"' : '' }}>Development</option>
+                    <option value="Technological" {{ $artifact->artifact->type == 'Technological' ? 'selected="selected"' : '' }}>Technological</option>
                 </select>
             </div>
 
@@ -51,29 +51,41 @@
         <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
                 <strong>Link to Artifact:</strong>
-                <input type="text" name="external_link" class="form-control" placeholder="Link to Artifact" value="{{ $artifact->external_link }}" disabled>
+                <input type="text" name="external_link" class="form-control" placeholder="Link to Artifact" value="{{ $artifact->artifact->external_link }}" disabled>
             </div>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3">
             <div class="form-group">
                 <strong>File extension:</strong>
-                <input type="text" name="extension" class="form-control" placeholder="File Extension (pdf, doc, xml, etc)" value="{{ $artifact->extension }}" disabled> 
+                <input type="text" name="extension" class="form-control" placeholder="File Extension (pdf, doc, xml, etc)" value="{{ $artifact->artifact->extension }}" disabled>
             </div>
         </div>
 
         <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Description:</strong>
-                <textarea class="form-control" style="height:150px" name="description" placeholder="Description" disabled>{{ $artifact->description }}</textarea>
+                <textarea class="form-control" style="height:150px" name="description" placeholder="Description" disabled>{{ $artifact->artifact->description }}</textarea>
             </div>
         </div>
-        <input type="hidden" id="project_id" name="project_id" value=" {{ $artifact->project_id }}">
-        <input type="hidden" id="owner_id" name="owner_id" value=" {{ $artifact->owner_id }}">
+        <input type="hidden" id="project_id" name="project_id" value=" {{ $artifact->artifact->project_id }}">
+        <input type="hidden" id="owner_id" name="owner_id" value=" {{ $artifact->artifact->owner_id }}">
 
-
+        <div class="col-xs-9 col-sm-9 col-md-9">
+            <div class="form-group">
+                <strong>Problems:</strong>
+                <textarea class="form-control" style="height:150px" name="obs" placeholder="Report problems found">{{ $artifact->obs }}</textarea>
+            </div>
+        </div>
 
         <div class="col-xs-9 col-sm-9 col-md-9 text-center">
-            <button type="submit" class="btn btn-primary">Save Changes<i class="fas fa-save"></i></button>
+            <button type="submit" class="btn btn-danger" name="status" value="problem">Report Problems <i class="fas fa-exclamation-triangle"></i>
+
+            </button>
+
+            <button type="submit" class="btn btn-success" name="status" value="checked">No Problems Found <i class="fas fa-check-double"></i>
+
+            </button>
+
         </div>
     </div>
 

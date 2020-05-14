@@ -23,4 +23,18 @@ class Activity extends Model
     {
         return $this->hasMany('App\ActivitiesArtifact')->where('io', 'o');
     }
+
+    public function problems_found()
+    {
+        $problems = 0;
+        $artifacts = ActivitiesArtifact::where('activity_id', $this->id)->get();
+        foreach ($artifacts as $art) {
+            if($art->status=='problem'){
+                ++$problems;
+            }
+        }
+        return $problems;
+    }
+
+     
 }
