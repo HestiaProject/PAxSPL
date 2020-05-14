@@ -93,6 +93,7 @@
                                 <th>Name</th>
                                 <th>Phase</th>
                                 <th>Order</th>
+                                <th>Problems</th>
 
                                 <th width="320px">Action</th>
                             </tr>
@@ -104,6 +105,7 @@
                                 <td>{{ $activity->phase }}</td>
                                 <td>{{ $activity->order }}</td>
 
+                                <td>{{ $activity->problems_found() }}</td>
 
 
 

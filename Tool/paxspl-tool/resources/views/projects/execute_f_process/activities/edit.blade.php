@@ -146,7 +146,7 @@
                             <form action="{{ route('projects.execute_f_process.activities.artifact.destroy', ['project'=>$project->id,'execute_f_process'=>$execute_f_process->id,'activity'=>$activity->id,'artifact'=>$artifact->id]) }}" method="POST">
 
 
-                                <a class="btn btn-info " href="{{ route('projects.execute_f_process.activities.artifact.show', ['project'=>$project->id,'execute_f_process'=>$execute_f_process->id,'activity'=>$activity->id,'artifact'=>$artifact->artifact->id,'io'=>'i']) }}">View <i class="fas fa-eye"></i> </a>
+                                <a class="btn btn-info " href="{{ route('projects.execute_f_process.activities.artifact.show', ['project'=>$project->id,'execute_f_process'=>$execute_f_process->id,'activity'=>$activity->id,'artifact'=>$artifact->id,'io'=>'i']) }}">View <i class="fas fa-eye"></i> </a>
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
@@ -193,17 +193,15 @@
                         <td style="color:{{$artifact->status_color()}}">{{ $artifact->status() }}</td> 
                         <td>{{ date('m-d-Y', strtotime($artifact->artifact->last_update_date))}}</td>
 
-
-
-
+ 
 
                         <td>
 
                             <form action="{{ route('projects.execute_f_process.activities.artifact.destroy', ['project'=>$project->id,'execute_f_process'=>$execute_f_process->id,'activity'=>$activity->id,'artifact'=>$artifact->id]) }}" method="POST">
 
 
-                                <a class="btn btn-info " href="{{ route('projects.execute_f_process.activities.artifact.show', ['project'=>$project->id,'execute_f_process'=>$execute_f_process->id,'activity'=>$activity->id,'artifact'=>$artifact->artifact->id,'io'=>'o']) }}">View <i class="fas fa-eye"></i> </a>
-                                <a class="btn btn-primary" href="{{ route('projects.execute_f_process.activities.artifact.edit', ['project'=>$project->id,'execute_f_process'=>$execute_f_process->id,'activity'=>$activity->id,'artifact'=>$artifact->artifact->id]) }}">Edit <i class="fas fa-pen"></i></a>
+                                <a class="btn btn-info " href="{{ route('projects.execute_f_process.activities.artifact.show', ['project'=>$project->id,'execute_f_process'=>$execute_f_process->id,'activity'=>$activity->id,'artifact'=>$artifact->id,'io'=>'o']) }}">View <i class="fas fa-eye"></i> </a>
+                                <a class="btn btn-primary" href="{{ route('projects.execute_f_process.activities.artifact.edit', ['project'=>$project->id,'execute_f_process'=>$execute_f_process->id,'activity'=>$activity->id,'artifact'=>$artifact->id]) }}">Edit <i class="fas fa-pen"></i></a>
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>

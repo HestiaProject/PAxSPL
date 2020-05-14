@@ -90,9 +90,9 @@ class ExecuteArtifactController extends Controller
         $io = $request->io;
         $activity = Activity::where('id', $request->activity)->first();
         $project = Project::where('id', $request->project)->first();
-        $artifact = Artifact::where('id', $request->artifact)->first();
+        $artifact = ActivitiesArtifact::where('id', $request->artifact)->first();
         $execute_f_process = AssembleProcess::where('id', $request->execute_f_process)->first();
-        return view('projects.execute_f_process.activities.artifact.show', compact('project', 'execute_f_process', 'activity', 'io','artifact'));
+        return view('projects.execute_f_process.activities.artifact.show', compact('project', 'execute_f_process', 'activity', 'io', 'artifact'));
     }
 
     /**
@@ -104,7 +104,7 @@ class ExecuteArtifactController extends Controller
     public function edit(Request $request)
     {
 
-        $artifact = Artifact::where('id', $request->artifact)->first();
+        $artifact = ActivitiesArtifact::where('id', $request->artifact)->first();
         $activity = Activity::where('id', $request->activity)->first();
         $execute_f_process = AssembleProcess::where('id', $request->execute_f_process)->first();
         $project = Project::where('id', $request->project)->first();
@@ -126,14 +126,19 @@ class ExecuteArtifactController extends Controller
             'type' => 'required',
             'extension' => 'required',
         ]);
+        $artifact_act =  ActivitiesArtifact::find($request->artifact);
+        $artifact_act->status = 'created';
+        $artifact_act->update($request->all());
 
-        $artifact =  Artifact::find($request->artifact);
-
+        $artifact =  Artifact::find($artifact_act->artifact_id);
+        $artifact->name = $request->name;
+        $artifact->description = $request->description;
+        $artifact->external_link = $request->external_link;
+        $artifact->type = $request->type;
+        $artifact->extension = $request->extension;  
         $artifact->last_update_user = auth()->id();
         $artifact->last_update_date = Carbon::now();
-        $artifact->update($request->all());
-
-
+        $artifact->update(); 
 
         $activity = Activity::where('id', $request->activity)->first();
         $project = Project::where('id', $request->project)->first();
@@ -153,6 +158,6 @@ class ExecuteArtifactController extends Controller
         $artifact->delete();
 
         return redirect()->route('projects.execute_f_process.activities.edit', compact('activity', 'execute_f_process', 'project'))
-        ->with('success', 'Artifact removed from activity successfully');
+            ->with('success', 'Artifact removed from activity successfully');
     }
 }
