@@ -1,6 +1,6 @@
 
 
-**The PAxSPL tool is being developed since 2020 and aims at giving full support to the process execution. The tool is being developed using the [Laravel Framework](https://laravel.com/).**
+**The PAxSPL tool is being developed since 2020 and aims at giving full support to the process execution. The tool is being developed using the [Laravel Framework](https://laravel.com/) and [bpmn-js](https://bpmn.io/toolkit/bpmn-js/) for BPMN modeling.**
 
 
 ## Use Cases
@@ -58,6 +58,10 @@
 ### Assemble Retrieval Activities
 
 <p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/activities.PNG" width="600"></p>
+
+### Modeling BPMN Assemble Process
+
+<p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/process_bpmn.PNG" width="600"></p>
 
 
 <p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/activities2.PNG" width="600"></p>
