@@ -58,6 +58,9 @@ class ActivityController extends Controller
         if ($activity->phase == "group") {
             $activity->phase_id = 3;
         }
+        if ($activity->phase == "fm") {
+            $activity->phase_id = 4;
+        }
 
         $activity->description = $request->description;
         $activity->assemble_process_id = $request->assemble_process;
@@ -189,7 +192,7 @@ class ActivityController extends Controller
 
             $document->setValue('act#' . $i, $i);
             $document->setValue('act.name#' . $i, $activity->name);
-            $document->setValue('act.phase#' . $i, $activity->phase);
+            $document->setValue('act.phase#' . $i, $activity->phase());
             $document->setValue('act.description#' . $i, $activity->description);
             $document->setValue('act.technique#' . $i, $activity->technique->name);
         }

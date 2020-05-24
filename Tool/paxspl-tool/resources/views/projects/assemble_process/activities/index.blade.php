@@ -262,6 +262,72 @@
                 </div>
             </div>
 
+            
+
+        </div>
+        <div class="card shadow mb-4">
+            <!-- Card Header - Accordion -->
+            <a href="#collapseCard4" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+
+                <h6 class="m-0 font-weight-bold text-primary">Create Feature Model:</h6>
+            </a>
+            <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('projects.assemble_process.activities.create',['project'=>$project -> id,'assemble_process'=>$assemble_process -> id,'phase'=>'fm']) }}">New Activity <i class="fas fa-plus"></i></a>
+            </div>
+
+            <!-- Card Content - Collapse -->
+            <div class="collapse" id="collapseCard4" style="">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
+                            <tr>
+
+                                <th>Name</th>
+                                <th>Order</th>
+                                <th>Retrieval Tech.</th>
+
+                                <th width="320px">Action</th>
+                            </tr>
+
+                            @foreach ($assemble_process->activities_fm as $activity)
+                            <tr>
+
+                                <td>{{ $activity->name }}</td>
+                                <td>{{ $activity->order }}</td>
+                                <td>{{ $activity->technique->name }}</td>
+
+
+
+
+
+                                <td>
+
+                                    <form action="{{ route('projects.assemble_process.activities.destroy', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}" method="POST">
+
+
+
+                                        <a class="btn btn-info " href="{{ route('projects.assemble_process.activities.show', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">View <i class="fas fa-eye"></i> </a>
+                                        <a class="btn btn-primary" href="{{ route('projects.assemble_process.activities.edit', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">Edit <i class="fas fa-pen"></i></a>
+
+                                        @csrf
+
+                                        @if($activity->input_artifacts->count()==0 and $activity->output_artifacts->count()==0)
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
+                                        @endif
+
+
+
+
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </table>
+                    </div>
+                </div>
+            </div>
+
             @endif
 
         </div>

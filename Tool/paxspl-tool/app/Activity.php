@@ -10,6 +10,15 @@ class Activity extends Model
         'name',   'phase', 'phase_id', 'order', 'assemble_process_id', 'technique_id', 'status', 'description'
     ];
 
+    public function phase()
+    {
+        if ($this->phase == 'fm')
+            return 'Create Feature Model';
+        else {
+            return ucfirst($this->phase);
+        }
+    }
+
     public function technique()
     {
         return $this->belongsTo('App\Technique');
@@ -29,12 +38,10 @@ class Activity extends Model
         $problems = 0;
         $artifacts = ActivitiesArtifact::where('activity_id', $this->id)->get();
         foreach ($artifacts as $art) {
-            if($art->status=='problem'){
+            if ($art->status == 'problem') {
                 ++$problems;
             }
         }
         return $problems;
     }
-
-     
 }

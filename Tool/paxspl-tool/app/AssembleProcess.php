@@ -54,6 +54,11 @@ class AssembleProcess extends Model
         return $this->hasMany('App\Activity')->where('phase', '=', 'group')->orderBy('order', 'asc');
     }
 
+    public function activities_fm()
+    {
+        return $this->hasMany('App\Activity')->where('phase', '=', 'fm')->orderBy('order', 'asc');
+    }
+
     public function activities_support()
     {
         return $this->hasMany('App\Activity')->where('phase', '=', 'SupportS')->orderBy('order', 'asc');

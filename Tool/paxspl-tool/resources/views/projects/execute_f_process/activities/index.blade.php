@@ -102,7 +102,7 @@
                             <tr>
 
                                 <td>{{ $activity->name }}</td>
-                                <td>{{ $activity->phase }}</td>
+                                <td>{{ $activity->phase() }}</td>
                                 <td>{{ $activity->order }}</td>
                                 <td>{{ $activity->problems_found() }}</td>
 
@@ -154,7 +154,7 @@
                             <tr>
 
                                 <td>{{ $activity->name }}</td>
-                                <td>{{ $activity->phase }}</td>
+                                <td>{{ $activity->phase() }}</td>
                                 <td>{{ $activity->order }}</td>
 
 
@@ -204,7 +204,7 @@
                             <tr>
 
                                 <td>{{ $activity->name }}</td>
-                                <td>{{ $activity->phase }}</td>
+                                <td>{{ $activity->phase() }}</td>
                                 <td>{{ $activity->order }}</td>
 
 
