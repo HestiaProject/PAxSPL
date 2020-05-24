@@ -59,12 +59,12 @@
 
 <p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/activities.PNG" width="600"></p>
 
+
+<p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/activities2.PNG" width="600"></p>
+
 ### Modeling BPMN Assemble Process
 
 <p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/process_bpmn.PNG" width="600"></p>
-
-
-<p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/activities2.PNG" width="600"></p>
 
 ### Assemble Scoping Activities
 
