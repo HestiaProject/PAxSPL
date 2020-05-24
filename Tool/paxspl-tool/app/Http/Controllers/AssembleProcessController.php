@@ -69,8 +69,13 @@ class AssembleProcessController extends Controller
     {
         $assemble_process = AssembleProcess::where('id', $request->assemble_process)->first();
         $project = Project::where('id', $request->project)->first();
-        return view('projects.assemble_process.activities.index', compact('assemble_process', 'project'));
+        $route = $request->bpmn;
+        if ($route == 't') {
+            return view('projects.assemble_process.show', compact('assemble_process', 'project'));
+        } else
+            return view('projects.assemble_process.activities.index', compact('assemble_process', 'project'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -95,17 +100,22 @@ class AssembleProcessController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-        ]);
+
 
         $assemble_process =  AssembleProcess::find($request->assemble_process);
-
+        if ($request->bpmn == '1') {
+            $assemble_process->diagram = $request->diagram;
+        } else {
+            $request->validate([
+                'name' => 'required',
+            ]);
+        }
 
         $assemble_process->update($request->all());
 
 
         $project = $request->project;
+
 
         return redirect()->route('projects.assemble_process.index', compact('project'))
             ->with('success', 'Process information updated successfully');

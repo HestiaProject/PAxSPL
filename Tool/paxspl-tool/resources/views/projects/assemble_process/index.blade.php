@@ -66,7 +66,7 @@
 
                     <th>Name</th>
 
-                    <th width="300px">Action</th>
+                    <th width="400px">Action</th>
                 </tr>
                 @foreach ($project->assemble_process as $assemble_process)
                 <tr>
@@ -75,7 +75,9 @@
                     <td>
                         <form action="{{ route('projects.assemble_process.destroy',['project'=>$project->id, 'assemble_process'=>$assemble_process->id]) }}" method="POST">
 
-                            <a class="btn btn-info " href="{{ route('projects.assemble_process.show',['project'=>$project->id, 'assemble_process'=>$assemble_process->id]) }}">Enter <i class="fas fa-folder-open"></i> </a>
+                            <a class="btn btn-info " href="{{ route('projects.assemble_process.show',['project'=>$project->id, 'assemble_process'=>$assemble_process->id, 'bpmn'=>'f'] ) }}">Enter <i class="fas fa-folder-open"></i> </a>
+
+                            <a class="btn btn-secondary " href="{{ route('projects.assemble_process.show',['project'=>$project->id, 'assemble_process'=>$assemble_process->id, 'bpmn'=>'t']) }}">BPMN <i class="fas fa-project-diagram"></i> </a>
 
                             <a class="btn btn-primary" href="{{ route('projects.assemble_process.edit',['project'=>$project->id, 'assemble_process'=>$assemble_process->id]) }}">Edit <i class="fas fa-edit"></i></a>
 

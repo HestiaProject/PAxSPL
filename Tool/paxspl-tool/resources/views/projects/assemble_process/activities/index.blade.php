@@ -51,6 +51,9 @@
             <a class="collapse-item" href="{{ route('projects.technique_projects.index', $project -> id) }}">Add Techniques</a>
         </div>
         @else
+        <a class="btn btn-primary btn-warning" href="{{action('ActivityController@generateDocx',['project' => $project, 'assemble_process' => $assemble_process])}}">Download Activities Report <i class="fas fa-file-download"></i></a>
+        <br><br>
+        
 
         <div class="card shadow mb-4">
             <!-- Card Header - Accordion -->
@@ -63,13 +66,15 @@
                     <figure style="display: block;  margin-left: auto;  margin-right: auto;  width: 50%;">
                         <img src="https://raw.githubusercontent.com/HestiaProject/Generic-SPL-Re-engineering-Process/master/process/img/genericProcess.png" alt="Generic Feature Retrieval Process">
                         <figcaption>Generic Feature Retrieval Process</figcaption>
+
                     </figure>
 
                 </div>
             </div>
         </div>
 
-        <a class="btn btn-primary btn-warning" href="{{action('ActivityController@generateDocx',['project' => $project, 'assemble_process' => $assemble_process])}}">Download Activities Report <i class="fas fa-file-download"></i></a>
+
+
 
         <div class="card shadow mb-4">
             <!-- Card Header - Accordion -->
@@ -262,7 +267,7 @@
                 </div>
             </div>
 
-            
+
 
         </div>
         <div class="card shadow mb-4">

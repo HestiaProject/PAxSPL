@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class AssembleProcess extends Model
 {
     protected $fillable = [
-        'name', 'project_id', 'status'
+        'name', 'project_id', 'status','diagram'
     ];
 
 
@@ -127,4 +127,6 @@ class AssembleProcess extends Model
             if ($result >= 100)
             return "green";
     }
+
+     
 }
