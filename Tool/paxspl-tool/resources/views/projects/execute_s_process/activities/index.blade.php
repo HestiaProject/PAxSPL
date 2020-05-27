@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Execute Retrieval Activities: {{ $project->title }}</h2>
+            <h2>Execute Scoping Activities: {{ $project->title }}</h2>
         </div>
 
     </div>
@@ -73,6 +73,21 @@
                 <div class="progress mb-4">
                     <div class="progress-bar" role="progressbar" style="width:  {{$execute_s_process->progress()}}%; background-color:{{$execute_s_process->progress_color()}};" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                         {{$execute_s_process->progress()}}%
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-4">
+            <a href="#collapseCanvas" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+
+                <h6 class="m-0 font-weight-bold text-primary">Scping Process:</h6>
+            </a>
+
+            <!-- Card Content - Collapse -->
+            <div class="collapse" id="collapseCanvas" style="">
+                <div class="card-body">
+                    <div class="canvas">
+                        <div id="js-canvas"></div>
                     </div>
                 </div>
             </div>
@@ -235,5 +250,37 @@
     </div>
 
 </div>
+<script>
+    var diagramUrl = <?php
+                        $string = preg_replace('/\\s\\s+/', ' ', ($execute_s_process->diagram));
+                        echo $string ?>;
+    var viewer = new BpmnJS({
+        container: $('#js-canvas'),
+        height: 500
+    });
 
+    function openDiagram(bpmnXML) {
+
+        // import diagram
+        viewer.importXML(bpmnXML, function(err) {
+
+            if (err) {
+                return console.error('could not import BPMN 2.0 diagram', err);
+            }
+
+            // access modeler components
+            var canvas = viewer.get('js-canvas');
+
+
+            // zoom to fit full viewport
+            canvas.zoom('fit-viewport');
+
+
+        });
+    }
+
+
+    // load external diagram file via AJAX and open it
+    openDiagram(diagramUrl);
+</script>
 @endsection

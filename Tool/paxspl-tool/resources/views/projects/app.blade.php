@@ -21,6 +21,7 @@
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     <script src="https://unpkg.com/bpmn-js@6.5.1/dist/bpmn-modeler.development.js"></script>
 
+    <script src="https://unpkg.com/bpmn-js@6.5.1/dist/bpmn-viewer.development.js"></script>
     <!-- needed for this example only -->
     <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
 
