@@ -49,7 +49,7 @@
         </div>
         @else
         <a class="btn btn-primary btn-warning" href="{{action('TechniqueProjectController@generateDocx',$project)}}">Download Techniques Report <i class="fas fa-file-download"></i></a>
-
+        <br><br>
 
 
         <div class="table-responsive">
