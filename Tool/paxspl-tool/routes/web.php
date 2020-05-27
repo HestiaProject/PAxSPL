@@ -42,6 +42,8 @@ Route::get('projects/{project}/teams_generate/', 'TeamController@generateDocx');
 Route::get('projects/{project}/artifact_generate/', 'ArtifactController@generateDocx');
 Route::get('projects/{project}/technique_generate/', 'TechniqueProjectController@generateDocx');
 Route::get('projects/{project}/assemble_process/{assemble_process}/activities_generate', 'ActivityController@generateDocx');
+Route::get('projects/{project}/execute_f_process/{execute_f_process}/process_generate', 'ExecuteActivityFProcessController@generateDocx');
+Route::get('projects/{project}/execute_s_process/{execute_s_process}/process_generate', 'ExecuteActivitySProcessController@generateDocx');
 Route::get('projects/{project}/scoping_process/{scoping_process}/activities_generate', 'ScopingActController@generateDocx');
 
 Route::get('/', 'HomeController@index')->name('home')->middleware('auth');

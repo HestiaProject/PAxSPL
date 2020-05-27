@@ -62,7 +62,8 @@
         </div>
         @else
 
-
+        <a class="btn btn-primary btn-warning" href="{{action('ExecuteActivityFProcessController@generateDocx',['project' => $project, 'execute_f_process' => $execute_f_process])}}">Download Report <i class="fas fa-file-download"></i></a>
+        <br><br>
         <div class="card shadow mb-4">
 
             <div class="card-header py-3">

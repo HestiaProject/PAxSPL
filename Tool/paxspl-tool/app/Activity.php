@@ -33,6 +33,11 @@ class Activity extends Model
         return $this->hasMany('App\ActivitiesArtifact')->where('io', 'o');
     }
 
+    public function artifacts()
+    {
+        return $this->hasMany('App\ActivitiesArtifact');
+    }
+
     public function problems_found()
     {
         $problems = 0;

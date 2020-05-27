@@ -7,7 +7,7 @@ use App\Project;
 use App\User;
 use App\AssembleProcess;
 use App\Activity;
-
+use Exception;
 
 class ExecuteActivityFProcessController extends Controller
 {
@@ -68,7 +68,7 @@ class ExecuteActivityFProcessController extends Controller
         return view('projects.execute_f_process.activities.edit', compact('activity', 'execute_f_process', 'project'));
     }
 
-   /**
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -77,9 +77,7 @@ class ExecuteActivityFProcessController extends Controller
      */
     public function update(Request $request)
     {
-        $request->validate([
-             
-        ]);
+        $request->validate([]);
 
 
         $activity =  Activity::find($request->activity);
@@ -92,7 +90,7 @@ class ExecuteActivityFProcessController extends Controller
 
         return redirect()->route('projects.execute_f_process.activities.index', compact('execute_f_process', 'project'))
             ->with('success', 'Activity updated successfully');
-    } 
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -102,5 +100,88 @@ class ExecuteActivityFProcessController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Generate report 
+     *
+     * @param  \Illuminate\Http\Project  $project
+     * @return \Illuminate\Http\Response
+     */
+
+    public function generateDocx(Project $project, AssembleProcess $execute_f_process)
+    {
+        setlocale(LC_TIME, 'es');
+
+        $date = date('m-d-Y');
+
+        $document = new \PhpOffice\PhpWord\TemplateProcessor('../templates/process.docx');
+
+
+        $user = User::find(auth()->id());
+        $document->setValue('doc', "Assembled Process");
+        $document->setValue('admin', $user->name);
+        $document->setValue('date', $date);
+        $document->setValue('project', $project->title);
+        $document->setValue('process', $execute_f_process->name);
+
+        $activities = $execute_f_process->activities;
+        $i = 0;
+        $document->cloneRow('act', count($activities));
+        foreach ($activities as $activity) {
+            $i++;
+
+            $document->setValue('act#' . $i, $i);
+            $document->setValue('act.name#' . $i, $activity->name);
+            $document->setValue('act.phase#' . $i, $activity->phase());
+            $document->setValue('act.description#' . $i, $activity->description);
+            $document->setValue('act.technique#' . $i, $activity->technique->name);
+            $j = 0;
+            $artifacts = $activity->artifacts;
+            $document->cloneRow('art#' . $i, count($artifacts));
+            foreach ($artifacts as $artifact) {
+                $j++;
+                $newdate = date_create($artifact->artifact->last_update_date);
+                $updated_date = date_format($newdate, 'm-d-Y');
+                $document->setValue('art#' . $i .'#'. $j, $j);
+                $io = 'Input';
+                if ($artifact->io == 'o') {
+                    $io = 'Output';
+                }
+                $document->setValue('art.io#' . $i .'#'. $j, $io);
+                $document->setValue('art.name#' . $i .'#'. $j, $artifact->artifact->name);
+                $document->setValue('art.type#' . $i .'#'. $j, $artifact->artifact->type);
+                $document->setValue('art.description#' . $i .'#'. $j, $artifact->artifact->description);
+                $document->setValue('art.extension#' . $i .'#'. $j, $artifact->artifact->extension);
+                $document->setValue('art.external_link#' . $i .'#'. $j, $artifact->artifact->external_link);
+                $document->setValue('art.last_update_date#' . $i .'#'. $j, $updated_date);
+                $document->setValue('art.last_update_user#' . $i .'#'. $j, $artifact->artifact->update_user->name);
+            }
+        }
+
+
+
+
+
+
+
+
+        $name = 'AssembledProcess-' .  "$date" . '.docx';
+
+
+
+
+
+        $headers = array(
+            //'Content-Type: application/msword',
+            'Content-Type: vnd.openxmlformats-officedocument.wordprocessingml.document'
+        );
+
+        try {
+            $document->saveAs(storage_path($name));
+        } catch (Exception $e) {
+        }
+
+        return response()->download(storage_path($name));
     }
 }

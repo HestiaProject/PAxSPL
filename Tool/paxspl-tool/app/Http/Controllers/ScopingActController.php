@@ -7,6 +7,7 @@ use App\Project;
 use App\User;
 use App\AssembleProcess;
 use App\Activity;
+use Exception;
 
 class ScopingActController extends Controller
 {
@@ -193,7 +194,7 @@ class ScopingActController extends Controller
             if ($activity->phase == "SupportS") {
                 $document->setValue('act.phase#' . $i, "Pre-Scoping");
             } else
-                $document->setValue('act.phase#' . $i, $activity->phase);
+                $document->setValue('act.phase#' . $i, $activity->phase());
             $document->setValue('act.description#' . $i, $activity->description);
             $document->setValue('act.technique#' . $i, $activity->technique->name);
         }
