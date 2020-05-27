@@ -67,6 +67,14 @@
                     </option>
                     @endforeach
                     @endif
+                    @if ($activity->phase == 'fm')
+
+                    @foreach($execute_f_process->activities_fm as $ac)
+                    <option value="{{ $ac->order }}" {{ $activity->order == $ac->order ? 'selected="selected"' : '' }}>
+                        {{ $ac->order }}
+                    </option>
+                    @endforeach
+                    @endif
                     @endif
                     @endif
                 </select>
