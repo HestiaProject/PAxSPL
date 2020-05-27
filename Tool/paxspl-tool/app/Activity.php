@@ -35,7 +35,7 @@ class Activity extends Model
 
     public function artifacts()
     {
-        return $this->hasMany('App\ActivitiesArtifact');
+        return $this->hasMany('App\ActivitiesArtifact')->orderBy('io');
     }
 
     public function problems_found()
