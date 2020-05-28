@@ -31,24 +31,16 @@ The PAxSPL framework is composed of PAxSPL [process](https://github.com/HestiaPr
 
 ## Current Status
 
-| US 	| Status |
+| US 	| Status | US 	| Status |
 |:-----------------:	|---	|
-| 1 	|Done|
-| 2 	|Done|
-| 3 	|Done|
-| 4 	|Done|
-|5      |Done|
-|6      |Done|
-|7      |Done|
-|8      |Done|
-|9      |Done|
-|10      |Done|
-|11      |Done|
-|12      |Doing|
-|13      |Done|
-|14      |To Do|
-|15      |Doing|
-
+| 1 	|Done |9
+| 2 	|Done|10      |Done|
+| 3 	|Done|11      |Done|
+| 4 	|Done|12      |Doing|
+|5      |Done|13      |Done|
+|6      |Done|14      |To Do|
+|7      |Done|15      |Doing|
+|8      |Done|||
 |:-----------------:	|---	|
  
 <p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/status.PNG" width="160"></p>
