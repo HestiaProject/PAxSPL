@@ -1,3 +1,8 @@
+# ⚙️ PAxSPL Framework
+
+The PAxSPL framework is composed of PAxSPL [process](https://github.com/HestiaProject/PAxSPL/wiki/Process-Structure), [guidelines](https://github.com/HestiaProject/PAxSPL/wiki/Guidelines) and [tool].(https://github.com/HestiaProject/PAxSPL/tree/master/Tool/paxspl-tool).
+<p align="center"><img src="https://github.com/HestiaProject/PAxSPL/blob/master/process/img/framework.png" width="400"></p> 
+
 :arrows_counterclockwise: **P**repare, **A**ssemble and E**x**ecute Process for **SPL** (PAxSPL)
 
 ![Process Overview](https://github.com/HestiaProject/PAxSPL/blob/master/process/img/Processo_Art.png)
@@ -38,6 +43,7 @@
   * [2.2 Assemble Techniques](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Assemble#assemble-techniques)
   * [2.3 Assign Tasks](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Assemble#assign-tasks)
   * [2.4 Assemble Scoping Process](https://github.com/HestiaProject/PAxSPL/wiki/Assemble#assemble-scoping-process)
+  
 
 * [3. Execute](https://github.com/HestiaProject/abstract-spl-reengineering/wiki/Execute)
   * [3.1 Execute Assembled Process](https://github.com/HestiaProject/Generic-SPL-Re-engineering-Process/wiki/Execute#execute-assembled-process) 
