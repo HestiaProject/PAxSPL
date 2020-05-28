@@ -32,16 +32,14 @@ The PAxSPL framework is composed of PAxSPL [process](https://github.com/HestiaPr
 ## Current Status
 
 | **US** 	| **Status** | **US** 	| **Status** |
-|:-----------------:||	|---	|
-| US1 	|Done |US9|Done|
-| US2 	|Done|US10      |Done|
-| US3 	|Done|US11      |Done|
-|US4 	|Done|US12      |Doing|
-|US5      |Done|US13      |Done|
-|US6      |Done|US14      |To Do|
-|US7      |Done|US15      |Doing|
-|US8      |Done|||
-|:-----------------:|	||---	|
+| US1 	|Done           |   US9|Done|
+| US2 	|Done|  US10      |Done|
+| US3 	|Done|  US11      |Done|
+|US4 	|Done|  US12      |Doing|
+|US5      |Done|    US13      |Done|
+|US6      |Done|    US14      |To Do|
+|US7      |Done|    US15      |Doing|
+|US8      |Done|               |   | 
  
  
 ## Class Diagram
