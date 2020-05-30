@@ -45,7 +45,7 @@
         </div>
         @elseif (!$project->retriever())
         <div class="alert alert-danger">
-            You Must be a feature retriver to execute the process!<br><br>
+            You Must be a feature retriever to execute the process!<br><br>
             
         </div>
         @elseif ($project->artifacts->count()==0)

@@ -30,6 +30,8 @@
 
     </div>
 </form>
+
+<script src="https://unpkg.com/bpmn-js@6.5.1/dist/bpmn-modeler.development.js"></script>
 <script>
     var diagramUrl = <?php
                         $string = preg_replace('/\\s\\s+/', ' ', ($scoping_process->diagram));

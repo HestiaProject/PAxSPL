@@ -23,6 +23,11 @@ class Project extends Model
         return $this->hasMany('App\Team');
     }
 
+    public function fms()
+    {
+        return $this->hasMany('App\FeatureModel');
+    }
+
     public function techniques_project()
     {
 

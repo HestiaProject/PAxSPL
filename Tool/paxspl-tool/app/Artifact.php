@@ -35,4 +35,9 @@ class Artifact extends Model
     {
         return $this->hasMany('App\ActivitiesArtifact')->where('io', 'o');
     }
+
+    public function features()
+    {
+        return $this->hasMany('App\FeatureArtifact');
+    }
 }
