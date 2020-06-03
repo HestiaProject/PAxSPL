@@ -22,9 +22,9 @@ class CreateFeaturesTable extends Migration
             $table->text('description');
             $table->boolean('abstract')->default(false);
              
-            $table->integer('fm_id')->unsigned(); 
+            $table->integer('feature_model_id')->unsigned(); 
             $table->integer('parent')->nullable()->unsigned(); 
-            $table->foreign('fm_id')->references('id')->on('feature_models'); 
+            $table->foreign('feature_model_id')->references('id')->on('feature_models'); 
             $table->foreign('parent')->references('id')->on('features'); 
         });
     }

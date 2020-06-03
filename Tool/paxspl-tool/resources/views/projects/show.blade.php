@@ -37,22 +37,21 @@
 
 
 
-                    <a href="{{ route('projects.teams.index', $project -> id) }}" class="btn btn-primary btn-icon-split">
+                    <a href="{{ route('projects.teams.index', $project -> id) }}" class="btn btn-success btn-icon-split">
                         <span class="icon text-white-50">
                             <i class="fas fa-user-friends"></i>
                         </span>
                         <span class="text">Collect Team Information </span>
                     </a>
                     <div class="my-2"></div>
-                    <a href="{{ route('projects.artifact.index', $project -> id) }}" class=" btn btn-primary btn-icon-split">
+                    <a href="{{ route('projects.artifact.index', $project -> id) }}" class=" btn btn-success btn-icon-split">
                         <span class="icon text-white-50">
                             <i class="fas fa-file-code"></i>
                         </span>
                         <span class="text">Register Artifacts</span>
                     </a>
 
-
-
+ 
 
                 </div>
             </div>
@@ -73,21 +72,17 @@
                     <div class="my-2"></div>
                     <a href="{{ route('projects.assemble_process.index', $project -> id) }}" class=" btn btn-secondary btn-icon-split">
                         <span class="icon text-white-50">
-                            <i class="fas fa-sitemap"></i>
+                            <i class="fas fa-puzzle-piece"></i>
                         </span>
                         <span class="text">Assemble Retrieval Process</span>
                     </a>
                     <div class="my-2"></div>
                     <a href="{{ route('projects.scoping_process.index', $project -> id) }}" class=" btn btn-secondary btn-icon-split">
                         <span class="icon text-white-50">
-                            <i class="fas fa-sitemap"></i>
+                            <i class="fas fa-puzzle-piece"></i>
                         </span>
                         <span class="text">Assemble Scoping Process</span>
                     </a>
-
-
-
-
                 </div>
             </div>
         </div>
@@ -128,6 +123,14 @@
                     <span class="text">Check Scoping Process</span>
                 </a>
                 @endif
+                <div class="my-2"></div>
+                <a href="{{ route('projects.feature_model.index', $project -> id) }}" class=" btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-sitemap"></i>
+                    </span>
+                    <span class="text">Create Feature Model</span>
+                </a>
+
                 <div class="my-2"></div>
                 <a href="{{ route('projects.scoping_process.index', $project -> id) }}" class=" btn btn-info btn-icon-split">
                     <span class="icon text-white-50">

@@ -23,7 +23,7 @@ class Project extends Model
         return $this->hasMany('App\Team');
     }
 
-    public function fms()
+    public function fm()
     {
         return $this->hasMany('App\FeatureModel');
     }
@@ -106,6 +106,10 @@ class Project extends Model
         return $this->hasMany('App\AssembleProcess')->where('type', 'r');;
     }
 
+    public function assemble_process_finished()
+    {
+        return $this->hasMany('App\AssembleProcess')->where('type', 'r')->where('status', 'finished');
+    }
 
     public function scoping_process()
     {

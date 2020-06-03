@@ -37,6 +37,8 @@ Route::resource('projects.check_f_process', 'CheckArtifactsController');
 Route::resource('projects.check_s_process', 'CheckSArtifactsController'); 
 Route::resource('projects.check_f_process.artifact', 'CheckAArtifactController'); 
 Route::resource('projects.check_s_process.artifact', 'CheckASArtifactController'); 
+Route::resource('projects.feature_model', 'FeatureModelController'); 
+Route::resource('projects.feature_model.features', 'FeatureController'); 
 
 Route::get('projects/{project}/teams_generate/', 'TeamController@generateDocx');
 Route::get('projects/{project}/artifact_generate/', 'ArtifactController@generateDocx');

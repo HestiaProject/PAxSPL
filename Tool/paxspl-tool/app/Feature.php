@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Feature extends Model
 {
     protected $fillable = [
-        'name', 'type', 'height', 'description', 'abstract', 'fm_id', 'parent',
+        'name', 'type', 'height', 'description', 'abstract', 'feature_model_id', 'parent',
     ];
 
     public function parent_()
