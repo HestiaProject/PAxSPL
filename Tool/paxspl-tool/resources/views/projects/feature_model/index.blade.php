@@ -55,7 +55,7 @@
         @elseif ($project->assemble_process_finished->count()>0)
         <div class="alert alert-danger">
             Before continuing, the retrieval process must be finished!<br><br>
-            <a class="collapse-item" href="{{ route('projects.technique_projects.index', $project -> id) }}">Add Techniques</a>
+            <a class="collapse-item" href="{{ route('projects.technique_projects.index', $project -> id) }}">Process</a>
         </div>
         @else
         <div class="pull-right">

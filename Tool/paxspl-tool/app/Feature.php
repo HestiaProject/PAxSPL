@@ -15,14 +15,33 @@ class Feature extends Model
         return $this->belongsTo('App\Feature', 'parent');
     }
 
+    public function children()
+    {
+        $features = Feature::where('parent',$this->id)->get();
+        return $features;
+    }
+
+    
+
     public function fm()
     {
-        return $this->belongsTo('App\FeatureModel', 'fm_id');
+        return $this->belongsTo('App\FeatureModel', 'feature_model_id');
     }
 
     public function artifacts()
     {
         return $this->hasMany('App\FeatureArtifact');
+    }
+
+
+    public function style()
+    {
+        $style = '';
+        if($this->abstract){
+            $style ='color: blue;
+            font-style: italic;';
+    }
+    return $style;
     }
 
 }

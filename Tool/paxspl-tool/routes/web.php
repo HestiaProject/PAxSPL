@@ -47,6 +47,7 @@ Route::get('projects/{project}/assemble_process/{assemble_process}/activities_ge
 Route::get('projects/{project}/execute_f_process/{execute_f_process}/process_generate', 'ExecuteActivityFProcessController@generateDocx');
 Route::get('projects/{project}/execute_s_process/{execute_s_process}/process_generate', 'ExecuteActivitySProcessController@generateDocx');
 Route::get('projects/{project}/scoping_process/{scoping_process}/activities_generate', 'ScopingActController@generateDocx');
+Route::get('projects/{project}/feature_model/{feature_model}/features_generate', 'FeatureController@generateDocx');
 
 Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

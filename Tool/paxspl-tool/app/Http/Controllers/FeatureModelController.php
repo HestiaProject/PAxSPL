@@ -24,10 +24,19 @@ class FeatureModelController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display the specified resource.
      *
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function show(Request $request)
+    {
+        $feature_model = FeatureModel::where('id', $request->feature_model)->first();
+        $project = Project::where('id', $request->project)->first();
+
+        return view('projects.feature_model.features.index', compact('feature_model', 'project'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -74,9 +83,9 @@ class FeatureModelController extends Controller
         $feature_core = new Feature();
         $feature_core->name = $request->name;
         $feature_core->height = 0;
-        $feature_core->type = 'mandatory';
+        $feature_core->type = 'Mandatory';
         $feature_core->abstract = true;
-        
+
         $feature_core->description = "SPL core.";
         $feature_core->feature_model_id = $feature_model->id;
         $feature_core->save();
@@ -125,10 +134,10 @@ class FeatureModelController extends Controller
 
 
         $feature_model->update($request->all());
-        
 
-        $feature_core = Feature::find($feature_model->features->first()->id); 
-        $feature_core->name=$request->name;
+
+        $feature_core = Feature::find($feature_model->features->first()->id);
+        $feature_core->name = $request->name;
         $feature_core->update();
         $project = $request->project;
 
@@ -145,7 +154,7 @@ class FeatureModelController extends Controller
      */
     public function destroy(Project $project, FeatureModel $feature_model)
     {
-        $feature_core = Feature::find($feature_model->features->first()->id); 
+        $feature_core = Feature::find($feature_model->features->first()->id);
         $feature_core->delete();
         $feature_model->delete();
 

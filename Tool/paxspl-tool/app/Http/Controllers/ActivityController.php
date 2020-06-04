@@ -7,6 +7,7 @@ use App\Project;
 use App\User;
 use App\AssembleProcess;
 use App\Activity;
+use Exception;
 
 class ActivityController extends Controller
 {

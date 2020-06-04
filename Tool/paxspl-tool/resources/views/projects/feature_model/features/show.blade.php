@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Activity Details</h2>
+            <h2>Feature Details</h2>
         </div>
 
     </div>
@@ -21,41 +21,70 @@
 </div>
 @endif
 
+<form action="{{ route('projects.feature_model.features.update', ['project'=>$project->id,'feature_model'=>$feature_model->id,'feature'=>$feature->id]) }}" method="POST">
+    @csrf
 
+    @method('PUT')
 
-<div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-6">
-        <div class="form-group">
-            <strong>Name:</strong>
-            <input type="text" name="name" class="form-control" placeholder="Activity Name" value="{{ $activity->name }}" disabled>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <div class="form-group">
+                <strong>Name:</strong>
+                <input type="text" name="name" class="form-control" placeholder="Feature Name" value="{{$feature->name}}" disabled>
+            </div>
         </div>
-    </div>
-    <div class="col-xs-1 col-sm-1 col-md-1">
-        <div class="form-group">
-            <strong>Order:</strong>
-            <input type="text" name="type" class="form-control" value="{{$activity->order}}" disabled>
+
+        <div class="col-xs-2 col-sm-2 col-md-2">
+            <div class="form-group">
+                <strong>Feature Type:</strong>
+                <select class="custom-select" name="type" value='{{$feature->type}}' disabled>
+                    <option value="Mandatory" {{ $feature->type == 'Mandatory' ? 'selected="selected"' : '' }}>Mandatory</option>
+                    <option value="Optional" {{ $feature->type == 'Optional' ? 'selected="selected"' : '' }}>Optional</option>
+                    <option value="OR Alternative" {{ $feature->type == 'OR Alternative' ? 'selected="selected"' : '' }}>OR Alternative</option>
+                    <option value="XOR Alternative" {{ $feature->type == 'XOR Alternative' ? 'selected="selected"' : '' }}>XOR Alternative</option>
+                </select>
+            </div>
         </div>
-    </div>
-    <div class="col-xs-3 col-sm-3 col-md-3">
-        <div class="form-group">
-            <strong>Retrieval Technique:</strong>
-            <input type="text" name="type" class="form-control" value="{{$activity->technique->name}}" disabled>
+        <div class="col-xs-2 col-sm-2 col-md-2">
+            <div class="form-group">
+                <label style="margin-top: 30px;">
+                    <input disabled type="checkbox" name="abstract" value="1" class="custom-checkbox" {{ $feature->abstract == 1 ? 'checked="checked"' : '' }}>
+                    Abstract </label>
+            </div>
+
         </div>
-    </div>
-    <div class="col-xs-10 col-sm-10 col-md-10">
-        <div class="form-group">
-            <strong>Description:</strong>
-            <textarea class="form-control" id="description" style="height:150px" name="description" placeholder="Description" disabled>{{$activity->description}}</textarea>
+        <div class="col-xs-2 col-sm-2 col-md-2">
+            <div class="form-group">
+                <strong>Parent:</strong>
+                <select name="parent" class="form-control" value="{{$feature->parent}}" disabled>
+                    @foreach($feature_model->features as $f)
+
+                    @if($f->id!= $feature->id)
+                    <option value="{{ $feature->id }}" {{ $feature->parent == $f->id ? 'selected="selected"' : '' }}>
+                        {{ $f->name }}
+                    </option>
+                    @endif
+                    @endforeach
+                </select>
+            </div>
         </div>
+        <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="form-group">
+                <strong>Description:</strong>
+                <textarea class="form-control" id="description" style="height:150px" name="description" placeholder="Description" disabled>{{$feature->description}}</textarea>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <!-- <button type="submit" class="btn btn-primary">Update <i class="fas fa-save"></i></button> -->
+            </div>
+        </div>
+
     </div>
+    <input type="hidden" id="feature_model_id" name="feature_model_id" value=" {{ $feature_model->id }}">
 
-    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-
-        <a class="btn btn-primary" href="{{ route('projects.assemble_process.activities.edit', ['project'=>$project->id,'assemble_process'=>$assemble_process->id,'activity'=>$activity->id]) }}">Edit <i class="fas fa-pen"></i></a>
-    </div>
-
-
-    <input type="hidden" id="phase" name="phase" value=" {{ $activity->phase }}">
-</div>
+</form>
 
 @endsection
