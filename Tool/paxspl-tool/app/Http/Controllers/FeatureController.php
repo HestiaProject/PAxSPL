@@ -53,10 +53,10 @@ class FeatureController extends Controller
         $feature->type = $request->type;
         $feature->parent = $request->parent;
 
-        if ($request->abstract != null) {
-            $feature->abstract = $request->abstract;
+        if ($request->abstrf != null) {
+            $feature->abstrf = $request->abstrf;
         } else {
-            $feature->abstract = 0;
+            $feature->abstrf = 0;
         }
         $parent = Feature::find($request->parent);
         $feature->height = $parent->height + 1;
@@ -126,12 +126,12 @@ class FeatureController extends Controller
         $feature =  Feature::find($request->feature);
         $parent = Feature::find($request->parent);
         $feature->height = $parent->height + 1;
-        if ($request->abstract != null) {
-            $feature->abstract = $request->abstract;
+        if ($request->abstrf != null) {
+            $feature->abstrf = $request->abstrf;
         } else {
-            $feature->abstract = 0;
+            $feature->abstrf = 0;
         }
-         
+
         $feature->update($request->all());
 
 
@@ -170,28 +170,51 @@ class FeatureController extends Controller
 
         $date = date('m-d-Y');
 
-        $document = new \PhpOffice\PhpWord\TemplateProcessor('../templates/activities.docx');
+        $document = new \PhpOffice\PhpWord\TemplateProcessor('../templates/features.docx');
 
 
         $user = User::find(auth()->id());
-
-        $document->setValue('doc', "Assembled Retrieval Process");
+        $document->setValue('doc', "Features");
         $document->setValue('admin', $user->name);
         $document->setValue('date', $date);
         $document->setValue('project', $project->title);
-        $document->setValue('process', $feature_model->name);
+        $document->setValue('fm', $feature_model->name);
 
-        $activities = $feature_model->activities;
+        $features = $feature_model->features;
         $i = 0;
-        $document->cloneRow('act', count($activities));
-        foreach ($activities as $feature) {
+        $document->cloneRow('f', count($features));
+        foreach ($features as $feature) {
             $i++;
-
-            $document->setValue('act#' . $i, $i);
-            $document->setValue('act.name#' . $i, $feature->name);
-            $document->setValue('act.phase#' . $i, $feature->phase());
-            $document->setValue('act.description#' . $i, $feature->description);
-            $document->setValue('act.technique#' . $i, $feature->technique->name);
+            $abs = 'No';
+            if ($feature->abstract) {
+                $abs = 'Yes';
+            }
+            $document->setValue('f#' . $i, $i);
+            $document->setValue('f.name#' . $i, $feature->name);
+            $document->setValue('f.type#' . $i, $feature->type);
+            $document->setValue('f.description#' . $i, $feature->description);
+            $document->setValue('f.abstract#' . $i,$abs);
+            $j = 0;
+            $artifacts = $feature->artifacts;
+            $document->cloneRow('art#' . $i, count($artifacts));
+            foreach ($artifacts as $artifact) {
+                $j++;
+                $newdate = date_create($artifact->artifact->last_update_date);
+                $updated_date = date_format($newdate, 'm-d-Y');
+                $document->setValue('art#' . $i . '#' . $j, $j);
+                $io = 'Input';
+                if ($artifact->io == 'o') {
+                    $io = 'Output';
+                }
+                $document->setValue('art.io#' . $i . '#' . $j, $io);
+                $document->setValue('art.name#' . $i . '#' . $j, $artifact->artifact->name);
+                $document->setValue('art.type#' . $i . '#' . $j, $artifact->artifact->type);
+                $document->setValue('art.description#' . $i . '#' . $j, $artifact->artifact->description);
+                $document->setValue('art.extension#' . $i . '#' . $j, $artifact->artifact->extension);
+                $document->setValue('art.external_link#' . $i . '#' . $j, $artifact->artifact->external_link);
+                $document->setValue('art.last_update_date#' . $i . '#' . $j, $updated_date);
+                $document->setValue('art.last_update_user#' . $i . '#' . $j, $artifact->artifact->update_user->name);
+            }
         }
 
 
@@ -199,7 +222,9 @@ class FeatureController extends Controller
 
 
 
-        $name = 'RetrievalFeaturesSelected-' .  "$date" . '.docx';
+
+
+        $name = 'Features-' .  "$date" . '.docx';
 
 
 
