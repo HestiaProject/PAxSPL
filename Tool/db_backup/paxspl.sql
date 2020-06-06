@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Maio-2020 às 15:18
+-- Tempo de geração: 06-Jun-2020 às 20:46
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.3.9
 
@@ -39,24 +39,25 @@ CREATE TABLE `activities` (
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'created',
   `assemble_process_id` int(10) UNSIGNED NOT NULL,
   `technique_id` int(10) UNSIGNED NOT NULL,
-  `phase_id` int(11) NOT NULL DEFAULT 1
+  `phase_id` int(11) NOT NULL DEFAULT 1,
+  `experience_id` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `activities`
 --
 
-INSERT INTO `activities` (`id`, `created_at`, `updated_at`, `name`, `phase`, `order`, `description`, `status`, `assemble_process_id`, `technique_id`, `phase_id`) VALUES
-(1, '2020-04-15 22:31:53', '2020-05-14 03:23:58', 'Apply FCA into requirements', 'extract', 1, 'FCA must be applied into the requirements to retrieve the features identified among the software products.', 'doing', 1, 4, 1),
-(2, '2020-04-15 22:40:56', '2020-05-14 03:24:02', 'Apply LSI into source code', 'extract', 1, 'd', 'doing', 1, 5, 1),
-(5, '2020-04-17 23:42:15', '2020-05-27 13:45:07', 'Test', 'categorize', 1, 'fa', 'done', 1, 4, 2),
-(15, '2020-04-19 03:09:46', '2020-05-12 22:58:46', 'Define Metrics for Scoping', 'SupportS', 1, 'Define the metrics that will be used for Scoping', 'done', 7, 18, 0),
-(16, '2020-04-19 03:10:57', '2020-05-12 22:40:58', 'Analyze the market', 'domain', 1, 'Find potential for the SPL', 'doing', 7, 10, 1),
-(17, '2020-05-24 10:54:52', '2020-05-27 14:23:03', 'Divide features with LSI', 'extract', 1, 'Use LSI to divide features and classes into common and variable partitions;', 'done', 8, 5, 1),
-(18, '2020-05-24 10:55:25', '2020-05-27 14:24:02', 'Fragment variable partitions with FCA', 'extract', 2, 'Fragment variable partitions into minimal disjoint sets using FCA', 'done', 8, 4, 1),
-(20, '2020-05-24 11:02:43', '2020-05-27 14:25:21', 'Derive code-topics from common class partitions;', 'group', 1, 'Code-topics are derived based on their common class partitions;', 'done', 8, 1, 3),
-(21, '2020-05-24 11:11:36', '2020-05-27 14:29:11', 'Perform traceability links between features and code-topics;', 'fm', 1, 'Analyzed and perform the traceability links between features and their code-topics;', 'done', 8, 5, 4),
-(22, '2020-05-24 11:14:12', '2020-05-27 14:30:45', 'Determine feature implementation', 'fm', 2, 'determine which classes implement each feature.', 'done', 8, 9, 4);
+INSERT INTO `activities` (`id`, `created_at`, `updated_at`, `name`, `phase`, `order`, `description`, `status`, `assemble_process_id`, `technique_id`, `phase_id`, `experience_id`) VALUES
+(1, '2020-04-15 22:31:53', '2020-06-06 21:40:22', 'Apply FCA into requirements', 'extract', 1, 'FCA must be applied into the requirements to retrieve the features identified among the software products.', 'done', 1, 4, 1, 8),
+(2, '2020-04-15 22:40:56', '2020-06-06 21:38:16', 'Apply LSI into source code', 'extract', 1, 'd', 'done', 1, 5, 1, 5),
+(5, '2020-04-17 23:42:15', '2020-06-06 21:38:11', 'Test', 'categorize', 1, 'fa', 'done', 1, 4, 2, NULL),
+(15, '2020-04-19 03:09:46', '2020-05-12 22:58:46', 'Define Metrics for Scoping', 'SupportS', 1, 'Define the metrics that will be used for Scoping', 'done', 7, 18, 0, NULL),
+(16, '2020-04-19 03:10:57', '2020-05-12 22:40:58', 'Analyze the market', 'domain', 1, 'Find potential for the SPL', 'doing', 7, 10, 1, NULL),
+(17, '2020-05-24 10:54:52', '2020-05-27 14:23:03', 'Divide features with LSI', 'extract', 1, 'Use LSI to divide features and classes into common and variable partitions;', 'done', 8, 5, 1, NULL),
+(18, '2020-05-24 10:55:25', '2020-05-27 14:24:02', 'Fragment variable partitions with FCA', 'extract', 2, 'Fragment variable partitions into minimal disjoint sets using FCA', 'done', 8, 4, 1, NULL),
+(20, '2020-05-24 11:02:43', '2020-05-27 14:25:21', 'Derive code-topics from common class partitions;', 'group', 1, 'Code-topics are derived based on their common class partitions;', 'done', 8, 1, 3, NULL),
+(21, '2020-05-24 11:11:36', '2020-05-27 14:29:11', 'Perform traceability links between features and code-topics;', 'fm', 1, 'Analyzed and perform the traceability links between features and their code-topics;', 'done', 8, 5, 4, NULL),
+(22, '2020-05-24 11:14:12', '2020-05-27 14:30:45', 'Determine feature implementation', 'fm', 2, 'determine which classes implement each feature.', 'done', 8, 9, 4, NULL);
 
 -- --------------------------------------------------------
 
@@ -182,6 +183,31 @@ INSERT INTO `assemble_processes` (`id`, `created_at`, `updated_at`, `name`, `sta
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `experiences`
+--
+
+CREATE TABLE `experiences` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `time` int(11) NOT NULL,
+  `difficulty` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `obs` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `assemble_process_id` int(10) UNSIGNED NOT NULL,
+  `activity_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `experiences`
+--
+
+INSERT INTO `experiences` (`id`, `created_at`, `updated_at`, `time`, `difficulty`, `obs`, `assemble_process_id`, `activity_id`) VALUES
+(5, '2020-06-06 21:33:29', '2020-06-06 21:38:16', 13, '13', '13', 1, 2),
+(8, '2020-06-06 21:40:22', '2020-06-06 21:40:22', 2, '22', '2', 1, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `failed_jobs`
 --
 
@@ -193,6 +219,77 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `features`
+--
+
+CREATE TABLE `features` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `height` int(11) NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abstract` tinyint(1) NOT NULL DEFAULT 0,
+  `feature_model_id` int(10) UNSIGNED NOT NULL,
+  `parent` int(10) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `features`
+--
+
+INSERT INTO `features` (`id`, `created_at`, `updated_at`, `name`, `type`, `height`, `description`, `abstract`, `feature_model_id`, `parent`) VALUES
+(2, '2020-06-04 23:33:16', '2020-06-04 23:33:25', 'SPL1', 'Mandatory', 0, 'SPL core.', 1, 2, NULL),
+(4, '2020-06-05 00:34:35', '2020-06-06 19:23:51', 'essaqe', 'OR Alternative', 2, 'fee', 0, 2, 10),
+(10, '2020-06-05 01:04:32', '2020-06-05 01:04:38', 'fe', 'Optional', 1, 'fe', 1, 2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `feature_artifacts`
+--
+
+CREATE TABLE `feature_artifacts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `feature_id` int(10) UNSIGNED NOT NULL,
+  `artifact_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `feature_artifacts`
+--
+
+INSERT INTO `feature_artifacts` (`id`, `created_at`, `updated_at`, `feature_id`, `artifact_id`) VALUES
+(1, '2020-06-06 19:48:44', '2020-06-06 19:48:44', 4, 15);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `feature_models`
+--
+
+CREATE TABLE `feature_models` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `xml` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `project_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `feature_models`
+--
+
+INSERT INTO `feature_models` (`id`, `created_at`, `updated_at`, `name`, `xml`, `project_id`) VALUES
+(2, '2020-06-04 23:33:16', '2020-06-04 23:33:25', 'SPL1', '\'<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n        <featureModel chosenLayoutAlgorithm=\"1\">\n            <struct>\n                <and mandatory=\"true\" name=\"Fm2\">\n                    <feature name=\"Feature1\"/>\n                    <feature name=\"Feature2\"/>  \n                </and>\n            </struct>\n            <constraints> \n            </constraints>\n            <comments/>\n            <featureOrder userDefined=\"false\"/>\n        </featureModel>\'', 1);
 
 -- --------------------------------------------------------
 
@@ -224,7 +321,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (70, '2020_02_29_020235_create_technique_project_table', 9),
 (71, '2020_03_07_184849_create_assemble_processes_table', 9),
 (72, '2020_03_07_191145_create_activities_table', 9),
-(73, '2020_03_07_191511_create_activities_inputs_table', 9);
+(73, '2020_03_07_191511_create_activities_inputs_table', 9),
+(74, '2020_05_30_135030_create_feature_models_table', 10),
+(75, '2020_05_30_135031_create_features_table', 10),
+(76, '2020_05_30_135033_create_features_artifacts_table', 10),
+(77, '2020_05_30_135033_create_feature_artifacts_table', 11),
+(78, '2020_06_06_164248_create_experiences_table', 11);
 
 -- --------------------------------------------------------
 
@@ -326,7 +428,7 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`id`, `role`, `company_role`, `spl_exp`, `retrieval_exp`, `obs`, `fca`, `lsi`, `vsm`, `cluster`, `data_flow`, `dependency`, `created_at`, `updated_at`, `user_id`, `project_id`, `status`, `retrieval_role`) VALUES
-(1, 'Admin', 'Developer', 'Has a few works published in the field.', 'Applied FCA a few years ago.', 'None to be made.', 1, 1, 1, 0, 1, 1, '2020-01-08 22:44:01', '2020-05-14 04:08:52', 1, 1, 'Complete', 'Feature Retriever'),
+(1, 'Admin', 'Developer', 'Has a few works published in the field.', 'Applied FCA a few years ago.', 'None to be made.', 1, 1, 1, 0, 1, 1, '2020-01-08 22:44:01', '2020-06-06 21:46:07', 1, 1, 'Complete', 'Feature Retriever'),
 (3, 'Admin', 'Fa', 'FA', 'FA', 'AF', 0, 0, 1, 0, 0, 0, '2020-01-16 00:18:42', '2020-01-16 00:44:06', 3, 2, 'Complete', 'Architect'),
 (4, 'Admin', 'fa', 'fa', 'fa', 'fa', 0, 1, 0, 0, 1, 0, '2020-01-16 00:18:56', '2020-01-16 00:44:24', 1, 2, 'Complete', 'Domain Engineer'),
 (6, 'Admin', NULL, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, '2020-02-29 02:25:16', '2020-02-29 02:25:16', 1, 3, 'Incomplete', 'Feature Retriever'),
@@ -402,7 +504,6 @@ CREATE TABLE `technique_projects` (
 
 INSERT INTO `technique_projects` (`id`, `created_at`, `updated_at`, `reason`, `project_id`, `technique_id`) VALUES
 (2, '2020-04-15 22:41:03', '2020-04-15 22:41:03', 'FA', 1, 5),
-(3, '2020-04-15 22:41:15', '2020-04-15 22:41:15', 'FA', 1, 1),
 (4, '2020-04-17 23:43:44', '2020-04-17 23:43:44', 'Fa', 1, 4),
 (5, '2020-05-24 10:53:32', '2020-05-24 10:53:32', 'Chosen as it was used in the original study', 6, 5),
 (7, '2020-05-24 10:57:13', '2020-05-24 10:57:13', 'It was used in the original study', 6, 4),
@@ -446,7 +547,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 ALTER TABLE `activities`
   ADD PRIMARY KEY (`id`),
   ADD KEY `activities_assemble_process_id_foreign` (`assemble_process_id`),
-  ADD KEY `activities_technique_id_foreign` (`technique_id`);
+  ADD KEY `activities_technique_id_foreign` (`technique_id`),
+  ADD KEY `activities_experience_id_foreign` (`experience_id`) USING BTREE;
 
 --
 -- Índices para tabela `activities_artifacts`
@@ -473,10 +575,41 @@ ALTER TABLE `assemble_processes`
   ADD KEY `assemble_processes_project_id_foreign` (`project_id`);
 
 --
+-- Índices para tabela `experiences`
+--
+ALTER TABLE `experiences`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `experiences_assemble_process_id_foreign` (`assemble_process_id`),
+  ADD KEY `experiences_activity_id_foreign` (`activity_id`);
+
+--
 -- Índices para tabela `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `features`
+--
+ALTER TABLE `features`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `features_fm_id_foreign` (`feature_model_id`),
+  ADD KEY `features_parent_foreign` (`parent`);
+
+--
+-- Índices para tabela `feature_artifacts`
+--
+ALTER TABLE `feature_artifacts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `feature_artifacts_feature_id_foreign` (`feature_id`),
+  ADD KEY `feature_artifacts_artifact_id_foreign` (`artifact_id`);
+
+--
+-- Índices para tabela `feature_models`
+--
+ALTER TABLE `feature_models`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `feature_models_project_id_foreign` (`project_id`);
 
 --
 -- Índices para tabela `migrations`
@@ -563,16 +696,40 @@ ALTER TABLE `assemble_processes`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT de tabela `experiences`
+--
+ALTER TABLE `experiences`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT de tabela `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `features`
+--
+ALTER TABLE `features`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de tabela `feature_artifacts`
+--
+ALTER TABLE `feature_artifacts`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `feature_models`
+--
+ALTER TABLE `feature_models`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de tabela `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT de tabela `projects`
@@ -641,6 +798,33 @@ ALTER TABLE `artifacts`
 --
 ALTER TABLE `assemble_processes`
   ADD CONSTRAINT `assemble_processes_project_id_foreign` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`);
+
+--
+-- Limitadores para a tabela `experiences`
+--
+ALTER TABLE `experiences`
+  ADD CONSTRAINT `experiences_activity_id_foreign` FOREIGN KEY (`activity_id`) REFERENCES `activities` (`id`),
+  ADD CONSTRAINT `experiences_assemble_process_id_foreign` FOREIGN KEY (`assemble_process_id`) REFERENCES `assemble_processes` (`id`);
+
+--
+-- Limitadores para a tabela `features`
+--
+ALTER TABLE `features`
+  ADD CONSTRAINT `features_fm_id_foreign` FOREIGN KEY (`feature_model_id`) REFERENCES `feature_models` (`id`),
+  ADD CONSTRAINT `features_parent_foreign` FOREIGN KEY (`parent`) REFERENCES `features` (`id`);
+
+--
+-- Limitadores para a tabela `feature_artifacts`
+--
+ALTER TABLE `feature_artifacts`
+  ADD CONSTRAINT `feature_artifacts_artifact_id_foreign` FOREIGN KEY (`artifact_id`) REFERENCES `artifacts` (`id`),
+  ADD CONSTRAINT `feature_artifacts_feature_id_foreign` FOREIGN KEY (`feature_id`) REFERENCES `features` (`id`);
+
+--
+-- Limitadores para a tabela `feature_models`
+--
+ALTER TABLE `feature_models`
+  ADD CONSTRAINT `feature_models_project_id_foreign` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`);
 
 --
 -- Limitadores para a tabela `projects`

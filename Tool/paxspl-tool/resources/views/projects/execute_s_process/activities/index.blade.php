@@ -80,7 +80,7 @@
         <div class="card shadow mb-4">
             <a href="#collapseCanvas" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 
-                <h6 class="m-0 font-weight-bold text-primary">Scping Process:</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Scoping Process:</h6>
             </a>
 
             <!-- Card Content - Collapse -->

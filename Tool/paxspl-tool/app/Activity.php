@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Activity extends Model
 {
     protected $fillable = [
-        'name',   'phase', 'phase_id', 'order', 'assemble_process_id', 'technique_id', 'status', 'description'
+        'name',   'phase', 'phase_id', 'order', 'assemble_process_id', 'technique_id', 'status', 'description', 'experience_id'
     ];
 
     public function phase()
@@ -22,6 +22,11 @@ class Activity extends Model
     public function technique()
     {
         return $this->belongsTo('App\Technique');
+    }
+
+    public function experience()
+    {
+        return $this->belongsTo('App\Experience');
     }
     public function input_artifacts()
     {

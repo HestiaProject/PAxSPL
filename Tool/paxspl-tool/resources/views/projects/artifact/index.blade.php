@@ -11,6 +11,7 @@
             <a class="btn btn-primary btn-warning" href="{{action('ArtifactController@generateDocx',$project)}}">Download Artifact Report <i class="fas fa-file-download"></i></a>
 
         </div>
+        <br><br>
     </div>
 </div>
 @if ($message = Session::get('success'))

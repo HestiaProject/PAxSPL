@@ -60,9 +60,10 @@
             </div>
         </div>
     </div>
+  
 </form>
 <a class="btn btn-primary btn-warning" href="{{action('TeamController@generateDocx',$project)}}">Download Team Report <i class="fas fa-file-download"></i></a>
-
+<br><br>
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="table-responsive">

@@ -146,7 +146,7 @@
                             <h6 class="collapse-header">Document:</h6>
                             <a class="collapse-item" href="{{ route('projects.feature_model.index', $project -> id) }}">Feature Model</a>
 
-                            <a class="collapse-item" href="{{ route('projects.execute_f_process.index', $project -> id) }}">Process Experience</a>
+                            <a class="collapse-item" href="{{ route('projects.exp_process.index', $project -> id) }}">Process Experience</a>
 
                         </div>
                     </div>

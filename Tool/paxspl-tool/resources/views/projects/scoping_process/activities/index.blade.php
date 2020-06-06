@@ -70,7 +70,7 @@
         </div>
 
         <a class="btn btn-primary btn-warning" href="{{action('ScopingActController@generateDocx',['project' => $project, 'scoping_process' => $scoping_process])}}">Download Activities Report <i class="fas fa-file-download"></i></a>
-
+        <br><br>
         <div class="card shadow mb-4">
             <a href="#collapseCard0x" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 

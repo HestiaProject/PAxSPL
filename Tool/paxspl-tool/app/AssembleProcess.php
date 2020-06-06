@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class AssembleProcess extends Model
 {
     protected $fillable = [
-        'name', 'project_id', 'status','diagram'
+        'name', 'project_id', 'status', 'diagram'
     ];
 
 
@@ -15,7 +15,7 @@ class AssembleProcess extends Model
     {
         $artifacts = [];
         $activities = Activity::where('assemble_process_id', $this->id)->get();
-        foreach ($activities as $activity){
+        foreach ($activities as $activity) {
             $artifactsA = $activity->output_artifacts;
             foreach ($artifactsA as $art) {
                 $artifacts[] = $art;
@@ -27,6 +27,16 @@ class AssembleProcess extends Model
     public function activities()
     {
         return $this->hasMany('App\Activity')->orderBy('phase_id', 'asc')->orderBy('order', 'asc');
+    }
+
+    public function activities_no_exp()
+    {
+        return $this->hasMany('App\Activity')->where('experience_id', null)->orderBy('phase_id', 'asc')->orderBy('order', 'asc');
+    }
+
+    public function experiences()
+    {
+        return $this->hasMany('App\Experience');
     }
 
     public function activities_phase($phase)
@@ -127,6 +137,4 @@ class AssembleProcess extends Model
             if ($result >= 100)
             return "green";
     }
-
-     
 }

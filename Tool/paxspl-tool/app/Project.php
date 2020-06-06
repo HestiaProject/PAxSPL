@@ -100,10 +100,13 @@ class Project extends Model
     }
 
 
-
+    public function processes()
+    {
+        return $this->hasMany('App\AssembleProcess');
+    }
     public function assemble_process()
     {
-        return $this->hasMany('App\AssembleProcess')->where('type', 'r');;
+        return $this->hasMany('App\AssembleProcess')->where('type', 'r');
     }
 
     public function assemble_process_finished()

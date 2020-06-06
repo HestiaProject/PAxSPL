@@ -40,6 +40,8 @@ Route::resource('projects.check_s_process.artifact', 'CheckASArtifactController'
 Route::resource('projects.feature_model', 'FeatureModelController'); 
 Route::resource('projects.feature_model.features', 'FeatureController'); 
 Route::resource('projects.feature_model.features.artifact', 'FeatureArtifactController'); 
+Route::resource('projects.exp_process', 'ProcessExpController'); 
+Route::resource('projects.exp_process.experiences', 'ExperienceController'); 
 
 Route::get('projects/{project}/teams_generate/', 'TeamController@generateDocx');
 Route::get('projects/{project}/artifact_generate/', 'ArtifactController@generateDocx');
@@ -49,6 +51,7 @@ Route::get('projects/{project}/execute_f_process/{execute_f_process}/process_gen
 Route::get('projects/{project}/execute_s_process/{execute_s_process}/process_generate', 'ExecuteActivitySProcessController@generateDocx');
 Route::get('projects/{project}/scoping_process/{scoping_process}/activities_generate', 'ScopingActController@generateDocx');
 Route::get('projects/{project}/feature_model/{feature_model}/features_generate', 'FeatureController@generateDocx');
+Route::get('projects/{project}/exp_process/{exp_process}/experiences_generate', 'ExperienceController@generateDocx');
 
 Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

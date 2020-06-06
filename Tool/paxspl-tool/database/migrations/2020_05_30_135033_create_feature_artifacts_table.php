@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFeaturesArtifactsTable extends Migration
+class CreateFeatureArtifactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFeaturesArtifactsTable extends Migration
      */
     public function up()
     {
-        Schema::create('features_artifacts', function (Blueprint $table) {
+        Schema::create('feature_artifacts', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
              
@@ -33,6 +33,6 @@ class CreateFeaturesArtifactsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('features_artifacts');
+        Schema::dropIfExists('feature_artifacts');
     }
 }

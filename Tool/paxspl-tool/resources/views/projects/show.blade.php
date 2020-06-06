@@ -132,9 +132,9 @@
                 </a>
 
                 <div class="my-2"></div>
-                <a href="{{ route('projects.scoping_process.index', $project -> id) }}" class=" btn btn-info btn-icon-split">
+                <a href="{{ route('projects.exp_process.index', $project -> id) }}" class=" btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
-                        <i class="fas fa-file-alt"></i>
+                        <i class="fas fa-flag-checkered"></i>
                     </span>
                     <span class="text">Register Process Experience</span>
                 </a>
