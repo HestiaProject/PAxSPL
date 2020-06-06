@@ -25,8 +25,8 @@ The PAxSPL framework is composed of PAxSPL [process](https://github.com/HestiaPr
  1. As a **Feature Retriever** I want **to document the feature retrieval artifacts** so that **the features retrieved may be documented**. :heavy_check_mark:
  1. As a **Feature Retriever** I want **to create a feature model** so that **the features retrieved may be documented**.:soon:
  1. As a **Feature Tester** I want **to check the feature artifacts** so that **the features retrieved may be verified**.:heavy_check_mark:
- 1. As a **Manager** I want **to document the process experience** so that **the experience may be used in the future**.:soon:
- 1. As a **Team Member** I want **download reports of all tasks** so that **these reports may be stored**.:soon:
+ 1. As a **Manager** I want **to document the process experience** so that **the experience may be used in the future**.:heavy_check_mark:
+ 1. As a **Team Member** I want **download reports of all tasks** so that **these reports may be stored**. :heavy_check_mark:
 
  
  
