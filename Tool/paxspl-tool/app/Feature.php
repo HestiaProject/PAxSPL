@@ -41,9 +41,14 @@ class Feature extends Model
             $style = 'color: blue;
             font-style: italic;';
         }else{
-            $style = 'color: black;
-            font-style: bold;';
+            $style = 'color: black;';
         }
+
+        $padding = '0';
+        if($this->height!=0){
+           $padding = 35*$this->height; 
+        }
+        $style = $style.'padding-left:'.$padding.'px;';
 
         return $style;
     }

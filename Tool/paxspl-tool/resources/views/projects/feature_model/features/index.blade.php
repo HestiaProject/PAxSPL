@@ -65,31 +65,35 @@
 
 
 
+        <div class="pull-right">
 
 
+            Legend:
+            <a style="color:blue;font-style: italic;">Abstract</a>;
+            <a style="color:black"> <i class="fas fa-circle"></i> Mandatory;</a>
+            <a style="color:black"> <i class="far fa-circle"></i> Optional;</a>
+            <a style="color:black"> <i class="fas fa-play"></i> XOR Alternative;</a>
+            <a style="color:black"> <i class="fas fa-play icon-white"></i> OR Alternative;</a>
+
+        </div>
+        <br><br>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
                         <tr>
 
-                          
-                            <th>Name</th>
-                            <th>Type</th>
-                             
+
+                            <th>Feature</th>
+
+
                             <th width="320px">Action</th>
                         </tr>
 
                         @foreach ($feature_model->features_order() as $feature)
                         <tr>
-                             
+
                             <td style="{{ $feature->style() }}"><i class="{{$feature->icon()}}"></i> {{ $feature->name }}</td>
-                            <td>{{ $feature->type }}</td>
-                            
-
-
-
-
                             <td>
 
                                 <form action="{{ route('projects.feature_model.features.destroy', ['project'=>$project->id,'feature_model'=>$feature_model->id,'feature'=>$feature->id]) }}" method="POST">
