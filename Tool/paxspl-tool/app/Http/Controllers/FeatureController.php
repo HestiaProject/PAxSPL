@@ -53,10 +53,10 @@ class FeatureController extends Controller
         $feature->type = $request->type;
         $feature->parent = $request->parent;
 
-        if ($request->abstrf != null) {
-            $feature->abstrf = $request->abstrf;
+        if ($request->abstract != null) {
+            $feature->abstract = $request->abstract;
         } else {
-            $feature->abstrf = 0;
+            $feature->abstract = 0;
         }
         $parent = Feature::find($request->parent);
         $feature->height = $parent->height + 1;
@@ -126,10 +126,10 @@ class FeatureController extends Controller
         $feature =  Feature::find($request->feature);
         $parent = Feature::find($request->parent);
         $feature->height = $parent->height + 1;
-        if ($request->abstrf != null) {
-            $feature->abstrf = $request->abstrf;
+        if ($request->abstract != null) {
+            $feature->abstract = $request->abstract;
         } else {
-            $feature->abstrf = 0;
+            $feature->abstract = 0;
         }
 
         $feature->update($request->all());

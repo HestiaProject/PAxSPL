@@ -73,17 +73,19 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
                         <tr>
 
+                          
                             <th>Name</th>
                             <th>Type</th>
+                             
                             <th width="320px">Action</th>
                         </tr>
 
-                        @foreach ($feature_model->features as $feature)
+                        @foreach ($feature_model->features_order() as $feature)
                         <tr>
-
-                            <td style="{{ $feature->style() }}">{{ $feature->name }}</td>
+                             
+                            <td style="{{ $feature->style() }}"><i class="{{$feature->icon()}}"></i> {{ $feature->name }}</td>
                             <td>{{ $feature->type }}</td>
-
+                            
 
 
 
