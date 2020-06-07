@@ -63,10 +63,10 @@ class Feature extends Model
             case "Optional":
                 $icon = 'far fa-circle';
                 break;
-            case "OR Alternative":
+            case "XOR Alternative":
                 $icon = 'fas fa-play icon-white';
                 break;
-            case "XOR Alternative":
+            case "OR Alternative":
                 $icon = 'fas fa-play';
                 break;
         }

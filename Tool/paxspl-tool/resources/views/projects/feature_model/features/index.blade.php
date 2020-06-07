@@ -72,8 +72,8 @@
             <a style="color:blue;font-style: italic;">Abstract</a>;
             <a style="color:black"> <i class="fas fa-circle"></i> Mandatory;</a>
             <a style="color:black"> <i class="far fa-circle"></i> Optional;</a>
-            <a style="color:black"> <i class="fas fa-play"></i> XOR Alternative;</a>
-            <a style="color:black"> <i class="fas fa-play icon-white"></i> OR Alternative;</a>
+            <a style="color:black"> <i class="fas fa-play "></i> OR Alternative;</a>
+            <a style="color:black"> <i class="fas fa-play icon-white"></i> XOR Alternative;</a>
 
         </div>
         <br><br>
