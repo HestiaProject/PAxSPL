@@ -180,7 +180,7 @@ class FeatureController extends Controller
         $document->setValue('project', $project->title);
         $document->setValue('fm', $feature_model->name);
 
-        $features = $feature_model->features;
+        $features = $feature_model->features_order();
         $i = 0;
         $document->cloneRow('f', count($features));
         foreach ($features as $feature) {
