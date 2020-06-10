@@ -42,10 +42,11 @@
                             @if ($project->owner_id == Auth::user()->id)
                             <a class="btn btn-primary" href="{{ route('projects.edit',$project->id) }}">Edit <i class="fas fa-edit"></i></a>
 
+<!-- 
                             @csrf
                             @method('DELETE')
                             
-                            <button type="submit" class="btn btn-danger">Delete <i class="fas fa-trash"></i></button>
+                            <button type="submit" class="btn btn-danger">Delete <i class="fas fa-trash"></i></button> -->
                             @endif
                         </form>
                     </td>
