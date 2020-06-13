@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Jun-2020 às 20:46
+-- Tempo de geração: 13-Jun-2020 às 20:55
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.3.9
 
@@ -53,7 +53,7 @@ INSERT INTO `activities` (`id`, `created_at`, `updated_at`, `name`, `phase`, `or
 (5, '2020-04-17 23:42:15', '2020-06-06 21:38:11', 'Test', 'categorize', 1, 'fa', 'done', 1, 4, 2, NULL),
 (15, '2020-04-19 03:09:46', '2020-05-12 22:58:46', 'Define Metrics for Scoping', 'SupportS', 1, 'Define the metrics that will be used for Scoping', 'done', 7, 18, 0, NULL),
 (16, '2020-04-19 03:10:57', '2020-05-12 22:40:58', 'Analyze the market', 'domain', 1, 'Find potential for the SPL', 'doing', 7, 10, 1, NULL),
-(17, '2020-05-24 10:54:52', '2020-05-27 14:23:03', 'Divide features with LSI', 'extract', 1, 'Use LSI to divide features and classes into common and variable partitions;', 'done', 8, 5, 1, NULL),
+(17, '2020-05-24 10:54:52', '2020-06-09 07:32:34', 'Divide features with LSI', 'extract', 1, 'Use LSI to divide features and classes into common and variable partitions;', 'done', 8, 5, 1, NULL),
 (18, '2020-05-24 10:55:25', '2020-05-27 14:24:02', 'Fragment variable partitions with FCA', 'extract', 2, 'Fragment variable partitions into minimal disjoint sets using FCA', 'done', 8, 4, 1, NULL),
 (20, '2020-05-24 11:02:43', '2020-05-27 14:25:21', 'Derive code-topics from common class partitions;', 'group', 1, 'Code-topics are derived based on their common class partitions;', 'done', 8, 1, 3, NULL),
 (21, '2020-05-24 11:11:36', '2020-05-27 14:29:11', 'Perform traceability links between features and code-topics;', 'fm', 1, 'Analyzed and perform the traceability links between features and their code-topics;', 'done', 8, 5, 4, NULL),
@@ -94,7 +94,7 @@ INSERT INTO `activities_artifacts` (`id`, `created_at`, `updated_at`, `io`, `act
 (16, '2020-05-14 03:34:18', '2020-05-14 03:34:42', 'o', 1, 19, 'problem', '2'),
 (17, '2020-05-27 14:21:43', '2020-05-27 14:21:43', 'i', 17, 20, 'created', NULL),
 (18, '2020-05-27 14:21:47', '2020-05-27 14:21:47', 'i', 17, 21, 'created', NULL),
-(19, '2020-05-27 14:23:00', '2020-05-27 14:23:00', 'o', 17, 22, 'created', NULL),
+(19, '2020-05-27 14:23:00', '2020-06-11 01:51:17', 'o', 17, 22, 'checked', NULL),
 (20, '2020-05-27 14:23:11', '2020-05-27 14:23:11', 'i', 18, 20, 'created', NULL),
 (21, '2020-05-27 14:23:15', '2020-05-27 14:23:15', 'i', 18, 21, 'created', NULL),
 (22, '2020-05-27 14:23:54', '2020-05-27 14:23:54', 'o', 18, 23, 'created', NULL),
@@ -246,7 +246,28 @@ CREATE TABLE `features` (
 INSERT INTO `features` (`id`, `created_at`, `updated_at`, `name`, `type`, `height`, `description`, `abstract`, `feature_model_id`, `parent`) VALUES
 (2, '2020-06-04 23:33:16', '2020-06-04 23:33:25', 'SPL1', 'Mandatory', 0, 'SPL core.', 1, 2, NULL),
 (4, '2020-06-05 00:34:35', '2020-06-06 19:23:51', 'essaqe', 'OR Alternative', 2, 'fee', 0, 2, 10),
-(10, '2020-06-05 01:04:32', '2020-06-05 01:04:38', 'fe', 'Optional', 1, 'fe', 1, 2, 2);
+(10, '2020-06-05 01:04:32', '2020-06-05 01:04:38', 'fe', 'Optional', 1, 'fe', 1, 2, 2),
+(11, '2020-06-08 00:13:32', '2020-06-08 01:29:34', 'f5', 'Mandatory', 1, 'f', 0, 2, 2),
+(12, '2020-06-08 00:14:38', '2020-06-08 01:35:47', 'f55', 'Mandatory', 4, '3', 1, 2, 13),
+(13, '2020-06-08 00:14:45', '2020-06-08 01:29:22', 'f2', 'XOR Alternative', 3, '3', 0, 2, 4),
+(14, '2020-06-08 00:14:57', '2020-06-08 01:29:28', 'f3', 'Mandatory', 2, '5', 0, 2, 10),
+(15, '2020-06-11 00:00:17', '2020-06-11 00:00:17', 'Text Editing System', 'Mandatory', 0, 'SPL core.', 1, 3, NULL),
+(16, '2020-06-11 00:00:47', '2020-06-11 00:00:47', 'File Management', 'Mandatory', 1, 'Management  of files', 1, 3, 15),
+(17, '2020-06-11 00:01:07', '2020-06-11 00:01:07', 'Help', 'Mandatory', 1, 'Help component', 0, 3, 15),
+(18, '2020-06-11 00:01:27', '2020-06-11 00:01:27', 'Change Display Settings', 'Mandatory', 1, 'Settings of the display', 1, 3, 15),
+(19, '2020-06-11 00:01:45', '2020-06-11 00:01:45', 'Basic', 'Mandatory', 2, 'Basic file manager', 0, 3, 16),
+(20, '2020-06-11 00:02:02', '2020-06-11 00:02:02', 'Edit', 'Mandatory', 2, 'Edit options', 1, 3, 16),
+(21, '2020-06-11 00:02:24', '2020-06-11 00:02:24', 'Resize', 'Optional', 2, 'resize options', 0, 3, 18),
+(23, '2020-06-11 00:03:03', '2020-06-11 00:03:03', 'Font Color', 'Mandatory', 2, 'change the font color', 1, 3, 18),
+(24, '2020-06-11 00:03:22', '2020-06-11 00:03:22', 'Black', 'XOR Alternative', 3, 'black color', 0, 3, 23),
+(25, '2020-06-11 00:03:35', '2020-06-11 00:03:35', 'Red', 'XOR Alternative', 3, 'red color', 0, 3, 23),
+(26, '2020-06-11 00:03:51', '2020-06-11 00:03:51', 'Case conversion', 'Mandatory', 2, 'convert cases', 1, 3, 18),
+(27, '2020-06-11 00:04:08', '2020-06-11 00:04:08', 'Upper Case', 'OR Alternative', 3, 'to upper case', 0, 3, 26),
+(28, '2020-06-11 00:04:20', '2020-06-11 00:04:20', 'Lower case', 'OR Alternative', 3, 'to lower case', 0, 3, 26),
+(29, '2020-06-11 00:04:48', '2020-06-11 00:04:48', 'Search', 'Optional', 2, 'search function', 0, 3, 16),
+(30, '2020-06-11 00:05:03', '2020-06-11 00:05:03', 'Replacement', 'Optional', 2, 'Replacement function', 0, 3, 16),
+(31, '2020-06-11 00:05:23', '2020-06-11 00:05:23', 'Copy', 'Mandatory', 3, 'copy fnt', 0, 3, 20),
+(32, '2020-06-11 00:05:36', '2020-06-11 00:05:48', 'Select All', 'Optional', 3, 'select all fnt', 0, 3, 20);
 
 -- --------------------------------------------------------
 
@@ -267,7 +288,10 @@ CREATE TABLE `feature_artifacts` (
 --
 
 INSERT INTO `feature_artifacts` (`id`, `created_at`, `updated_at`, `feature_id`, `artifact_id`) VALUES
-(1, '2020-06-06 19:48:44', '2020-06-06 19:48:44', 4, 15);
+(1, '2020-06-06 19:48:44', '2020-06-06 19:48:44', 4, 15),
+(2, '2020-06-11 00:06:58', '2020-06-11 00:06:58', 31, 20),
+(3, '2020-06-11 00:07:08', '2020-06-11 00:07:08', 32, 23),
+(4, '2020-06-11 00:07:23', '2020-06-11 00:07:23', 24, 20);
 
 -- --------------------------------------------------------
 
@@ -289,7 +313,8 @@ CREATE TABLE `feature_models` (
 --
 
 INSERT INTO `feature_models` (`id`, `created_at`, `updated_at`, `name`, `xml`, `project_id`) VALUES
-(2, '2020-06-04 23:33:16', '2020-06-04 23:33:25', 'SPL1', '\'<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n        <featureModel chosenLayoutAlgorithm=\"1\">\n            <struct>\n                <and mandatory=\"true\" name=\"Fm2\">\n                    <feature name=\"Feature1\"/>\n                    <feature name=\"Feature2\"/>  \n                </and>\n            </struct>\n            <constraints> \n            </constraints>\n            <comments/>\n            <featureOrder userDefined=\"false\"/>\n        </featureModel>\'', 1);
+(2, '2020-06-04 23:33:16', '2020-06-04 23:33:25', 'SPL1', '\'<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n        <featureModel chosenLayoutAlgorithm=\"1\">\n            <struct>\n                <and mandatory=\"true\" name=\"Fm2\">\n                    <feature name=\"Feature1\"/>\n                    <feature name=\"Feature2\"/>  \n                </and>\n            </struct>\n            <constraints> \n            </constraints>\n            <comments/>\n            <featureOrder userDefined=\"false\"/>\n        </featureModel>\'', 1),
+(3, '2020-06-11 00:00:17', '2020-06-11 00:00:17', 'Text Editing System', '\'<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n        <featureModel chosenLayoutAlgorithm=\"1\">\n            <struct>\n                <and mandatory=\"true\" name=\"Text Editing System\">\n                    <feature name=\"Feature1\"/>\n                    <feature name=\"Feature2\"/>  \n                </and>\n            </struct>\n            <constraints> \n            </constraints>\n            <comments/>\n            <featureOrder userDefined=\"false\"/>\n        </featureModel>\'', 6);
 
 -- --------------------------------------------------------
 
@@ -365,7 +390,8 @@ INSERT INTO `projects` (`id`, `title`, `description`, `created_at`, `updated_at`
 (3, 't', 't', '2020-02-29 02:25:16', '2020-02-29 02:25:16', 1),
 (4, 'g', 'g', '2020-02-29 03:05:14', '2020-02-29 03:05:14', 4),
 (5, '5', '5', '2020-02-29 03:05:36', '2020-02-29 03:05:36', 4),
-(6, 'Eyal-Salman203', 'Pilot evaluation of PAxSPL', '2020-05-24 10:48:29', '2020-05-24 10:48:29', 1);
+(6, 'Eyal-Salman203', 'Pilot evaluation of PAxSPL', '2020-05-24 10:48:29', '2020-05-24 10:48:29', 1),
+(7, 'test', 'ts', '2020-06-11 00:29:54', '2020-06-11 00:30:27', 1);
 
 -- --------------------------------------------------------
 
@@ -435,7 +461,9 @@ INSERT INTO `teams` (`id`, `role`, `company_role`, `spl_exp`, `retrieval_exp`, `
 (7, 'Admin', NULL, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, '2020-02-29 03:05:14', '2020-02-29 03:05:14', 4, 4, 'Incomplete', 'Feature Retriever'),
 (8, 'Admin', NULL, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, '2020-02-29 03:05:27', '2020-02-29 03:05:27', 1, 4, 'Incomplete', 'Feature Retriever'),
 (9, 'Admin', NULL, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, '2020-02-29 03:05:36', '2020-02-29 03:05:36', 4, 5, 'Incomplete', 'Feature Retriever'),
-(21, 'Admin', 'Software Engineer', 'Yes', 'None', NULL, 1, 0, 0, 0, 0, 0, '2020-05-24 10:48:29', '2020-05-24 10:49:00', 1, 6, 'Complete', 'Feature Retriever');
+(21, 'Admin', 'Software Engineer', 'Yes', 'None', NULL, 1, 0, 0, 0, 0, 0, '2020-05-24 10:48:29', '2020-05-24 10:49:00', 1, 6, 'Complete', 'Feature Retriever'),
+(23, 'Admin', 'CEO', 'Only as CEO', 'CEO Experience', NULL, 0, 0, 0, 0, 1, 1, '2020-06-11 00:13:47', '2020-06-11 00:14:14', 5, 6, 'Complete', 'Feature Tester'),
+(24, 'Admin', NULL, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, '2020-06-11 00:29:54', '2020-06-11 00:29:54', 1, 7, 'Incomplete', 'Feature Retriever');
 
 -- --------------------------------------------------------
 
@@ -535,7 +563,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (1, 'Luciano', 'lamp67@hotmail.com', NULL, '$2y$10$EAepJvAJetJbtbhZxrbfW.iZdhAwiXCeFP86inFVKOUA0G8/eoIky', NULL, '2019-12-19 23:58:53', '2019-12-19 23:58:53'),
 (2, 'Pedro', 'pedro@gmail.com', NULL, '$2y$10$pQQJgqIqcB5kpX99seqcKOUPB2lWuph8I1.n3ow8nOicg5KM1fPPm', NULL, '2020-01-06 23:37:01', '2020-01-06 23:37:01'),
 (3, 'Tetra', 'jao@gmail.com', NULL, '$2y$10$W8nTIab/xqC0RyyfUD5KxO.x.ng2A4DkkHzZJFIXyiRiDOr80fwwK', NULL, '2020-01-16 00:18:33', '2020-01-16 00:18:33'),
-(4, 'lu', 'lu@gmail.com', NULL, '$2y$10$hPy7JRsXOFXITJcv9KQBLe4sH2jtl4ABdB2YBrvpBt2FQPNfp9MDi', NULL, '2020-02-29 02:25:51', '2020-02-29 02:25:51');
+(4, 'lu', 'lu@gmail.com', NULL, '$2y$10$hPy7JRsXOFXITJcv9KQBLe4sH2jtl4ABdB2YBrvpBt2FQPNfp9MDi', NULL, '2020-02-29 02:25:51', '2020-02-29 02:25:51'),
+(5, 'Luciano 2', 'augustus.marchezan@gmail.com', NULL, '$2y$10$RZOXnwaifCQNej6RLIppRuHTmxoTogdViwXRKF8YNxsOzLYdYBhCy', NULL, '2020-06-11 00:13:34', '2020-06-11 00:13:34');
 
 --
 -- Índices para tabelas despejadas
@@ -711,19 +740,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT de tabela `features`
 --
 ALTER TABLE `features`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de tabela `feature_artifacts`
 --
 ALTER TABLE `feature_artifacts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `feature_models`
 --
 ALTER TABLE `feature_models`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `migrations`
@@ -735,7 +764,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de tabela `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `related_techniques`
@@ -747,7 +776,7 @@ ALTER TABLE `related_techniques`
 -- AUTO_INCREMENT de tabela `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de tabela `techniques`
@@ -765,7 +794,7 @@ ALTER TABLE `technique_projects`
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para despejos de tabelas
