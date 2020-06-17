@@ -11327,7 +11327,3 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
     width: 100%;
 }
-
-input:required {
-    box-shadow: 4px 4px 20px rgba(200, 0, 0, 0.85);
-}

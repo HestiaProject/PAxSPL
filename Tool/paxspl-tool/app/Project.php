@@ -96,7 +96,8 @@ class Project extends Model
 
     public function scoping_techniques($type)
     {
-        return Technique::where('type', $type)->get();
+
+        return Technique::where('type', ucfirst($type))->get();
     }
 
 
