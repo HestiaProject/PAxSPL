@@ -104,9 +104,9 @@
 
                                     @csrf
 
-                                    @if($feature->children()->count()==0)
+                                  
                                     <a class="btn btn-primary" href="{{ route('projects.feature_model.features.edit', ['project'=>$project->id,'feature_model'=>$feature_model->id,'feature'=>$feature->id]) }}">Edit <i class="fas fa-pen"></i></a>
-
+                                    @if($feature->children()->count()==0 && $feature->parent!=null)
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Remove <i class="fas fa-trash"></i></button>
                                     @endif

@@ -124,8 +124,13 @@ class FeatureController extends Controller
 
 
         $feature =  Feature::find($request->feature);
-        $parent = Feature::find($request->parent);
-        $feature->height = $parent->height + 1;
+        if ($request->parent != null) {
+
+            $parent = Feature::find($request->parent);
+            $feature->height = $parent->height + 1;
+        }
+
+
         if ($request->abstract != null) {
             $feature->abstract = $request->abstract;
         } else {
@@ -193,7 +198,7 @@ class FeatureController extends Controller
             $document->setValue('f.name#' . $i, $feature->name);
             $document->setValue('f.type#' . $i, $feature->type);
             $document->setValue('f.description#' . $i, $feature->description);
-            $document->setValue('f.abstract#' . $i,$abs);
+            $document->setValue('f.abstract#' . $i, $abs);
             $j = 0;
             $artifacts = $feature->artifacts;
             $document->cloneRow('art#' . $i, count($artifacts));

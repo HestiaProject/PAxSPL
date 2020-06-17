@@ -33,7 +33,7 @@
                 <input type="text" name="name" class="form-control" placeholder="Feature Name" value="{{$feature->name}}" required maxlength="100">
             </div>
         </div>
-
+        @if($feature->parent!=null)
         <div class="col-xs-2 col-sm-2 col-md-2">
             <div class="form-group">
                 <strong>Feature Type:</strong>
@@ -45,6 +45,8 @@
                 </select>
             </div>
         </div>
+        @endif
+        @if($feature->parent!=null)
         <div class="col-xs-2 col-sm-2 col-md-2">
             <div class="form-group">
                 <label style="margin-top: 30px;">
@@ -53,6 +55,8 @@
             </div>
 
         </div>
+        @endif
+        @if($feature->children()->count()==0 && $feature->parent!=null)
         <div class="col-xs-2 col-sm-2 col-md-2">
             <div class="form-group">
                 <strong>Parent:</strong>
@@ -68,6 +72,7 @@
                 </select>
             </div>
         </div>
+        @endif
         <div class="col-xs-10 col-sm-10 col-md-10">
             <div class="form-group">
                 <strong>Description:</strong>
@@ -83,6 +88,7 @@
         </div>
 
     </div>
+
     <input type="hidden" id="feature_model_id" name="feature_model_id" value=" {{ $feature_model->id }}">
 
 </form>

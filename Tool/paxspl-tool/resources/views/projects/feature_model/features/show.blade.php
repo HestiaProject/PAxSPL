@@ -82,8 +82,9 @@
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <a class="btn" href="{{ route('projects.feature_model.features.index', ['project'=>$project->id,'feature_model'=>$feature_model->id]) }}">Back <i class="fas fa-arrow-left"></i></a>
 
+            
             <a class="btn btn-primary" href="{{ route('projects.feature_model.features.edit', ['project'=>$project->id,'feature_model'=>$feature_model->id,'feature'=>$feature->id]) }}">Edit <i class="fas fa-pen"></i></a>
-
+        
         </div>
     </div>
 
