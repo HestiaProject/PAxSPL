@@ -30,7 +30,7 @@
         <div class="col-xs-4 col-sm-4 col-md-4">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Feature Name" value="{{$feature->name}}">
+                <input type="text" name="name" class="form-control" placeholder="Feature Name" value="{{$feature->name}}" required maxlength="100">
             </div>
         </div>
 
@@ -71,7 +71,7 @@
         <div class="col-xs-10 col-sm-10 col-md-10">
             <div class="form-group">
                 <strong>Description:</strong>
-                <textarea class="form-control" id="description" style="height:150px" name="description" placeholder="Description">{{$feature->description}}</textarea>
+                <textarea class="form-control" id="description" style="height:150px" name="description" placeholder="Description" required maxlength="500">{{$feature->description}}</textarea>
             </div>
         </div>
 

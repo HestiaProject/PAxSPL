@@ -78,6 +78,15 @@
             <a class="btn btn-primary btn-warning" href="{{action('ExperienceController@generateDocx',['project' => $project, 'exp_process' => $exp_process])}}">Download Report <i class="fas fa-file-download"></i></a>
         </div>
         <br><br>
+        <div class="pull-right">
+
+
+            
+            <a style="color:blue;font-style: italic;">Experiences Remaining</a>;
+            <a style="color:black"> {{$exp_process->activities_no_exp->count()}} </a> 
+
+        </div>
+        <br><br>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="table-responsive">

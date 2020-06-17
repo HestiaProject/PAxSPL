@@ -39,20 +39,20 @@
         <div class="col-xs-3 col-sm-3 col-md-3">
             <div class="form-group">
                 <strong>Time Spent (hours):</strong>
-                <input type="number" name="time" class="form-control" placeholder="Time spent in this activity">
+                <input type="number" name="time" class="form-control" placeholder="Time spent in this activity" >
             </div>
         </div>
           
         <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Difficulties:</strong>
-                <textarea class="form-control" style="height:150px" name="difficulty" placeholder="Difficulties during the activity"></textarea>
+                <textarea class="form-control" style="height:150px" name="difficulty" placeholder="Difficulties during the activity" required maxlength="500"></textarea>
             </div>
         </div>
         <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Decisions or Observations:</strong>
-                <textarea class="form-control" style="height:150px" name="obs" placeholder="Decisions made during this activity"></textarea>
+                <textarea class="form-control" style="height:150px" name="obs" placeholder="Decisions made during this activity" required maxlength="500"></textarea>
             </div>
         </div>
         

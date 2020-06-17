@@ -49,13 +49,13 @@
         <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Difficulties:</strong>
-                <textarea class="form-control" style="height:150px" name="difficulty" placeholder="Difficulties during the activity">{{$experience->difficulty}}</textarea>
+                <textarea class="form-control" style="height:150px" name="difficulty" placeholder="Difficulties during the activity" required maxlength="500">{{$experience->difficulty}}</textarea>
             </div>
         </div>
         <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Decisions or Observations:</strong>
-                <textarea class="form-control" style="height:150px" name="obs" placeholder="Decisions made during this activity">{{$experience->obs}}</textarea>
+                <textarea class="form-control" style="height:150px" name="obs" placeholder="Decisions made during this activity" required maxlength="500">{{$experience->obs}}</textarea>
             </div>
         </div>
 

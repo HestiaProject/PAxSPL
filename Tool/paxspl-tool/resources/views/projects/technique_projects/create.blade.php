@@ -29,51 +29,51 @@
         <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Technique Name" >
+                <input type="text" name="name" class="form-control" placeholder="Technique Name" required maxlength="100">
             </div>
         </div>
 
         <div class="col-xs-7 col-sm-7 col-md-7">
             <div class="form-group">
                 <strong>Variations:</strong>
-                <input type="text" name="variations" class="form-control"  >
+                <input type="text" name="variations" class="form-control" required maxlength="100" >
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Definition:</strong>
-                <textarea class="form-control" style="height:100px" name="definition" placeholder="" ></textarea>
+                <textarea class="form-control" style="height:100px" name="definition" placeholder="" required maxlength="500"></textarea>
             </div>
         </div>
 
         <div class="col-xs-4 col-sm-4 col-md-4">
             <div class="form-group">
                 <strong>Type:</strong>
-                <input type="text" name="extension" class="form-control" >
+                <input type="text" name="extension" class="form-control" required maxlength="100">
             </div>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3">
             <div class="form-group">
                 <strong>Priority Order:</strong>
-                <input type="text" name="priority_order" class="form-control">
+                <input type="text" name="priority_order" class="form-control" required maxlength="100">
             </div>
         </div>
         <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="form-group">
                 <strong>Input Artifacts:</strong>
-                <input type="text" name="inputs" class="form-control"  >
+                <input type="text" name="inputs" class="form-control"  required maxlength="100">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Recommended Situation:</strong>
-                <textarea class="form-control" style="height:150px" name="recommended_situation" placeholder="" ></textarea>
+                <textarea class="form-control" style="height:150px" name="recommended_situation" placeholder="" required maxlength="500"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Not Recommended Situation:</strong>
-                <textarea class="form-control" style="height:120px" name="not_recommended_situation" placeholder="" ></textarea>
+                <textarea class="form-control" style="height:120px" name="not_recommended_situation" placeholder="" required maxlength="500"></textarea>
             </div>
         </div>
          

@@ -28,26 +28,26 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Company Role:</strong>
-                <input type="text" name="company_role" value="{{ $team->company_role }}" class="form-control" placeholder="Analyst, Developer, etc">
+                <input type="text" name="company_role" value="{{ $team->company_role }}" class="form-control" placeholder="Analyst, Developer, etc" required maxlength="100">
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Experience working with Software Product Lines:</strong>
-                <textarea class="form-control" style="height:120px" name="spl_exp" placeholder="Description of experience working with SPL.">{{ $team->spl_exp }}</textarea>
+                <textarea class="form-control" style="height:120px" name="spl_exp" placeholder="Description of experience working with SPL." required maxlength="500">{{ $team->spl_exp }}</textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Experience working with Feature Retrieval:</strong>
-                <textarea class="form-control" style="height:120px" name="retrieval_exp" placeholder="Description of experience with Feature Retrieval">{{ $team->retrieval_exp }}</textarea>
+                <textarea class="form-control" style="height:120px" name="retrieval_exp" placeholder="Description of experience with Feature Retrieval" required maxlength="500">{{ $team->retrieval_exp }}</textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Observation:</strong>
-                <textarea class="form-control" style="height:120px" name="obs" placeholder="">{{ $team->obs }}</textarea>
+                <textarea class="form-control" style="height:120px" name="obs" placeholder="" maxlength="500">{{ $team->obs }}</textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

@@ -73,7 +73,7 @@
         <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Problems:</strong>
-                <textarea class="form-control" style="height:150px" name="obs" placeholder="Report problems found">{{ $artifact->obs }}</textarea>
+                <textarea class="form-control" style="height:150px" name="obs" placeholder="Report problems found" maxlength="100">{{ $artifact->obs }}</textarea>
             </div>
         </div>
 

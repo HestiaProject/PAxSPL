@@ -78,7 +78,8 @@
 
         <div class="card shadow mb-4">
             <!-- Card Header - Accordion -->
-            <a href="#collapseCard" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+            
+            <a href="#collapseCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 
                 <h6 class="m-0 font-weight-bold text-primary">Extract:</h6>
             </a>
@@ -87,7 +88,7 @@
             </div>
 
             <!-- Card Content - Collapse -->
-            <div class="collapse" id="collapseCard" style="">
+            <div class="collapse show" id="collapseCard" style="">
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
@@ -142,7 +143,7 @@
         </div>
         <div class="card shadow mb-4">
             <!-- Card Header - Accordion -->
-            <a href="#collapseCard3" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+            <a href="#collapseCard3" class="d-block card-header py-3 " data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 
                 <h6 class="m-0 font-weight-bold text-primary">Categorize:</h6>
             </a>
@@ -151,7 +152,7 @@
             </div>
 
             <!-- Card Content - Collapse -->
-            <div class="collapse" id="collapseCard3" style="">
+            <div class="collapse show" id="collapseCard3" style="">
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
@@ -206,7 +207,7 @@
         </div>
         <div class="card shadow mb-4">
             <!-- Card Header - Accordion -->
-            <a href="#collapseCard2" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+            <a href="#collapseCard2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 
                 <h6 class="m-0 font-weight-bold text-primary">Group:</h6>
             </a>
@@ -215,7 +216,7 @@
             </div>
 
             <!-- Card Content - Collapse -->
-            <div class="collapse" id="collapseCard2" style="">
+            <div class="collapse show" id="collapseCard2" style="">
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
@@ -272,7 +273,7 @@
         </div>
         <div class="card shadow mb-4">
             <!-- Card Header - Accordion -->
-            <a href="#collapseCard4" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+            <a href="#collapseCard4" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 
                 <h6 class="m-0 font-weight-bold text-primary">Create Feature Model:</h6>
             </a>
@@ -281,7 +282,7 @@
             </div>
 
             <!-- Card Content - Collapse -->
-            <div class="collapse" id="collapseCard4" style="">
+            <div class="collapse show" id="collapseCard4" style="">
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">

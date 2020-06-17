@@ -28,13 +28,13 @@
     <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Artifact Name">
+                <input type="text" name="name" class="form-control" placeholder="Artifact Name" required maxlength="100">
             </div>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3">
             <div class="form-group">
                 <strong>Artifact Type:</strong>
-                <select class="custom-select" name="type" value=''>
+                <select class="custom-select" name="type" value='' required>
 
                     <option value="Domain">Domain</option>
                     <option value="Requirements">Requirements</option>
@@ -49,19 +49,19 @@
         <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
                 <strong>Link to Artifact:</strong>
-                <input type="text" name="external_link" class="form-control" placeholder="Link to Artifact">
+                <input type="text" name="external_link" class="form-control" placeholder="Link to Artifact" required maxlength="100">
             </div>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3">
             <div class="form-group">
                 <strong>File extension:</strong>
-                <input type="text" name="extension" class="form-control" placeholder="File Extension (pdf, doc, xml, etc)">
+                <input type="text" name="extension" class="form-control" placeholder="File Extension (pdf, doc, xml, etc)" required maxlength="100">
             </div>
         </div>
         <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Description:</strong>
-                <textarea class="form-control" style="height:150px" name="description" placeholder="Description"></textarea>
+                <textarea class="form-control" style="height:150px" name="description" placeholder="Description" required maxlength="500"></textarea>
             </div>
         </div>
         <input type="hidden" id="project_id" name="project_id" value=" {{ $project->id }}">

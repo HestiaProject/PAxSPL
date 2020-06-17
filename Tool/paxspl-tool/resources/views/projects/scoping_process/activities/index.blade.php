@@ -72,7 +72,7 @@
         <a class="btn btn-primary btn-warning" href="{{action('ScopingActController@generateDocx',['project' => $project, 'scoping_process' => $scoping_process])}}">Download Activities Report <i class="fas fa-file-download"></i></a>
         <br><br>
         <div class="card shadow mb-4">
-            <a href="#collapseCard0x" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+            <a href="#collapseCard0x" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 
                 <h6 class="m-0 font-weight-bold text-primary">Pre-Scoping:</h6>
             </a>
@@ -81,7 +81,7 @@
             </div>
 
             <!-- Card Content - Collapse -->
-            <div class="collapse" id="collapseCard0x" style="">
+            <div class="collapse show" id="collapseCard0x" style="">
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
@@ -136,7 +136,7 @@
         </div>
         <!-- Card Header - Accordion -->
         <div class="card shadow mb-4">
-            <a href="#collapseCard" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+            <a href="#collapseCard" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 
                 <h6 class="m-0 font-weight-bold text-primary">Domain:</h6>
             </a>
@@ -145,7 +145,7 @@
             </div>
 
             <!-- Card Content - Collapse -->
-            <div class="collapse" id="collapseCard" style="">
+            <div class="collapse show" id="collapseCard" style="">
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
@@ -201,7 +201,7 @@
 
         <div class="card shadow mb-4">
             <!-- Card Header - Accordion -->
-            <a href="#collapseCard3" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+            <a href="#collapseCard3" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 
                 <h6 class="m-0 font-weight-bold text-primary">Asset:</h6>
             </a>
@@ -210,7 +210,7 @@
             </div>
 
             <!-- Card Content - Collapse -->
-            <div class="collapse" id="collapseCard3" style="">
+            <div class="collapse show" id="collapseCard3" style="">
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
@@ -265,7 +265,7 @@
         </div>
         <div class="card shadow mb-4">
             <!-- Card Header - Accordion -->
-            <a href="#collapseCard2" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+            <a href="#collapseCard2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 
                 <h6 class="m-0 font-weight-bold text-primary">Product:</h6>
             </a>
@@ -274,7 +274,7 @@
             </div>
 
             <!-- Card Content - Collapse -->
-            <div class="collapse" id="collapseCard2" style="">
+            <div class="collapse show" id="collapseCard2" style="">
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
