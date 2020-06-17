@@ -57,7 +57,7 @@
                 type: 'image/svg+xml'
             });
 
-            var fileName = '<?php $scoping_process->name ?>.svg';
+            var fileName = 'scoping_process.svg';
 
             var downloadLink = document.createElement('a');
             downloadLink.download = fileName;

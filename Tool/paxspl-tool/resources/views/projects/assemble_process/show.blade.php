@@ -57,7 +57,7 @@
                 type: 'image/svg+xml'
             });
 
-            var fileName = '<?php $assemble_process->name ?>.svg';
+            var fileName = 'retrieval_process.svg';
 
             var downloadLink = document.createElement('a');
             downloadLink.download = fileName;
