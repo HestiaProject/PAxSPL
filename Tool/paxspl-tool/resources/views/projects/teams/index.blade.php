@@ -41,15 +41,17 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
 
                 <div class="form-group">
-                    <strong>Email:</strong>
-                    <input name="email" type="text" class="form-control bg-light border-0 " placeholder="User email" aria-label="Search" aria-describedby="basic-addon2">
-
-                    <strong>Role:</strong>
-                    <select class="custom-select" name="role">
-                        <option value="Admin">Admin</option>
-                        <option value="Team Member">Team Member</option>
-                        <option value="External User">External User</option>
-                    </select>
+                    <label> <strong>Email:</strong>
+                        <input name="email" type="text" class="form-control" placeholder="User email" aria-label="Search" aria-describedby="basic-addon2">
+                    </label>
+                    
+                    <label><strong>Role:</strong>
+                        <select class="custom-select" name="role">
+                            <option value="Admin">Admin</option>
+                            <option value="Team Member">Team Member</option>
+                            <option value="External User">External User</option>
+                        </select>
+                    </label>
 
                     <input type="hidden" id="project_id" name="project_id" value=" {{ $project->id }}">
 
@@ -60,7 +62,7 @@
             </div>
         </div>
     </div>
-  
+
 </form>
 <a class="btn btn-primary btn-warning" href="{{action('TeamController@generateDocx',$project)}}">Download Team Report <i class="fas fa-file-download"></i></a>
 <br><br>

@@ -11339,3 +11339,7 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
     width: 100%
 }
+
+:required {
+    box-shadow: 1px 1px 1px rgba(200, 0, 0, 0.85);
+}

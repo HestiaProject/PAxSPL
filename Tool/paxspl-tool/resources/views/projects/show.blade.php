@@ -6,7 +6,7 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="row">
-                <strong> Project: </strong> {{ $project->title }}
+            <p> <strong> Project: </strong> {{ $project->title }}</p>
             </div>
 
 
@@ -15,15 +15,15 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="row">
 
-                <strong>Description: </strong>
-                {{ $project->description }}
+            <p><strong>Description: </strong>
+                {{ $project->description }} </p>
 
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="row">
-                <strong>Owner: </strong>
-                {{ $project->user->name }}
+            <p>  <strong>Owner: </strong>
+                {{ $project->user->name }} </p>
             </div>
         </div>
         <div class="row">

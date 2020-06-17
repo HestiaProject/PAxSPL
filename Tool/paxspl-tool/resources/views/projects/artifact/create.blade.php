@@ -26,13 +26,13 @@
     <div class="row">
         
     <div class="col-xs-6 col-sm-6 col-md-6">
-            <div class="form-group">
+            <label class="form-group">
                 <strong>Name:</strong>
                 <input type="text" name="name" class="form-control" placeholder="Artifact Name" required maxlength="100">
-            </div>
+            </label>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3">
-            <div class="form-group">
+            <label class="form-group">
                 <strong>Artifact Type:</strong>
                 <select class="custom-select" name="type" value='' required>
 
@@ -43,7 +43,7 @@
                     <option value="Development">Development</option>
                     <option value="Technological">Technological</option>
                 </select>
-            </div>
+            </label>
         </div>
         
         <div class="col-xs-6 col-sm-6 col-md-6">

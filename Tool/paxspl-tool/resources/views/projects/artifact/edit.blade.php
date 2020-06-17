@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-9 margin-tb">
         <div class="pull-left">
-            <h2>Add New Artifact</h2>
+            <h2>Edit Artifact</h2>
         </div>
 
     </div>
