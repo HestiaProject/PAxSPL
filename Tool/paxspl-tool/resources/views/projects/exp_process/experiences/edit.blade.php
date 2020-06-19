@@ -42,7 +42,7 @@
         <div class="col-xs-3 col-sm-3 col-md-3">
             <div class="form-group">
                 <strong>Time Spent (hours):</strong>
-                <input type="number" name="time" class="form-control" placeholder="Time spent in this activity" value="{{$experience->time}}">
+                <input type="number" name="time" class="form-control" placeholder="Time spent in this activity" value="{{$experience->time}}" required  min="1" max="9999" maxlength="4" step="1">
             </div>
         </div>
 
