@@ -43,6 +43,9 @@ class TechniqueProjectController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'reason' => 'required',
+        ]);
         $tech_pro = new TechniqueProject();
         $tech_pro->project_id = $request->project;
 

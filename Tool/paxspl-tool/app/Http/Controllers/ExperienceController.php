@@ -45,6 +45,7 @@ class ExperienceController extends Controller
         $request->validate([
             'time' => 'required',
             'difficulty' => 'required',
+            'obs' => 'required',
         ]);
 
         $experience = new Experience();
@@ -114,6 +115,7 @@ class ExperienceController extends Controller
         $request->validate([
             'time' => 'required',
             'difficulty' => 'required',
+            'obs' => 'required',
         ]);
         Activity::find($request->old_activity_id)->update(['experience_id' => null]);
 

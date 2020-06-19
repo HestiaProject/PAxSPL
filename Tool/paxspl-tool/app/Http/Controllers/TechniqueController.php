@@ -42,6 +42,8 @@ class TechniqueController extends Controller
      */
     public function store(Request $request)
     {
+
+        
         $tech_pro = new TechniqueProject();
         $tech_pro->project_id = $request->project_id;
 
