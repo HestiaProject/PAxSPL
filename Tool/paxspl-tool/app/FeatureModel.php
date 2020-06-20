@@ -67,9 +67,9 @@ class FeatureModel extends Model
         $parent_xml = '';
         $abstract = '';
         $relation = 'and';
-        $mandatory = false;
+        $mandatory = 'false';
         if ($parent->type == 'Mandatory') {
-            $mandatory = true;
+            $mandatory = 'true';
         }
         if ($parent->abstract) {
             $abstract = 'abstract="true"';
@@ -85,10 +85,10 @@ class FeatureModel extends Model
             if ($newF->children()->count() > 0) {
                 $xml =  $this->generate_xml_children($newF, $features, $xml);
             } else {
-                $mandatory = false;
+                $mandatory = 'false';
                 $abstract = '';
                 if ($newF->type == 'Mandatory') {
-                    $mandatory = true;
+                    $mandatory = 'true';
                 }
                 if ($newF->abstract) {
                     $abstract = 'abstract="true"';
