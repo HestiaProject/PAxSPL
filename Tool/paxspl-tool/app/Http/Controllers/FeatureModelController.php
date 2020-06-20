@@ -6,6 +6,7 @@ use App\Feature;
 use App\FeatureModel;
 use App\Project;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class FeatureModelController extends Controller
 {
@@ -33,8 +34,15 @@ class FeatureModelController extends Controller
     {
         $feature_model = FeatureModel::where('id', $request->feature_model)->first();
         $project = Project::where('id', $request->project)->first();
+        $show = $request->show;
 
-        return view('projects.feature_model.features.index', compact('feature_model', 'project'));
+        if ($show == 'enter') {
+
+            return view('projects.feature_model.features.index', compact('feature_model', 'project'));
+        } else {
+
+            return view('projects.feature_model.show', compact('feature_model', 'project'));
+        }
     }
 
     /**
@@ -161,4 +169,6 @@ class FeatureModelController extends Controller
         return redirect()->route('projects.feature_model.index', compact('project'))
             ->with('success', 'Feature Model deleted successfully');
     }
+
+   
 }

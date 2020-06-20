@@ -51,7 +51,7 @@
         <div class="alert alert-danger">
             Before continuing, at least one technique must be added to the project!<br><br>
             <a class="collapse-item" href="{{ route('projects.technique_projects.index', $project -> id) }}">Add Techniques</a>
-        </div> 
+        </div>
         @elseif ($project->assemble_process_finished->count()>0)
         <div class="alert alert-danger">
             Before continuing, the retrieval process must be finished!<br><br>
@@ -71,7 +71,7 @@
 
                     <th>Name</th>
 
-                    <th width="300px">Action</th>
+                    <th width="500px">Action</th>
                 </tr>
                 @foreach ($project->fm as $feature_model)
                 <tr>
@@ -80,10 +80,11 @@
                     <td>
                         <form action="{{ route('projects.feature_model.destroy',['project'=>$project->id, 'feature_model'=>$feature_model->id]) }}" method="POST">
 
-                            <a class="btn btn-info " href="{{ route('projects.feature_model.show',['project'=>$project->id, 'feature_model'=>$feature_model->id, 'bpmn'=>'f'] ) }}">Enter <i class="fas fa-folder-open"></i> </a>
+                            <a class="btn btn-info " href="{{ route('projects.feature_model.show',['project'=>$project->id, 'feature_model'=>$feature_model->id, 'show'=>'enter'] ) }}">Enter <i class="fas fa-folder-open"></i> </a>
 
-                           
+
                             <a class="btn btn-primary" href="{{ route('projects.feature_model.edit',['project'=>$project->id, 'feature_model'=>$feature_model->id]) }}">Edit <i class="fas fa-edit"></i></a>
+                            <a class="btn btn-secondary" href="{{ route('projects.feature_model.show',['project'=>$project->id, 'feature_model'=>$feature_model->id, 'show'=>'config']) }}">Configurator <i class="fas fa-cogs"></i></a>
 
                             @if($feature_model->features->count()==1)
                             @csrf

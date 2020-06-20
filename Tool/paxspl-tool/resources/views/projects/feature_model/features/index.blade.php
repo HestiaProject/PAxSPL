@@ -60,6 +60,8 @@
             <a class="btn btn-success" href="{{ route('projects.feature_model.features.create',['project' => $project, 'feature_model' => $feature_model]) }}">New Feature <i class="fas fa-plus"></i></a>
 
             <a class="btn btn-primary btn-warning" href="{{action('FeatureController@generateDocx',['project' => $project, 'feature_model' => $feature_model])}}">Download Features Report <i class="fas fa-file-download"></i></a>
+            <a class="btn btn-primary btn-info" href="{{action('FeatureController@generateXML',['project' => $project, 'feature_model' => $feature_model])}}">Download XML <i class="fas fa-file-code"></i></a>
+
         </div>
         <br><br>
 
@@ -104,7 +106,7 @@
 
                                     @csrf
 
-                                  
+
                                     <a class="btn btn-primary" href="{{ route('projects.feature_model.features.edit', ['project'=>$project->id,'feature_model'=>$feature_model->id,'feature'=>$feature->id]) }}">Edit <i class="fas fa-pen"></i></a>
                                     @if($feature->children()->count()==0 && $feature->parent!=null)
                                     @method('DELETE')
@@ -121,11 +123,11 @@
                     </table>
                 </div>
             </div>
+
         </div>
+
         @endif
 
+
     </div>
-
-</div>
-
-@endsection
+    @endsection

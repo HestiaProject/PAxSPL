@@ -8,6 +8,8 @@ use App\Project;
 use App\User;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class FeatureController extends Controller
 {
@@ -162,6 +164,25 @@ class FeatureController extends Controller
             ->with('success', 'Feature deleted successfully');
     }
 
+
+    /**
+     * Generate XML
+     */
+    public function generateXML(Project $project, FeatureModel $feature_model){
+
+        // $output = View::make('site.contabilidad.adeudosXML')->with(compact(('xml_datos', 'total'))->render();
+
+        $xml = $feature_model->generate_xml();
+
+        $response = Response::create($xml, 200);
+        $response->header('Content-Type', 'text/xml');
+        $response->header('Cache-Control', 'public');
+        $response->header('Content-Description', 'File Transfer');
+        $response->header('Content-Disposition', 'attachment; filename=' . $feature_model->name . '.xml');
+        $response->header('Content-Transfer-Encoding', 'binary');
+        return $response;
+
+    }
     /**
      * Generate report 
      *

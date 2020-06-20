@@ -1,0 +1,46 @@
+{
+  "_from": "feature-configurator",
+  "_id": "feature-configurator@1.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-GmHoY2JbI3J1MbmePJ9nhZ2VAYW38QW/9hgQr9iEZEqhO7PglLFPOAbRgArADCMuK2YNXu0WElJFQ0kPhVlBpQ==",
+  "_location": "/feature-configurator",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "feature-configurator",
+    "name": "feature-configurator",
+    "escapedName": "feature-configurator",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/feature-configurator/-/feature-configurator-1.0.1.tgz",
+  "_shasum": "3fc78deeec00bc7b18728100a2bd9be4572789a3",
+  "_spec": "feature-configurator",
+  "_where": "E:\\Docs\\Documents\\Unipampa\\tcc\\PAxSPL\\Tool\\paxspl-tool",
+  "bugs": {
+    "url": "https://github.com/ekuiter/feature-configurator/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Browser-based configurator for FeatureIDE feature models",
+  "devDependencies": {
+    "logic-solver": "^2.0.1"
+  },
+  "homepage": "https://github.com/ekuiter/feature-configurator#readme",
+  "license": "LGPL-3.0",
+  "name": "feature-configurator",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekuiter/feature-configurator.git"
+  },
+  "scripts": {
+    "prepare": "browserify node_modules/logic-solver/logic-solver.js --standalone Logic | uglifyjs > src/logic-solver.js && cat src/*.js | uglifyjs -o bundle.js"
+  },
+  "version": "1.0.1"
+}

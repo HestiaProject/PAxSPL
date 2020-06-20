@@ -11,7 +11,7 @@
 					<feature mandatory="true" name="Country"/>
 					<feature mandatory="true" name="Supplier"/>
 					<feature mandatory="true" name="Unit of m."/>
-					<feature mandatory="true" name="Salesman"/>
+					<feature mandatory="true" name="Salesman" description=""/>
 					<feature name="Paym. Cond."/>
 					<and name="Transport">
 						<feature mandatory="true" name="Vehicle"/>

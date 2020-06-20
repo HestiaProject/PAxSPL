@@ -24,6 +24,14 @@
     <!-- needed for this example only -->
     <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
 
+    <!-- Feature configurator -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.rawgit.com/vanderlee/tristate/master/jquery.tristate.js"></script>
+    <script src="{{ asset('feature-configurator/bundle.js') }}"></script>
+
+     
+
 </head>
 
 <body id="page-top">
@@ -127,7 +135,7 @@
 
                         <a class="collapse-item" href="{{ route('projects.execute_f_process.index', $project -> id) }}">Retrieval Process</a>
                         <a class="collapse-item" href="{{ route('projects.execute_s_process.index', $project -> id) }}">Scoping Process</a>
-                       
+
                     </div>
 
                     @else
@@ -289,7 +297,7 @@
 
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}" defer></script>
+
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}" defer></script>
     <script src="{{ asset('js/sb-admin-2.min.js') }}" defer></script>
