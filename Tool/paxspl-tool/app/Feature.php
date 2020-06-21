@@ -34,6 +34,16 @@ class Feature extends Model
     }
 
 
+    public function check_artifact(Artifact $a){
+        $artifact = FeatureArtifact::where('feature_id', $this->id)->where('artifact_id', $a->id)->first();
+        if($artifact != null){
+            return '<i class="fas fa-check-circle fa-2x" style="color:green"></i>';
+        }
+        else{
+            return '';
+        }
+
+    }
     public function style()
     {
         $style = '';
