@@ -163,7 +163,7 @@ function Feature(node, parent, children) {
     if (!(this instanceof Feature)) return new Feature(node, parent, children);
     var self = this;
 
-    function getDescription(node) { var description = node.find("> description").get(); return description.length === 1 ? $(description[0]).text().split("\n").map(function(line) { return line.trim() }).join("\n").trim() : null }
+    function getDescription(node) { var description = node.find("description").get(); return description.length === 1 ? $(description[0]).text().split("\n").map(function(line) { return line.trim() }).join("\n").trim() : null }
     this.name = node.attr("name");
     this.description = getDescription(node);
     this.mandatory = node.attr("mandatory") === "true";

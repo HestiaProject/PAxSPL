@@ -51,7 +51,7 @@ class FeatureController extends Controller
         ]);
 
         $feature = new Feature();
-        $feature->name = $request->name;
+        $feature->name = str_replace(" ","",$request->name);
         $feature->type = $request->type;
         $feature->parent = $request->parent;
 
@@ -139,7 +139,8 @@ class FeatureController extends Controller
             $feature->abstract = 0;
         }
 
-        $feature->update($request->all());
+        
+        $feature->update($request->all($feature->name = str_replace(" ","",$request->name)));
 
 
         $project = $request->project;

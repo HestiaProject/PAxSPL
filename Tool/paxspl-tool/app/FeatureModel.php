@@ -74,13 +74,21 @@ class FeatureModel extends Model
         if ($parent->abstract) {
             $abstract = 'abstract="true"';
         }
-        $parent_xml = '<'.$relation.' ' . $abstract . ' mandatory="' . $mandatory . '" name="' . $parent->name . '" description="' . $parent->description . '">';
 
-        $xml = $xml . $parent_xml;
 
         $children = $parent->children();
+        if ($children[0]->type == 'XOR Alternative') {
+            $relation = 'alt';
+        } else  if ($children[0]->type == 'OR Alternative') {
+            $relation = 'or';
+        }
+
+        $parent_xml = '<' . $relation . ' ' . $abstract . ' mandatory="' . $mandatory . '" name="' . str_replace(" ", "", $parent->name) . '"><description>' . $parent->description . ';</description>';
+
+        $xml = $xml . $parent_xml;
         foreach ($children as $c) {
             $newF = Feature::find($c->id);
+
             $features[] = $newF;
             if ($newF->children()->count() > 0) {
                 $xml =  $this->generate_xml_children($newF, $features, $xml);
@@ -93,10 +101,10 @@ class FeatureModel extends Model
                 if ($newF->abstract) {
                     $abstract = 'abstract="true"';
                 }
-                $xml = $xml . '<feature ' . $abstract . ' mandatory="' . $mandatory . '" name="' . $newF->name . '" description="' . $newF->description . '"/>';
+                $xml = $xml . '<feature ' . $abstract . ' mandatory="' . $mandatory . '" name="' . str_replace(" ", "", $newF->name) . '" /><description>' . $parent->description . ';</description>';
             }
         }
-        $xml = $xml . '</'.$relation.'>';
+        $xml = $xml . '</' . $relation . '>';
         return $xml;
     }
 }
