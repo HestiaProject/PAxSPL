@@ -59,10 +59,10 @@
         </div>
         @else
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('projects.feature_model.create',$project -> id) }}">New Feature Model <i class="fas fa-plus"></i></a>
+            <a class="btn btn-success" href="{{ route('projects.feature_model.product.create',['project' => $project, 'feature_model' => $feature_model]) }}">New Product <i class="fas fa-plus"></i></a>
         </div>
         <div class="pull-left">
-            <h2>My Feature Models:</h2>
+            <h2>My Products:</h2>
         </div>
 
         <div class="table-responsive">
@@ -73,24 +73,21 @@
 
                     <th width="500px">Action</th>
                 </tr>
-                @foreach ($project->fm as $feature_model)
+                @foreach ($feature_model->products as $product)
                 <tr>
 
-                    <td>{{ $feature_model->name }}</td>
+                    <td>{{ $product->name }}</td>
                     <td>
-                        <form action="{{ route('projects.feature_model.destroy',['project'=>$project->id, 'feature_model'=>$feature_model->id]) }}" method="POST">
-
-                            <a class="btn btn-info " href="{{ route('projects.feature_model.show',['project'=>$project->id, 'feature_model'=>$feature_model->id, 'show'=>'enter'] ) }}">Enter <i class="fas fa-folder-open"></i> </a>
+                        <form action="{{ route('projects.feature_model.product.destroy',['project'=>$project->id, 'feature_model'=>$feature_model->id, 'product'=>$product->id]) }}" method="POST">
 
 
-                            <a class="btn btn-primary" href="{{ route('projects.feature_model.edit',['project'=>$project->id, 'feature_model'=>$feature_model->id]) }}">Edit <i class="fas fa-edit"></i></a>
-                            <a class="btn btn-secondary" href="{{ route('projects.feature_model.product.index',['project'=>$project->id, 'feature_model'=>$feature_model->id]) }}">Products <i class="fas fa-cogs"></i></a>
+                            <a class="btn btn-primary btn-info" href="{{action('ProductController@generateXML',['project' => $project, 'feature_model' => $feature_model, 'product' => $product])}}">Download XML <i class="fas fa-file-code"></i></a>
 
-                            @if($feature_model->features->count()==1)
+
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete <i class="fas fa-trash"></i></button>
-                            @endif
+
                         </form>
                     </td>
                 </tr>
@@ -101,5 +98,7 @@
         </div>
     </div>
 </div>
+
+
 
 @endsection

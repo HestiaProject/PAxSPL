@@ -33,6 +33,11 @@ class Feature extends Model
         return $this->hasMany('App\FeatureArtifact');
     }
 
+    public function pro_features()
+    {
+        return $this->hasMany('App\ProductFeatures');
+    }
+
 
     public function check_artifact(Artifact $a){
         $artifact = FeatureArtifact::where('feature_id', $this->id)->where('artifact_id', $a->id)->first();

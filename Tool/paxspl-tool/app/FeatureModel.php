@@ -15,6 +15,11 @@ class FeatureModel extends Model
         return $this->hasMany('App\Feature')->orderBy('height', 'asc');
     }
 
+    public function products()
+    {
+        return $this->hasMany('App\Product');
+    }
+
     public function project()
     {
         return $this->belongsTo('App\Project', 'project_id');

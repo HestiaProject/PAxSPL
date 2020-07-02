@@ -66,7 +66,44 @@
         <br><br>
 
 
+        <div class="card shadow mb-4">
+            <a class="d-block card-header py-3 collapsed" href="#collapseTrace" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseTrace">
 
+                <h6 class="m-0 font-weight-bold text-primary">Artifacts Traceability Matrix:</h6>
+            </a>
+
+            <!-- Card Content - Collapse -->
+            <div class="collapse" id="collapseTrace" style="">
+                <div class="card-body">
+
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
+                            <tr>
+                                <th><strong> Feature/Artifact</strong></th>
+                                @foreach ($project->artifacts as $artifact)
+                                <th>{{ $artifact->name }}</th>
+                                @endforeach
+
+                            </tr>
+                            @foreach ($feature_model->features_order() as $feature)
+                            <tr>
+
+                                <td>{{ $feature->name }}</td>
+                                @foreach ($project->artifacts as $artifact)
+
+                                <td style=" text-align: center; vertical-align: middle;">{!! $feature->check_artifact($artifact) !!}</td>
+
+                                @endforeach
+                            </tr>
+                            @endforeach
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="pull-right">
 
 
