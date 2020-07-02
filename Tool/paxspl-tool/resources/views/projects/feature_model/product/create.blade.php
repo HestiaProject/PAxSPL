@@ -86,8 +86,7 @@
 
                     afterRender: function() {
                         var self = this;
-                        $(".export").click(function() {
-                            alert(self.configuration.serialize());
+                        $(".export").click(function() { 
                             $('#features').val(self.configuration.serialize());
 
                             //         // $("pre").empty().text(self.configuration.serialize());

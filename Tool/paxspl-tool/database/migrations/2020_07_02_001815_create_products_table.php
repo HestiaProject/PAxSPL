@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->integer('feature_model_id')->unsigned(); 
 
              
-            $table->foreign('feature_model_id')->references('id')->on('feature_model'); 
+            $table->foreign('feature_model_id')->references('id')->on('feature_models'); 
         });
     }
 

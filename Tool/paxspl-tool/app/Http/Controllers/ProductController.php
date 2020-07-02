@@ -80,8 +80,7 @@ class ProductController extends Controller
                 $productFeature->product_id = $product->id;
                 $featureName = strstr($f, 'name');
                 $featureName = str_replace('name="', '', $featureName);
-                $featureName = str_replace('"', '', $featureName);
-                print($featureName);
+                $featureName = str_replace('"', '', $featureName); 
                 $feature = Feature::where('feature_model_id', $feature_model->id)->where('name', $featureName)->first();
                 $productFeature->feature_id = $feature->id;
                 $productFeature->save();
