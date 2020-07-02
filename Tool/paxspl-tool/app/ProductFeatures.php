@@ -17,7 +17,7 @@ class ProductFeatures extends Model
 
     public  function feature()
     {
-        return $this->belongsTo('App\Feature', 'feature_id');
+        return $this->belongsTo('App\Feature', 'feature_id')->orderBy('height');
     }
 
     

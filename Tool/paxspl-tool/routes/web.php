@@ -54,6 +54,7 @@ Route::get('projects/{project}/scoping_process/{scoping_process}/activities_gene
 Route::get('projects/{project}/feature_model/{feature_model}/features_generate', 'FeatureController@generateDocx');
 Route::get('projects/{project}/feature_model/{feature_model}/features_xml', 'FeatureController@generateXML'); 
 Route::get('projects/{project}/feature_model/{feature_model}/product/{product}/product_xml', 'ProductController@generateXML'); 
+Route::get('projects/{project}/feature_model/{feature_model}/product/{product}/generate_report', 'ProductController@generateDocx'); 
 Route::get('projects/{project}/exp_process/{exp_process}/experiences_generate', 'ExperienceController@generateDocx');
 
 Route::get('/', 'HomeController@index')->name('home')->middleware('auth');

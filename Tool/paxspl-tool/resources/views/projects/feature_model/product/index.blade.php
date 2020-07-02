@@ -61,6 +61,45 @@
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('projects.feature_model.product.create',['project' => $project, 'feature_model' => $feature_model]) }}">New Product <i class="fas fa-plus"></i></a>
         </div>
+        <br> 
+        <div class="card shadow mb-4">
+            <a class="d-block card-header py-3 collapsed" href="#collapseTrace" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseTrace">
+
+                <h6 class="m-0 font-weight-bold text-primary">Feature Traceability Matrix:</h6>
+            </a>
+
+            <!-- Card Content - Collapse -->
+            <div class="collapse" id="collapseTrace" style="">
+                <div class="card-body">
+
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="100" style="width:100%">
+                            <tr>
+                                <th><strong> Features/Products</strong></th>
+                                @foreach ($feature_model->products as $product)
+                                <th>{{ $product->name }}</th>
+                                @endforeach
+
+                            </tr>
+                            @foreach ($feature_model->features_order() as $feature)
+                            <tr>
+
+                                <td>{{ $feature->name }}</td>
+                                @foreach ($feature_model->products as $product)
+
+                                <td style=" text-align: center; vertical-align: middle;">{!! $product->check_feature($feature) !!}</td>
+
+                                @endforeach
+                            </tr>
+                            @endforeach
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="pull-left">
             <h2>My Products:</h2>
         </div>
@@ -71,7 +110,7 @@
 
                     <th>Name</th>
 
-                    <th width="500px">Action</th>
+                    <th width="600px">Action</th>
                 </tr>
                 @foreach ($feature_model->products as $product)
                 <tr>
@@ -80,8 +119,9 @@
                     <td>
                         <form action="{{ route('projects.feature_model.product.destroy',['project'=>$project->id, 'feature_model'=>$feature_model->id, 'product'=>$product->id]) }}" method="POST">
 
+                            <a class="btn btn-primary btn-warning" href="{{action('ProductController@generateDocx',['project' => $project, 'feature_model' => $feature_model, 'product' => $product])}}">Feature Report <i class="fas fa-file-download"></i></a>
 
-                            <a class="btn btn-primary btn-info" href="{{action('ProductController@generateXML',['project' => $project, 'feature_model' => $feature_model, 'product' => $product])}}">Download XML <i class="fas fa-file-code"></i></a>
+                            <a class="btn btn-primary btn-info" href="{{action('ProductController@generateXML',['project' => $project, 'feature_model' => $feature_model, 'product' => $product])}}">Configuration XML <i class="fas fa-file-code"></i></a>
 
 
                             @csrf

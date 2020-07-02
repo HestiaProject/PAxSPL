@@ -7,6 +7,8 @@ use App\FeatureModel;
 use App\Product;
 use App\ProductFeatures;
 use App\Project;
+use App\User;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -153,5 +155,88 @@ class ProductController extends Controller
         $response->header('Content-Disposition', 'attachment; filename=' . $product->name . '-configuration.xml');
         $response->header('Content-Transfer-Encoding', 'binary');
         return $response;
+    }
+
+    public function generateDocx(Request $request)
+    {
+        setlocale(LC_TIME, 'es');
+
+        $date = date('m-d-Y');
+
+        $document = new \PhpOffice\PhpWord\TemplateProcessor('../templates/products.docx');
+
+
+        $user = User::find(auth()->id());
+        $product = Product::find($request->product);
+        $project = Project::find($request->project); 
+        $document->setValue('doc', "Features");
+        $document->setValue('admin', $user->name);
+        $document->setValue('date', $date);
+        $document->setValue('project', $project->title);
+        $document->setValue('product', $product->name);
+        $document->setValue('description', $product->description);
+
+        $features = $product->pro_features;
+        $i = 0;
+        $document->cloneRow('f', count($features));
+        foreach ($features as $f) {
+            $feature = $f->feature;
+            $i++;
+            $abs = 'No';
+            if ($feature->abstract) {
+                $abs = 'Yes';
+            }
+            $document->setValue('f#' . $i, $i);
+            $document->setValue('f.name#' . $i, $feature->name);
+            $document->setValue('f.type#' . $i, $feature->type);
+            $document->setValue('f.description#' . $i, $feature->description);
+            $document->setValue('f.abstract#' . $i, $abs);
+            $j = 0;
+            $artifacts = $feature->artifacts;
+            $document->cloneRow('art#' . $i, count($artifacts));
+            foreach ($artifacts as $artifact) {
+                $j++;
+                $newdate = date_create($artifact->artifact->last_update_date);
+                $updated_date = date_format($newdate, 'm-d-Y');
+                $document->setValue('art#' . $i . '#' . $j, $j);
+                $io = 'Input';
+                if ($artifact->io == 'o') {
+                    $io = 'Output';
+                }
+                $document->setValue('art.io#' . $i . '#' . $j, $io);
+                $document->setValue('art.name#' . $i . '#' . $j, $artifact->artifact->name);
+                $document->setValue('art.type#' . $i . '#' . $j, $artifact->artifact->type);
+                $document->setValue('art.description#' . $i . '#' . $j, $artifact->artifact->description);
+                $document->setValue('art.extension#' . $i . '#' . $j, $artifact->artifact->extension);
+                $document->setValue('art.external_link#' . $i . '#' . $j, $artifact->artifact->external_link);
+                $document->setValue('art.last_update_date#' . $i . '#' . $j, $updated_date);
+                $document->setValue('art.last_update_user#' . $i . '#' . $j, $artifact->artifact->update_user->name);
+            }
+        }
+
+
+
+
+
+
+
+
+        $name = 'Product-' .$product->name.  "-$date" . '.docx';
+
+
+
+
+
+        $headers = array(
+            //'Content-Type: application/msword',
+            'Content-Type: vnd.openxmlformats-officedocument.wordprocessingml.document'
+        );
+
+        try {
+            $document->saveAs(storage_path($name));
+        } catch (Exception $e) {
+        }
+
+        return response()->download(storage_path($name));
     }
 }
