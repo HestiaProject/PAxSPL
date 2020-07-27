@@ -13,7 +13,7 @@ class Activity extends Model
     public function phase()
     {
         if ($this->phase == 'fm')
-            return 'Create Feature Model';
+            return 'Create Variability Model';
         else {
             return ucfirst($this->phase);
         }

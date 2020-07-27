@@ -60,7 +60,7 @@
             <div class="collapse" id="collapseCard0" style="">
                 <div class="card-body">
                     <figure style="display: block;  margin-left: auto;  margin-right: auto;  width: 50%;">
-                        <img src="https://raw.githubusercontent.com/HestiaProject/Generic-SPL-Re-engineering-Process/master/process/img/genericProcess.png" alt="Generic Feature Retrieval Process">
+                        <img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/process/img/genericProcess.png" alt="Generic Feature Retrieval Process">
                         <figcaption>Generic Feature Retrieval Process</figcaption>
 
                     </figure>
@@ -271,7 +271,7 @@
             <!-- Card Header - Accordion -->
             <a href="#collapseCard4" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
 
-                <h6 class="m-0 font-weight-bold text-primary">Create Feature Model:</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Create Variability Model:</h6>
             </a>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('projects.assemble_process.activities.create',['project'=>$project -> id,'assemble_process'=>$assemble_process -> id,'phase'=>'fm']) }}">New Activity <i class="fas fa-plus"></i></a>
