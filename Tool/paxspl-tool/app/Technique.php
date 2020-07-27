@@ -76,8 +76,11 @@ class Technique extends Model
             }
         }
         $artifacts = Artifact::where("project_id", $project->id)->get();
-
-        $point = 50 / count($artifacts);
+        $number = 1;
+        if(count($artifacts)>0){
+            $number = count($artifacts);
+        }
+        $point = 50 / $number;
         foreach ($artifacts as $artifact) {
 
             if (strpos(strtolower($this->inputs), strtolower($artifact->type)) !== false)

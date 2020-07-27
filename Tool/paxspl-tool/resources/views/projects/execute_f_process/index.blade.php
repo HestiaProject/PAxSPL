@@ -47,11 +47,7 @@
             You Must be a feature retriever to check the artifacts!<br><br>
 
         </div>
-        @elseif ($project->artifacts->count()==0)
-        <div class="alert alert-danger">
-            Before continuing, at least one artifact must be created!<br><br>
-            <a class="collapse-item" href="{{ route('projects.artifact.index', $project -> id) }}">Register Artifacts</a>
-        </div>
+        
         @elseif ($project->techniques_project->count()==0)
         <div class="alert alert-danger">
             Before continuing, at least one technique must be added to the project!<br><br>

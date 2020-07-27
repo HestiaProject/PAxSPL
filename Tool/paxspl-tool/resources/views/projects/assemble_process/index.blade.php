@@ -42,11 +42,7 @@
             Before continuing, all team members information must be completed!<br><br>
             <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a>
         </div>
-        @elseif ($project->artifacts->count()==0)
-        <div class="alert alert-danger">
-            Before continuing, at least one artifact must be created!<br><br>
-            <a class="collapse-item" href="{{ route('projects.artifact.index', $project -> id) }}">Register Artifacts</a>
-        </div>
+         
         @elseif ($project->techniques_project->count()==0)
         <div class="alert alert-danger">
             Before continuing, at least one technique must be added to the project!<br><br>

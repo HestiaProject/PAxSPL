@@ -41,12 +41,7 @@
         <div class="alert alert-danger">
             Before continuing, all team members information must be completed!<br><br>
             <a class="collapse-item" href="{{ route('projects.teams.index', $project -> id) }}">Collect Team Information</a>
-        </div>
-        @elseif ($project->artifacts->count()==0)
-        <div class="alert alert-danger">
-            Before continuing, at least one artifact must be created!<br><br>
-            <a class="collapse-item" href="{{ route('projects.artifact.index', $project -> id) }}">Register Artifacts</a>
-        </div>
+        </div> 
         @else
         <a class="btn btn-primary btn-warning" href="{{action('TechniqueProjectController@generateDocx',$project)}}">Download Techniques Report <i class="fas fa-file-download"></i></a>
         <br><br>
