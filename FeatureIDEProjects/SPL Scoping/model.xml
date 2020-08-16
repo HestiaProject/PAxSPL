@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <featureModel>
-    <properties/>
-    <struct>
-        <and abstract="true" mandatory="true" name="SPLScoping">
-            <and abstract="true" mandatory="true" name="ScopinpType">
-                <and name="Domain">
-                    <feature name="MarketAnalysis"/>
-                    <or name="CostBenefitAnalysis">
-                        <or name="CostModels">
-                            <feature name="MathematicalModels"/>
-                            <feature name="Algorithms"/>
-                        </or>
-                        <feature name="CustomerNeeds"/>
-                    </or>
-                    <feature name="ProductRoadmap"/>
-                </and>
-                <and name="Asset">
-                    <feature name="PrioritizeProducts"/>
-                    <feature name="ArchitectureDefinition"/>
-                    <feature name="VaribiabilityAnalysis"/>
-                </and>
-                <or name="Product">
-                    <feature name="CandidateAnalysis"/>
-                    <feature name="FeatureDefinition"/>
-                </or>
-            </and>
-            <and name="SupportingConcepts">
-                <feature name="MetricsDefinition"/>
-                <feature name="ScopingMetamodel"/>
-                <feature name="EvolutionPlanning"/>
-            </and>
-        </and>
-    </struct>
-    <constraints/>
-    <calculations Auto="false" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
-    <comments/>
-    <featureOrder userDefined="false"/>
+	<properties>
+		<calculations key="tautology" value="true"/>
+		<calculations key="auto" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<calculations key="redundant" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="true"/>
+		<calculations key="constraints" value="true"/>
+		<graphics key="layoutalgorithm" value="4"/>
+		<calculations key="features" value="true"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Scoping">
+			<graphics key="collapsed" value="false"/>
+			<or abstract="true" mandatory="true" name="Type">
+				<or abstract="true" name="Domain">
+					<feature name="MarketAnalysis"/>
+					<feature name="CostModels"/>
+					<feature name="CustomerNeeds"/>
+					<feature name="ProductRoadmap"/>
+				</or>
+				<or abstract="true" name="Asset">
+					<feature name="PrioritizeProducts"/>
+					<feature name="ArchitectureDefinition"/>
+					<feature name="VaribiabilityAnalysis"/>
+				</or>
+				<or abstract="true" name="Product">
+					<feature name="CandidateAnalysis"/>
+					<feature name="FeatureDefinition"/>
+				</or>
+			</or>
+			<or abstract="true" name="Concepts">
+				<feature name="MetricsDefinition"/>
+				<feature name="ScopingMetamodel"/>
+				<feature name="EvolutionPlanning"/>
+			</or>
+		</and>
+	</struct>
 </featureModel>

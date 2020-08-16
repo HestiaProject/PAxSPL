@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<calculations key="tautology" value="true"/>
+		<calculations key="auto" value="true"/>
+		<graphics key="legendposition" value="607,300"/>
+		<graphics key="legendautolayout" value="false"/>
+		<calculations key="redundant" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="true"/>
+		<calculations key="constraints" value="true"/>
+		<graphics key="layoutalgorithm" value="4"/>
+		<calculations key="features" value="true"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="FeatureRetrieval">
+			<or abstract="true" name="AdditionalSupport">
+				<graphics key="collapsed" value="false"/>
+				<feature name="ExpertDriven"/>
+				<feature name="Heuristics"/>
+				<feature name="RuleBased"/>
+			</or>
+			<or abstract="true" mandatory="true" name="Techniques">
+				<graphics key="collapsed" value="false"/>
+				<or abstract="true" name="StaticAnalysis">
+					<graphics key="collapsed" value="false"/>
+					<feature name="DependencyAnalysis">
+						<graphics key="collapsed" value="false"/>
+					</feature>
+					<feature name="DataFlowAnalysis">
+						<graphics key="collapsed" value="false"/>
+					</feature>
+					<feature name="Clustering"/>
+				</or>
+				<or abstract="true" name="InformationRetrieval">
+					<graphics key="collapsed" value="false"/>
+					<feature name="LSI"/>
+					<feature name="VSM"/>
+					<feature name="FCA"/>
+				</or>
+			</or>
+		</and>
+	</struct>
+</featureModel>
