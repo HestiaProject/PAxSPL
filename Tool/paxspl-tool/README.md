@@ -1,11 +1,11 @@
-PAxSPL Tool is available for use at http://paxspl-tool.herokuapp.com/
+SPLReePlan Tool is available for use at http://paxspl-tool.herokuapp.com/
 
-# ⚙️ PAxSPL Framework
+# ⚙️ SPLReePlan Framework
 
-The PAxSPL framework is composed of PAxSPL [process](https://github.com/HestiaProject/PAxSPL/wiki/Process-Structure), [guidelines](https://github.com/HestiaProject/PAxSPL/wiki/Guidelines) and [tool](https://github.com/HestiaProject/PAxSPL/tree/master/Tool/paxspl-tool).
-<p align="center"><img src="https://github.com/HestiaProject/PAxSPL/blob/master/process/img/framework.png" width="400"></p> 
+ 
+<p align="center"><img src="https://github.com/HestiaProject/PAxSPL/blob/master/process/img/SPLReePlan.png" width="400"></p> 
 
-**The PAxSPL tool is being developed since 2020 and aims at giving full support to the process execution. The tool is being developed using the [Laravel Framework](https://laravel.com/) and [bpmn-js](https://bpmn.io/toolkit/bpmn-js/) for BPMN modeling.**
+**The SPLReePlan tool is being developed since 2020 and aims at giving full support to the process execution. The tool is being developed using the [Laravel Framework](https://laravel.com/) and [bpmn-js](https://bpmn.io/toolkit/bpmn-js/) for BPMN modeling.**
 
 
 ## Use Cases
