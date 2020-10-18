@@ -32,9 +32,8 @@ SPLReePlan Tool is available for use at http://paxspl-tool.herokuapp.com/
 
 ### Third Iteration (End-user requirements)
  
-1.As a User I want to create an account so that I can authenticate myself in the system.
-1. As a Team Member I want I want to model the BPMN representation of the assembled process so that the assembled process may be
-created.
+1. As a User I want to create an account so that I can authenticate myself in the system.
+1. As a Team Member I want I want to model the BPMN representation of the assembled process so that the assembled process may be created.
 1. As a Feature Retriever I want to create a feature model so that the features retrieved may be documented.
 1. As a Feature Tester I want to check the feature artifacts so that the features retrieved may be verified.
 1. As a Team Member I want to configure products from the Feature Model so that these products may be stored.
