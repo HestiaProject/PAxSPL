@@ -9,7 +9,7 @@ SPLReePlan Tool is available for use at http://paxspl-tool.herokuapp.com/
 
 # Relation between SPLReePlan, PAxSPL and the Reengineering process.
 
-<p align="center"><img src="https://github.com/HestiaProject/PAxSPL/blob/master/process/img/SPLReePlan.svg" width="400"></p> 
+<p align="center"><img src="https://github.com/HestiaProject/PAxSPL/blob/master/process/img/Correlation.svg" width="400"></p> 
 
 
 ## User Stories
