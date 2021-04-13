@@ -7,6 +7,10 @@ SPLReePlan Tool is available for use at http://paxspl-tool.herokuapp.com/
 
 **The SPLReePlan automated framerk is an evolution of PAxSPL. Developed since 2020, it aims at give full support to the PAxSPL execution, as well as additional features. The tool was developed using the [Laravel Framework](https://laravel.com/) and [bpmn-js](https://bpmn.io/toolkit/bpmn-js/) for BPMN modeling.**
 
+# Relation between SPLReePlan, PAxSPL and the Reengineering process.
+
+<p align="center"><img src="https://github.com/HestiaProject/PAxSPL/blob/master/process/img/SPLReePlan.svg" width="400"></p> 
+
 
 ## User Stories
  
