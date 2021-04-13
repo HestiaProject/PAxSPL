@@ -1,6 +1,6 @@
 # ⚙️ PAxSPL Framework
 
-The PAxSPL framework is composed of PAxSPL [process](https://github.com/HestiaProject/PAxSPL/wiki/Process-Structure), [guidelines](https://github.com/HestiaProject/PAxSPL/wiki/Guidelines) and [tool](https://github.com/HestiaProject/PAxSPL/tree/master/Tool/paxspl-tool).
+PAxSPL was evolved into the the [SPLReePLan automated framework](https://github.com/HestiaProject/PAxSPL/tree/master/Tool/paxspl-tool).
 <p align="center"><img src="https://github.com/HestiaProject/PAxSPL/blob/master/process/img/framework.png" width="400"></p> 
 
 :arrows_counterclockwise: **P**repare, **A**ssemble and E**x**ecute Process for **SPL** (PAxSPL)
