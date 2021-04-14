@@ -1,4 +1,4 @@
-SPLReePlan Tool is available for use at http://paxspl-tool.herokuapp.com/
+SPLReePlan Tool is available for use at https://splreeplan.herokuapp.com
 
 # ⚙️ SPLReePlan Framework
 
