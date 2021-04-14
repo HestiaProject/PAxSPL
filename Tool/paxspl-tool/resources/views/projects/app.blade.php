@@ -9,7 +9,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'PAxSPL') }}</title>
+    <title>SPLReePlan</title>
 
 
     <!-- Custom fonts for this template-->
@@ -26,11 +26,11 @@
 
     <!-- Feature configurator -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    
+
     <script src="https://cdn.rawgit.com/vanderlee/tristate/master/jquery.tristate.js"></script>
     <script src="{{ asset('feature-configurator/bundle.js') }}"></script>
 
-     
+
 
 </head>
 
@@ -48,9 +48,9 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/') }}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('projects.show',$project->id) }}">
 
-                {{ config('app.name', 'PAxSPL') }}
+                SPLReePlan
 
             </a>
 
@@ -90,7 +90,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-clipboard-list"></i>
-                    <span>Prepare</span>
+                    <span>Initiation</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -109,7 +109,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                     <i class="fas fa-puzzle-piece"></i>
-                    <span>Assemble</span>
+                    <span>Instantiation</span>
                 </a>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -126,7 +126,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                     <i class="fas fa-play-circle"></i>
-                    <span>Execute</span>
+                    <span>Documentation</span>
                 </a>
                 @if ($project->retriever())
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
@@ -158,6 +158,24 @@
 
                         </div>
                     </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analysis</span>
+                </a>
+
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
+
+
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Analysis</h6>
+                        <a class="collapse-item" href="{{ route('projects.feature_model.index', $project -> id) }}">Variablity Management</a>
+
+                        <a class="collapse-item" href="{{ route('projects.exp_process.index', $project -> id) }}">Process Experience</a>
+
+                    </div>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
@@ -276,7 +294,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Visit PAxSPL <a href="https://github.com/HestiaProject/PAxSPL/blob/master/README.md" target="_blank">Wiki</a> at GitHub </span>
+                        <span>Visit SPLReePlan <a href="https://github.com/HestiaProject/PAxSPL/blob/master/README.md" target="_blank">Wiki</a> at GitHub </span>
                     </div>
                 </div>
             </footer>

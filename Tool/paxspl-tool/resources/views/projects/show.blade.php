@@ -31,7 +31,7 @@
             <div class="card">
 
                 <div class="card-header py-3">
-                    <i class="fas fa-clipboard-list"></i> Prepare</div>
+                    <i class="fas fa-clipboard-list"></i> Initiation</div>
 
                 <div class="card-body">
 
@@ -57,7 +57,7 @@
             </div>
             <div class="card">
 
-                <div class="card-header py-3"><i class="fas fa-puzzle-piece"></i> Assemble</div>
+                <div class="card-header py-3"><i class="fas fa-puzzle-piece"></i> Instantiation</div>
 
                 <div class="card-body">
 
@@ -87,7 +87,7 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-header py-3"><i class="fas fa-play-circle"></i> Execute</div>
+            <div class="card-header py-3"><i class="fas fa-play-circle"></i> Documentation</div>
 
             <div class="card-body">
 
@@ -123,16 +123,30 @@
                     <span class="text">Check Scoping Process</span>
                 </a>
                 @endif
+                
+
+
+
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header py-3"><i class="fas fa-chart-line"></i> Analysis</div>
+
+            <div class="card-body">
+
+
+                
                 <div class="my-2"></div>
-                <a href="{{ route('projects.feature_model.index', $project -> id) }}" class=" btn btn-info btn-icon-split">
+                <a href="{{ route('projects.feature_model.index', $project -> id) }}" class=" btn btn-danger btn-icon-split">
                     <span class="icon text-white-50">
                         <i class="fas fa-sitemap"></i>
                     </span>
-                    <span class="text">Create Feature Model</span>
+                    <span class="text">Variability Management</span>
                 </a>
 
                 <div class="my-2"></div>
-                <a href="{{ route('projects.exp_process.index', $project -> id) }}" class=" btn btn-info btn-icon-split">
+                <a href="{{ route('projects.exp_process.index', $project -> id) }}" class=" btn btn-danger btn-icon-split">
                     <span class="icon text-white-50">
                         <i class="fas fa-flag-checkered"></i>
                     </span>

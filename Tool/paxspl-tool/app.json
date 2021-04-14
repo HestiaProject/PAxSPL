@@ -1,6 +1,6 @@
 {
-  "name": "PAxSPL-Tool",
-  "description": "A tool that gives full support to PAxSPL",
-  "repository": "https://github.com/HestiaProject/PAxSPL/tree/master/Tool/paxspl-tool",
-  "addons": []
+    "name": "SPLReePlan",
+    "description": "A tool that gives full support to the SPLReePlan framework",
+    "repository": "https://github.com/HestiaProject/PAxSPL/tree/master/Tool/paxspl-tool",
+    "addons": []
 }

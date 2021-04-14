@@ -9,7 +9,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'PAxSPL') }}</title>
+    <title>SPLReePlan{{ config('app.name', 'SPLReePlan') }}</title>
 
 
     <!-- Custom fonts for this template-->
@@ -32,8 +32,8 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/') }}">
-
-                {{ config('app.name', 'PAxSPL') }}
+            
+            SPLReePlan
 
             </a>
 
@@ -178,7 +178,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Visit PAxSPL <a href="https://github.com/HestiaProject/PAxSPL/blob/master/README.md" target="_blank">Wiki</a> at GitHub  </span>
+                        <span>Visit SPLReePlan <a href="https://github.com/HestiaProject/PAxSPL/blob/master/README.md" target="_blank">Wiki</a> at GitHub  </span>
                     </div>
                 </div>
             </footer>
