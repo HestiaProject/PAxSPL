@@ -1,4 +1,4 @@
-SPLReePlan Tool is available for use at [https://splreeplan.herokuapp.com/](https://splreeplan.herokuapp.com/)
+SPLReePlan Tool is available for use at [http://splreeplan.herokuapp.com/](http://splreeplan.herokuapp.com/)
 
 # ⚙️ SPLReePlan Framework
 
