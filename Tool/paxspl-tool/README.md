@@ -27,7 +27,7 @@ The artifacts repository can be used for reasoning about potential SPL evolution
 
 ## Relation between SPLReePlan, PAxSPL and the Reengineering process.
 
-<p align="center"><img src="https://github.com/HestiaProject/PAxSPL/blob/master/process/img/Correlation.svg" width="400"></p> 
+<p align="center"><img src="https://github.com/HestiaProject/PAxSPL/blob/master/process/img/correlation.svg" width="400"></p> 
 
 
 ## User Stories
