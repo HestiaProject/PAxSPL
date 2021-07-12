@@ -70,7 +70,7 @@ The artifacts repository can be used for reasoning about potential SPL evolution
 
 ### Project Home
 
-<p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/project.PNG" width="600"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/HestiaProject/PAxSPL/master/Tool/engineering/project_.PNG" width="600"></p>
 
 ### Team Member
 
