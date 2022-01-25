@@ -1,98 +1,202 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-	<featureModel>
-		<properties/>
-		<struct>
-			<and abstract="true" mandatory="true" name="ICode">
-				<and mandatory="true" name="Registration">
-					<feature mandatory="true" name="Client"/>
-					<feature mandatory="true" name="Product"/>
-					<feature mandatory="true" name="State"/>
-					<feature mandatory="true" name="City"/>
-					<feature mandatory="true" name="Country"/>
-					<feature mandatory="true" name="Supplier"/>
-					<feature mandatory="true" name="Unit of m."/>
-					<feature mandatory="true" name="Salesman" description=""/>
-					<feature name="Paym. Cond."/>
-					<and name="Transport">
-						<feature mandatory="true" name="Vehicle"/>
-						<feature mandatory="true" name="Ship. Company"/>
-					</and>
-				</and>
-				<or name="Document">
-					<and mandatory="true" name="E-invoice">
-						<feature mandatory="true" name="Input"/>
-						<feature mandatory="true" name="Output"/>
-						<feature mandatory="true" name=" XML Down"/>
-						<feature mandatory="true" name="Current Status "/>
-						<feature mandatory="true" name="Disable"/>
-					</and>
-					<and mandatory="true" name="Request">
-						<feature mandatory="true" name="Perform Request"/>
-						<feature mandatory="true" name="Status"/>
-						<feature name="E-invoice Generation"/>
-					</and>
-				</or>
-				<or abstract="true" mandatory="true" name="Operations">
-					<and mandatory="true" name="Taxation">
-						<feature mandatory="true" name="Op. Nature"/>
-						<feature mandatory="true" name="NCM"/>
-						<feature mandatory="true" name="Tributation"/>
-						<feature mandatory="true" name="Aliquot"/>
-						<feature mandatory="true" name="Nat. Simple"/>
-						<feature mandatory="true" name="ICMS Red. "/>
-						<feature mandatory="true" name="IBPT"/>
-						<feature mandatory="true" name="CFOP"/>
-						<feature mandatory="true" name="Cest"/>
-					</and>
-					<and mandatory="true" name="Finance">
-						<feature mandatory="true" name="Manage Acc. Plan"/>
-						<feature mandatory="true" name="Account"/>
-						<feature mandatory="true" name="Real. Flow"/>
-						<feature mandatory="true" name="Expec. Flow"/>
-						<feature mandatory="true" name="Cx. Ctrl"/>
-						<feature mandatory="true" name="Bank Ctrl. "/>
-						<feature mandatory="true" name="Rec. Acc."/>
-						<feature mandatory="true" name="Pay Acc. "/>
-					</and>
-				</or>
-				<and name="Schedule">
-					<feature mandatory="true" name="Historic"/>
-					<feature mandatory="true" name="Tasks"/>
-					<feature mandatory="true" name="Overview"/>
-					<feature mandatory="true" name="By User"/>
+<featureModel>
+	<properties>
+		<calculations key="tautology" value="true"/>
+		<calculations key="auto" value="true"/>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<calculations key="redundant" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<calculations key="constraints" value="true"/>
+		<graphics key="layoutalgorithm" value="0"/>
+		<calculations key="features" value="true"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="ICode">
+			<graphics key="position" value="20,632"/>
+			<and mandatory="true" name="Registration">
+				<graphics key="position" value="93,157"/>
+				<feature mandatory="true" name="Client">
+					<graphics key="position" value="195,20"/>
+				</feature>
+				<feature mandatory="true" name="Product">
+					<graphics key="position" value="195,49"/>
+				</feature>
+				<feature mandatory="true" name="State">
+					<graphics key="position" value="195,78"/>
+				</feature>
+				<feature mandatory="true" name="City">
+					<graphics key="position" value="195,107"/>
+				</feature>
+				<feature mandatory="true" name="Country">
+					<graphics key="position" value="195,136"/>
+				</feature>
+				<feature mandatory="true" name="Supplier">
+					<graphics key="position" value="195,165"/>
+				</feature>
+				<feature mandatory="true" name="UnitOfM">
+					<graphics key="position" value="195,194"/>
+				</feature>
+				<feature mandatory="true" name="Salesman">
+					<graphics key="position" value="195,223"/>
+				</feature>
+				<feature name="PaymCond">
+					<graphics key="position" value="195,252"/>
+				</feature>
+				<and name="Transport">
+					<graphics key="position" value="195,295"/>
+					<feature mandatory="true" name="Vehicle">
+						<graphics key="position" value="292,281"/>
+					</feature>
+					<feature mandatory="true" name="ShipCompany">
+						<graphics key="position" value="292,310"/>
+					</feature>
 				</and>
 			</and>
-		</struct>
-		<constraints>
-			<rule>
-				<imp>
-					<disj>
-						<var>Finance</var>
-						<var>E-invoice</var>
-					</disj>
-					<var>Paym. Cond.</var>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
-					<var>E-invoice</var>
-					<var>Taxation</var>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
-					<var>E-invoice</var>
-					<var>Transport</var>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
-					<var>E-invoice Generation</var>
-					<var>E-invoice</var>
-				</imp>
-			</rule>
-		</constraints>
-		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
-		<comments/>
-		<featureOrder userDefined="false"/>
-	</featureModel>
+			<or name="Document">
+				<graphics key="position" value="93,455"/>
+				<and name="EInvoice">
+					<graphics key="position" value="195,397"/>
+					<feature mandatory="true" name="Input">
+						<graphics key="position" value="292,339"/>
+					</feature>
+					<feature mandatory="true" name="Output">
+						<graphics key="position" value="292,368"/>
+					</feature>
+					<feature mandatory="true" name="XMLDown">
+						<graphics key="position" value="292,397"/>
+					</feature>
+					<feature mandatory="true" name="CurrentStatus">
+						<graphics key="position" value="292,426"/>
+					</feature>
+					<feature mandatory="true" name="Disable">
+						<graphics key="position" value="292,455"/>
+					</feature>
+				</and>
+				<and name="Request">
+					<graphics key="position" value="195,513"/>
+					<feature mandatory="true" name="PerformRequest">
+						<graphics key="position" value="292,484"/>
+					</feature>
+					<feature mandatory="true" name="Status">
+						<graphics key="position" value="292,513"/>
+					</feature>
+					<feature name="EInvoiceGeneration">
+						<graphics key="position" value="292,542"/>
+					</feature>
+				</and>
+			</or>
+			<or abstract="true" mandatory="true" name="Operations">
+				<graphics key="position" value="93,810"/>
+				<and name="Taxation">
+					<graphics key="position" value="195,687"/>
+					<feature mandatory="true" name="OpNature">
+						<graphics key="position" value="292,571"/>
+					</feature>
+					<feature mandatory="true" name="NCM">
+						<graphics key="position" value="292,600"/>
+					</feature>
+					<feature mandatory="true" name="Tributation">
+						<graphics key="position" value="292,629"/>
+					</feature>
+					<feature mandatory="true" name="Aliquot">
+						<graphics key="position" value="292,658"/>
+					</feature>
+					<feature mandatory="true" name="NatSimple">
+						<graphics key="position" value="292,687"/>
+					</feature>
+					<feature mandatory="true" name="ICMSRed">
+						<graphics key="position" value="292,716"/>
+					</feature>
+					<feature mandatory="true" name="IBPT">
+						<graphics key="position" value="292,745"/>
+					</feature>
+					<feature mandatory="true" name="CFOP">
+						<graphics key="position" value="292,774"/>
+					</feature>
+					<feature mandatory="true" name="Cest">
+						<graphics key="position" value="292,803"/>
+					</feature>
+				</and>
+				<and name="Finance">
+					<graphics key="position" value="195,933"/>
+					<feature mandatory="true" name="ManageAccPlan">
+						<graphics key="position" value="292,832"/>
+					</feature>
+					<feature mandatory="true" name="Account">
+						<graphics key="position" value="292,861"/>
+					</feature>
+					<feature mandatory="true" name="RealFlow">
+						<graphics key="position" value="292,890"/>
+					</feature>
+					<feature mandatory="true" name="ExpecFlow">
+						<graphics key="position" value="292,919"/>
+					</feature>
+					<feature mandatory="true" name="CxCtrl">
+						<graphics key="position" value="292,948"/>
+					</feature>
+					<feature mandatory="true" name="BankCtrl">
+						<graphics key="position" value="292,977"/>
+					</feature>
+					<feature mandatory="true" name="RecAcc">
+						<graphics key="position" value="292,1006"/>
+					</feature>
+					<feature mandatory="true" name="PayAcc">
+						<graphics key="position" value="292,1035"/>
+					</feature>
+				</and>
+			</or>
+			<and name="Schedule">
+				<graphics key="position" value="94,1005"/>
+				<feature mandatory="true" name="Historic">
+					<graphics key="position" value="196,962"/>
+				</feature>
+				<feature mandatory="true" name="Tasks">
+					<graphics key="position" value="196,991"/>
+				</feature>
+				<feature mandatory="true" name="Overview">
+					<graphics key="position" value="196,1020"/>
+				</feature>
+				<feature mandatory="true" name="ByUser">
+					<graphics key="position" value="196,1049"/>
+				</feature>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<graphics key="position" value="0,0"/>
+			<imp>
+				<disj>
+					<var>Finance</var>
+					<var>EInvoice</var>
+				</disj>
+				<var>PaymCond</var>
+			</imp>
+		</rule>
+		<rule>
+			<graphics key="position" value="0,0"/>
+			<imp>
+				<var>EInvoice</var>
+				<var>Taxation</var>
+			</imp>
+		</rule>
+		<rule>
+			<graphics key="position" value="0,0"/>
+			<imp>
+				<var>EInvoice</var>
+				<var>Transport</var>
+			</imp>
+		</rule>
+		<rule>
+			<graphics key="position" value="0,0"/>
+			<imp>
+				<var>EInvoiceGeneration</var>
+				<var>EInvoice</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>
